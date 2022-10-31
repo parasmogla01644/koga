@@ -1,0 +1,30 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ng-container *ngFor="let frame of frames">
+    <ngb-panel [title]="frame?.title || ''">
+      <ng-template ngbPanelContent>
+        <ng-container [ngSwitch]="frame.ref">
+          <ng-container *ngSwitchCase="'framekleurRef'">
+            framekleurRef
+          </ng-container>
+          <ng-container *ngSwitchCase="'frametypeRef'">
+            frametypeRef
+          </ng-container>
+          <ng-container *ngSwitchCase="'vorkRef'">
+            vorkRef
+          </ng-container>
+        </ng-container>
+      </ng-template>
+    </ngb-panel>
+  </ng-container>
+</ngb-accordion>
+
+
+<ng-template #framekleurRef>
+  framekleurRef
+</ng-template>
+<ng-template #frametypeRef>
+  frametypeRef
+</ng-template>
+<ng-template #vorkRef>
+  vorkRef
+</ng-template>
