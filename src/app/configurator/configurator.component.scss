@@ -1,0 +1,13 @@
+@import "../../assets/scss/variables.scss";
+.configurator {
+  background-color: $color-cream;
+  min-height: 100vh;
+  &__info {
+    padding-bottom: 80px;
+    &-img {
+      max-width: calc(100% - 560px);
+      position: relative;
+      z-index: 3;
+    }
+  }
+}

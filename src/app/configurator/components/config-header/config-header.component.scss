@@ -1,0 +1,79 @@
+@import '../../../../assets/scss/variables.scss';
+.configHeader{
+    padding: 24px 40px;
+    @include max-screen($desktop-xlarge) {
+        padding: 24px 20px;
+    }
+    @include max-screen($desktop-large) {
+        padding: 24px 15px;
+    }
+    &__back{
+        margin-right: 64px;
+        font-weight: 500;
+        font-size: 16px;
+        color: $color-black;
+        text-decoration: none;
+        @include max-screen($desktop-large) {
+            margin-right: 30px;
+        }
+        @include max-screen($desktop) {
+            margin: 0 0 15px 0;
+        }
+        img{
+            margin-right: 17px;
+        }
+    }
+    .nav-tabs{
+        border: 0;
+        @include max-screen($tablet) {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        li{
+            padding: 0 16px;
+            @include max-screen($desktop-large) {
+                padding: 0 12px;
+            }
+            .nav-link{
+                font-weight: 400;
+                font-size: 16px;
+                color: $color-darkBlue;
+                padding: 0;
+                border: 0;
+                border-radius: 0;
+                position: relative;
+                background-color: transparent;
+                @include max-screen($desktop-large) {
+                    font-size: 14px;
+                }
+                @include max-screen($desktop) {
+                    background-color: darken($color-cream, 3%);
+                    padding: 8px 15px;
+                    border-radius: $radius-xl;
+                    margin: 0 0 10px 0;
+                }
+                &::after{
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background-color: $color-primary;
+                    opacity: 0;
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;
+                    @include max-screen($desktop-large) {
+                    display: none;
+                    }
+                }
+                &.active{
+                    color: $color-primary;
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+      
+    }
+}

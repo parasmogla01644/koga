@@ -4,7 +4,7 @@
       <ng-template ngbPanelContent>
         <ng-container [ngSwitch]="frame.ref">
           <ng-container *ngSwitchCase="'framekleurRef'">
-            framekleurRef
+            <ng-container *ngTemplateOutlet="framekleurRef"></ng-container>
           </ng-container>
           <ng-container *ngSwitchCase="'frametypeRef'">
             frametypeRef
@@ -21,6 +21,9 @@
 
 <ng-template #framekleurRef>
   framekleurRef
+  <input #colorPicker [(colorPicker)]="color" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
+    [cpDialogDisplay]="'inline'" [style.background]="color" />
+  <!-- <color-sketch (onChange)="handleChange($event)"></color-sketch> -->
 </ng-template>
 <ng-template #frametypeRef>
   frametypeRef

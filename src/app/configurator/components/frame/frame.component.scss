@@ -1,0 +1,36 @@
+@import "../../../../assets/scss/variables.scss";
+.frame {
+  background-color: $color-white;
+  padding: 69px 88px;
+  max-width: 582px;
+  height: calc(100% - 100px);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  h2 {
+    font-weight: 500;
+    font-size: 32px;
+    color: $color-primary;
+    margin-bottom: 44px;
+  }
+  ::ng-deep .accordion {
+    .accordion-item {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      border-color: rgba($color-darkBlue, 0.2);
+      button {
+        outline: 0;
+        background-color: $color-white;
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-darkBlue;
+        border: 0;
+        box-shadow: 0 0 0;
+        padding: 16px 0;
+      }
+    }
+  }
+}

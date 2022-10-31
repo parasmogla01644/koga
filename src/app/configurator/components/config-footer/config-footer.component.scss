@@ -1,0 +1,56 @@
+@import "../../../../assets/scss/variables.scss";
+.configFooter {
+  padding: 15px 40px;
+  background-color: $color-white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 5;
+  @include max-screen($desktop) {
+    padding: 15px;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 20px;
+    color: $color-secondary;
+    @include max-screen($mobile) {
+      display: none;
+    }
+  }
+  &__right {
+    color: $color-secondary;
+    @include max-screen($mobile) {
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include max-screen($smobile) {
+      justify-content: center;
+    }
+    &-price {
+      margin-right: 48px;
+      @include max-screen($smobile) {
+        margin-right: 0px;
+      }
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+        strong {
+          font-weight: 700;
+          font-size: 20px;
+          padding: 0 5px;
+        }
+      }
+    }
+
+    &-button {
+      @include max-screen($smobile) {
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+  }
+}

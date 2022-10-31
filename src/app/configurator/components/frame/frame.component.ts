@@ -9,6 +9,7 @@ export class FrameComponent implements OnInit {
   @ViewChild('framekleurRef') framekleurRef: any;
   @ViewChild('frametypeRef') frametypeRef: any;
   @ViewChild('vorkRef') vorkRef: any;
+  color: any;
   frames: {
     title: string;
     ref: any;
@@ -34,4 +35,8 @@ export class FrameComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleChange(event: any) {
+    console.log(event);
+  }
 }
