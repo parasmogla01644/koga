@@ -56,7 +56,7 @@
                 }
             }
             img {
-                max-height: 100%;
+                max-height: calc(100vh - 152px);
             }
         }
         figure {
@@ -84,7 +84,7 @@
     &__bottom {
         left: 0;
         bottom: 0;
-        z-index: 1;
+        z-index: 5;
         width: 100%;
         position: fixed;
         @include max-screen($tablet-lg) {
