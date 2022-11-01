@@ -11,21 +11,31 @@
         background-color: $color-white;
     }
     &__info {
+        padding-top: 24px;
+        @include max-screen($tablet-lg){
+            padding-top: 0;
+        }
         article {
             z-index: 1;
-            padding-top: 45px;
             position: relative;
+            padding: 45px 0 15px 40px;
             width: calc(100% - 503px);
             height: calc(100vh - 152px);
+            @include max-screen($desktop-xlarge) {
+                padding-left: 20px;
+            }
+            @include max-screen($desktop-large) {
+                padding-left: 15px;
+            }
             @include max-screen($desktop){
-                padding: 0;
-                height: calc(100vh - 182px);
+                padding: 15px 0 15px 15px;
                 width: calc(100% - 400px);
+                height: calc(100vh - 182px);
             }
             @include max-screen($tablet-lg){
                 width: 100%;
                 height: auto;
-                padding: 0 15px 45px;
+                padding: 15px 15px 45px;
                 background-color: $color-white;
                 @include background-image(bottom-pattern, png, center bottom, repeat-x, 300px);
             }

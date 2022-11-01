@@ -5,14 +5,6 @@
     @include max-screen($desktop) {
         padding: 15px;
     }
-    h5 {
-        font-size: 20px;
-        font-weight: 400;
-        color: $color-secondary;
-        @include max-screen($mobile) {
-            display: none;
-        }
-    }
     &__right {
         color: $color-secondary;
         @include max-screen($mobile) {
@@ -24,13 +16,13 @@
             @include max-screen($smobile) {
                 margin-right: 0;
             }
-            p {
+            h5 {
                 margin: 0;
                 font-size: 12px;
                 @include max-screen($mobile){
                     font-size: 8px;
                 }
-                &+p {
+                &+h5 {
                     margin-left: 16px;
                     @include max-screen($smobile) {
                         margin-left: 10px;

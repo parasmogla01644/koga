@@ -5,8 +5,14 @@
     font-family: $font-family-base;
 }
 body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-darkBlue;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    @include max-screen($mobile){
+        font-size: 14px;
+    }
 }
 a {
     outline: none;

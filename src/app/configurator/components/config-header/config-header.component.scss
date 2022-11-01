@@ -9,7 +9,7 @@
     @include max-screen($desktop-large) {
         padding: 24px 15px;
     }
-    @include max-screen($mobile){
+    @include max-screen($tablet-lg){
         background-color: $color-cream;
     }
     &__back {
@@ -48,9 +48,11 @@
             @include max-screen($desktop) {
                 flex: auto;
             }
+            &:last-child {
+                padding-right: 0;
+            }
             .nav-link {
                 font-weight: 400;
-                font-size: 16px;
                 color: $color-darkBlue;
                 padding: 0;
                 border: 0;

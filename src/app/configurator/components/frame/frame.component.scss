@@ -16,17 +16,13 @@
     &::-webkit-scrollbar {
         width: 0;
     }
-    h2 {
+    h3 {
         top: 0;
         z-index: 5;
-        font-size: 32px;
         position: sticky;
-        font-weight: 500;
         margin: 0 -66px 34px;
-        color: $color-primary;
         padding: 66px 66px 10px;
         background-color: $color-white;
-        font-family: $font-family-secondary;
         @include max-screen($desktop){
             margin: 0 -40px 34px;
             padding: 40px 40px 10px;
@@ -34,21 +30,12 @@
         @include max-screen($tablet-lg){
             margin: 0;
             padding: 0 0 20px;
-            font-size: 25px;
             position: static;
-        }
-        @include max-screen($mobile){
-            font-size: 20px;            
         }
     }
     &__color {
         padding: 16px 0 24px;
         border-top: 1px solid rgba($color-darkBlue, 0.2);
-        p {
-            @include max-screen($mobile){
-                font-size: 14px;
-            }
-        }
         &-picker {
             position: relative;
             span {
@@ -56,7 +43,7 @@
                 height: 40px;
                 display: block;
                 margin-right: 8px;
-                border: 1px solid $color-gray-medium;
+                border: 1px solid $color-disabled-dark;
             }
             input {
                 padding: 8px;
@@ -68,7 +55,7 @@
                 color: $color-secondary;
                 width: calc(100% - 48px);
                 text-transform: uppercase;
-                border: 1px solid $color-gray-medium;
+                border: 1px solid $color-disabled-dark;
                 &::placeholder {
                     opacity: 1;
                     color: $color-secondary;
@@ -120,9 +107,6 @@
                     line-height: 1.2;
                     margin-bottom: 30px;
                     font-family: $font-family-secondary;
-                    @include max-screen($mobile){
-                        font-size: 14px;
-                    }
                 }
                 a {
                     font-weight: 500;
