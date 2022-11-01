@@ -6,21 +6,17 @@
                 <ng-template ngbPanelContent>
                     <ng-container [ngSwitch]="frame.ref">
                         <ng-container *ngSwitchCase="'framekleurRef'">
-                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
-                           
+                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a>
+                            </p>
+
                             <div class="row">
-                                <div class="col-6 d-flex mb-3">
-                                     <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny"></app-card-part>   
-                               </div>
-                               <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" [isDisabled]="true" caption="Graphite black shiny"></app-card-part>   
-                                </div>
+                                <ng-container *ngFor="let card of AppCards">
+                                    <div class="col-6 d-flex mb-3">
+                                        <app-card-part class="d-flex w-100" [isDisabled]="card.isDisabled"
+                                            [caption]="card.caption" [infoTitle]="card.infoTitle"></app-card-part>
+                                    </div>
+                                </ng-container>
+
                             </div>
 
                             <div class="frame__color">
@@ -28,29 +24,25 @@
 
                                 <div class="frame__color-picker d-flex flex-wrap">
                                     <span [style.background]="color"></span>
-                                    <input #colorPicker [(colorPicker)]="color" placeholder="{{color}}" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
-                                    [cpDialogDisplay]="'inline'" />
+                                    <input #colorPicker [(colorPicker)]="color" placeholder="{{color}}"
+                                        [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
+                                        [cpDialogDisplay]="'inline'" />
                                 </div>
                             </div>
                         </ng-container>
                         <ng-container *ngSwitchCase="'frametypeRef'">
                             <div class="row">
-                                <div class="col-6 d-flex mb-3">
-                                     <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny"></app-card-part>   
-                               </div>
-                               <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <app-card-part class="d-flex w-100" [isDisabled]="true" caption="Graphite black shiny"></app-card-part>   
-                                </div>
+                                <ng-container *ngFor="let card of AppCards">
+                                    <div class="col-6 d-flex mb-3">
+                                        <app-card-part class="d-flex w-100" [isDisabled]="card.isDisabled"
+                                            [caption]="card.caption" [infoTitle]="card.infoTitle"></app-card-part>
+                                    </div>
+                                </ng-container>
                             </div>
                         </ng-container>
                         <ng-container *ngSwitchCase="'vorkRef'">
-                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
+                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a>
+                            </p>
                         </ng-container>
                     </ng-container>
                 </ng-template>
@@ -62,7 +54,7 @@
 <ng-template #framekleurRef>
     framekleurRef
     <input #colorPicker [(colorPicker)]="color" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
-    [cpDialogDisplay]="'inline'" [style.background]="color" />
+        [cpDialogDisplay]="'inline'" [style.background]="color" />
 </ng-template>
 <ng-template #frametypeRef>
     frametypeRef

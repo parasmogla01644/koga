@@ -3,12 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: AppComponent,
-  // },
   {
-    path: 'configurator',
+    path: '',
     loadChildren: () =>
       import('./configurator/configurator.module').then(
         (m) => m.ConfiguratorModule

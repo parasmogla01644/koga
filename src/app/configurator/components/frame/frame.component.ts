@@ -1,5 +1,15 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+export interface IAppCards {
+  isDisabled: boolean;
+  caption: string;
+  infoTitle: string;
+}
 
+export interface Iframes {
+  title: string;
+  ref: any;
+  expand: boolean;
+}
 @Component({
   selector: 'app-frame',
   templateUrl: './frame.component.html',
@@ -10,11 +20,8 @@ export class FrameComponent implements OnInit {
   @ViewChild('frametypeRef') frametypeRef: any;
   @ViewChild('vorkRef') vorkRef: any;
   color: any;
-  frames: {
-    title: string;
-    ref: any;
-    expand: boolean;
-  }[] = [
+
+  frames: Iframes[] = [
     {
       title: 'Framekleur',
       ref: 'framekleurRef',
@@ -29,6 +36,29 @@ export class FrameComponent implements OnInit {
       title: 'Vork',
       ref: 'vorkRef',
       expand: true,
+    },
+  ];
+
+  AppCards: IAppCards[] = [
+    {
+      isDisabled: false,
+      caption: 'Graphite black shiny',
+      infoTitle: 'meest gekozen',
+    },
+    {
+      isDisabled: false,
+      caption: 'Graphite black shiny',
+      infoTitle: '',
+    },
+    {
+      isDisabled: false,
+      caption: 'Graphite black shiny',
+      infoTitle: 'meest gekozen',
+    },
+    {
+      isDisabled: true,
+      caption: 'Graphite black shiny',
+      infoTitle: '',
     },
   ];
 
