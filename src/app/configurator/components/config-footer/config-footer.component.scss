@@ -1,56 +1,63 @@
 @import "../../../../assets/scss/variables.scss";
 .configFooter {
-  padding: 15px 40px;
-  background-color: $color-white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  z-index: 5;
-  @include max-screen($desktop) {
-    padding: 15px;
-  }
-  h5 {
-    font-weight: 400;
-    font-size: 20px;
-    color: $color-secondary;
-    @include max-screen($mobile) {
-      display: none;
+    padding: 15px 24px;
+    background-color: $color-white;
+    @include max-screen($desktop) {
+        padding: 15px;
     }
-  }
-  &__right {
-    color: $color-secondary;
-    @include max-screen($mobile) {
-      justify-content: space-between;
-      width: 100%;
-    }
-    @include max-screen($smobile) {
-      justify-content: center;
-    }
-    &-price {
-      margin-right: 48px;
-      @include max-screen($smobile) {
-        margin-right: 0px;
-      }
-      span {
+    h5 {
+        font-size: 20px;
         font-weight: 400;
-        font-size: 12px;
-        &:not(:last-child) {
-          margin-right: 16px;
+        color: $color-secondary;
+        @include max-screen($mobile) {
+            display: none;
         }
-        strong {
-          font-weight: 700;
-          font-size: 20px;
-          padding: 0 5px;
+    }
+    &__right {
+        color: $color-secondary;
+        @include max-screen($mobile) {
+            width: 100%;
+            justify-content: space-between;
         }
-      }
+        &-price {
+            margin-right: 48px;
+            @include max-screen($smobile) {
+                margin-right: 0;
+            }
+            p {
+                margin: 0;
+                font-size: 12px;
+                @include max-screen($mobile){
+                    font-size: 8px;
+                }
+                &+p {
+                    margin-left: 16px;
+                    @include max-screen($smobile) {
+                        margin-left: 10px;
+                    }
+                }
+                strong {
+                    font-size: 167%;
+                    font-weight: 700;
+                    padding-left: 5px;
+                    @include max-screen($mobile){
+                        padding-left: 3px;
+                    }
+                }
+                cite {
+                    font-weight: 700;
+                    font-size: 100%;
+                    font-style: normal;
+                }
+            }
+        }
+        &-button {
+            .btn-outline {
+                @include max-screen($mobile) {
+                    width: 40px;
+                    padding: 5px 10px;
+                }
+            }
+        }
     }
-
-    &-button {
-      @include max-screen($smobile) {
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 15px;
-      }
-    }
-  }
 }

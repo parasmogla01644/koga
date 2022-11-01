@@ -1,6 +1,16 @@
 <div class="configurator">
-  <app-config-header></app-config-header>
-  <router-outlet></router-outlet>
-  <app-frame></app-frame>
-  <app-config-footer></app-config-footer>
+    <app-config-header></app-config-header>
+    <div class="configurator__info d-flex flex-wrap">
+        <article class="d-flex justify-content-md-end">
+            <figure>
+                <img src="/assets/images/cycle.png" alt="cycle">
+            </figure>
+        </article>
+        <aside class="d-flex">
+            <app-frame class="d-flex w-100"></app-frame>
+        </aside>
+    </div>
+    <div class="configurator__bottom">
+        <app-config-footer></app-config-footer>
+    </div>
 </div>

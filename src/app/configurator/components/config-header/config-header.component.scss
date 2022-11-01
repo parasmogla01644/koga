@@ -1,41 +1,54 @@
-@import '../../../../assets/scss/variables.scss';
-.configHeader{
+@import "../../../../assets/scss/variables.scss";
+.configHeader {
+    z-index: 9;
     padding: 24px 40px;
+    position: relative;
     @include max-screen($desktop-xlarge) {
         padding: 24px 20px;
     }
     @include max-screen($desktop-large) {
         padding: 24px 15px;
     }
-    &__back{
-        margin-right: 64px;
+    @include max-screen($mobile){
+        background-color: $color-cream;
+    }
+    &__back {
         font-weight: 500;
         font-size: 16px;
+        margin: 0 64px 0 0;
         color: $color-black;
         text-decoration: none;
         @include max-screen($desktop-large) {
             margin-right: 30px;
         }
         @include max-screen($desktop) {
-            margin: 0 0 15px 0;
+            margin-right: 15px;
         }
-        img{
+        @include max-screen($mobile) {
+            font-size: 14px;
+        }
+        img {
             margin-right: 17px;
+            @include max-screen($mobile) {
+                width: 19px;
+                margin-right: 10px;
+            }
         }
     }
-    .nav-tabs{
+    .nav-tabs {
         border: 0;
-        @include max-screen($tablet) {
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            white-space: nowrap;
+        @include max-screen($desktop) {
+           display: none;
         }
-        li{
+        li {
             padding: 0 16px;
             @include max-screen($desktop-large) {
-                padding: 0 12px;
+                padding: 0 10px;
             }
-            .nav-link{
+            @include max-screen($desktop) {
+                flex: auto;
+            }
+            .nav-link {
                 font-weight: 400;
                 font-size: 16px;
                 color: $color-darkBlue;
@@ -44,16 +57,7 @@
                 border-radius: 0;
                 position: relative;
                 background-color: transparent;
-                @include max-screen($desktop-large) {
-                    font-size: 14px;
-                }
-                @include max-screen($desktop) {
-                    background-color: darken($color-cream, 3%);
-                    padding: 8px 15px;
-                    border-radius: $radius-xl;
-                    margin: 0 0 10px 0;
-                }
-                &::after{
+                &::after {
                     content: "";
                     width: 100%;
                     height: 2px;
@@ -63,17 +67,77 @@
                     left: 0;
                     bottom: -8px;
                     @include max-screen($desktop-large) {
-                    display: none;
+                        display: none;
                     }
                 }
-                &.active{
+                &.active {
                     color: $color-primary;
-                    &::after{
+                    &::after {
                         opacity: 1;
                     }
                 }
             }
         }
-      
+    }
+    ol {
+        padding: 0;
+        margin: 0 15px 0 0;
+        @include max-screen($desktop-large) {
+            margin-left: auto;
+        }
+        @include max-screen($desktop) {
+            margin-right: 0;
+        }
+        li {
+            list-style: none;
+            position: relative;
+            p {
+                cursor: pointer;
+                @include max-screen($desktop) {
+                    padding-right: 12px;
+                    @include background-image(angle-down, svg, right, no-repeat, 8px);
+                }
+                span {
+                    user-select: none;
+                    @include max-screen($desktop) {
+                        display: none;
+                    }
+                }
+                img {
+                    width: 27px;
+                    display: block;
+                    @include min-screen($desktop) {
+                        display: none;
+                    }
+                }
+            }
+            ol {
+                left: 0;
+                top: 100%;
+                padding: 0;
+                display: none;
+                min-width: 100%;
+                position: absolute;
+                border-radius: 4px;
+                background-color: $color-white;
+                box-shadow: 0 3px 5px rgba($color-black, 0.05);
+                @include max-screen($desktop){
+                    right: 0;
+                    left: auto;
+                    min-width: 70px;
+                }
+                li {
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    & + li {
+                        border-top: 1px solid rgba($color-black, 0.05);
+                    }
+                }
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
     }
 }

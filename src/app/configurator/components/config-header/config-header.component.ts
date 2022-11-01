@@ -11,5 +11,8 @@ export class ConfigHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  dropDownStatus: boolean = false;
+  languageToggle(){
+      this.dropDownStatus = !this.dropDownStatus;       
+  }
 }

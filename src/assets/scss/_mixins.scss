@@ -9,3 +9,9 @@
     }
 }
 
+@mixin background-image($img, $ext, $pos, $repeat: no-repeat, $size: auto) {
+    background-image: url(#{$imgPath}#{$img}.#{$ext});
+    background-size: $size;
+    background-position: $pos;
+    background-repeat: $repeat;
+}

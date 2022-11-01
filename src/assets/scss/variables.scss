@@ -9,23 +9,28 @@ $color-success: #03D26F;
 $color-black: #000;
 $color-darkBlue :#232F5D;
 $color-disabled:#CFE5F4;
+$color-gray:#EAEAEA;
+$color-gray-medium:#D3D5DF;
 
 // base
 $font-size-base: 16px;
 $line-height-base: 1.5;
 $font-family-base: 'Quatro', sans-serif;
+$font-family-secondary: 'Quatro Slab', sans-serif;
 $radius:10px;
 $radius-xl:55px;
 
 // breakpoints
 $smobile: 575px;
 $mobile: 767px;
-$stablet: 991px;
-$tablet: 1024px;
+$tablet: 991px;
+$tablet-lg: 1024px;
 $desktop: 1199px;
 $desktop-large: 1366px;
 $desktop-xlarge: 1599px;
 
+// image path
+$imgPath: "/assets/images/";
 
 // mixins
 @import "mixins";

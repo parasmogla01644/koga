@@ -1,26 +1,39 @@
-.button{
-    background-color: $color-primary;
+.btn {
+    border: 0;
+    height: 50px;
+    align-items: center;
     display: inline-flex;
     justify-content: center;
-    align-items: center;
     padding: 10px 16px;
     font-weight: 500;
     font-size: 16px;
-    color: $color-white;
-    border: 0;
-    min-height: 50px;
-    &:hover{
-        background-color: $color-secondary;
+    border-radius: 0;
+    @include max-screen($mobile){
+        height: 40px;
+        font-size: 14px;
     }
-    &:disabled{
+    &-primary {
+        color: $color-white;
+        background-color: $color-primary;
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+    &-outline {
+        background-color: transparent;
+        border: 1px solid $color-secondary;
+        &:hover {
+            border-color: $color-secondary;
+        }
+    }
+    &:disabled {
         background-color: $color-disabled;
         cursor: not-allowed;
     }
-    & + .button{
+    & + .btn {
         margin-left: 16px;
-    }
-    &.outline{
-        background-color: transparent;
-        border: 1px solid $color-secondary;
-    }
+        @include max-screen($mobile){
+            margin-left: 10px;
+        }
+    }  
 }

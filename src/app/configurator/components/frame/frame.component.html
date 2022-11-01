@@ -1,33 +1,72 @@
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-  <ng-container *ngFor="let frame of frames">
-    <ngb-panel [title]="frame?.title || ''">
-      <ng-template ngbPanelContent>
-        <ng-container [ngSwitch]="frame.ref">
-          <ng-container *ngSwitchCase="'framekleurRef'">
-            <ng-container *ngTemplateOutlet="framekleurRef"></ng-container>
-          </ng-container>
-          <ng-container *ngSwitchCase="'frametypeRef'">
-            frametypeRef
-          </ng-container>
-          <ng-container *ngSwitchCase="'vorkRef'">
-            vorkRef
-          </ng-container>
-        </ng-container>
-      </ng-template>
-    </ngb-panel>
-  </ng-container>
-</ngb-accordion>
+<div class="frame">
+    <h2>Frame</h2>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ng-container *ngFor="let frame of frames">
+            <ngb-panel [title]="frame?.title || ''">
+                <ng-template ngbPanelContent>
+                    <ng-container [ngSwitch]="frame.ref">
+                        <ng-container *ngSwitchCase="'framekleurRef'">
+                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
+                           
+                            <div class="row">
+                                <div class="col-6 d-flex mb-3">
+                                     <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny"></app-card-part>   
+                               </div>
+                               <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" [isDisabled]="true" caption="Graphite black shiny"></app-card-part>   
+                                </div>
+                            </div>
 
+                            <div class="frame__color">
+                                <p>Maak je Koga nog persoonlijker met een zelf gekozen kleur</p>
+
+                                <div class="frame__color-picker d-flex flex-wrap">
+                                    <span [style.background]="color"></span>
+                                    <input #colorPicker [(colorPicker)]="color" placeholder="{{color}}" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
+                                    [cpDialogDisplay]="'inline'" />
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'frametypeRef'">
+                            <div class="row">
+                                <div class="col-6 d-flex mb-3">
+                                     <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny"></app-card-part>   
+                               </div>
+                               <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" caption="Graphite black shiny" infoTitle="meest gekozen"></app-card-part>   
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <app-card-part class="d-flex w-100" [isDisabled]="true" caption="Graphite black shiny"></app-card-part>   
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'vorkRef'">
+                            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
+                        </ng-container>
+                    </ng-container>
+                </ng-template>
+            </ngb-panel>
+        </ng-container>
+    </ngb-accordion>
+</div>
 
 <ng-template #framekleurRef>
-  framekleurRef
-  <input #colorPicker [(colorPicker)]="color" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
+    framekleurRef
+    <input #colorPicker [(colorPicker)]="color" [cpDisabled]="false" [cpPosition]="'bottom'" [cpToggle]="false"
     [cpDialogDisplay]="'inline'" [style.background]="color" />
-  <!-- <color-sketch (onChange)="handleChange($event)"></color-sketch> -->
 </ng-template>
 <ng-template #frametypeRef>
-  frametypeRef
+    frametypeRef
 </ng-template>
 <ng-template #vorkRef>
-  vorkRef
+    vorkRef
 </ng-template>

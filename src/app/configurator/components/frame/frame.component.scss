@@ -1,36 +1,134 @@
 @import "../../../../assets/scss/variables.scss";
 .frame {
-  background-color: $color-white;
-  padding: 69px 88px;
-  max-width: 582px;
-  height: calc(100% - 100px);
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 2;
-  h2 {
-    font-weight: 500;
-    font-size: 32px;
-    color: $color-primary;
-    margin-bottom: 44px;
-  }
-  ::ng-deep .accordion {
-    .accordion-item {
-      border-radius: 0;
-      border-left: 0;
-      border-right: 0;
-      border-color: rgba($color-darkBlue, 0.2);
-      button {
-        outline: 0;
-        background-color: $color-white;
-        font-weight: 700;
-        font-size: 20px;
-        color: $color-darkBlue;
-        border: 0;
-        box-shadow: 0 0 0;
-        padding: 16px 0;
-      }
+    width: 100%;
+    overflow-y: auto;
+    padding: 0 90px 66px;
+    height: calc(100vh - 152px);
+    background-color: $color-white;
+    @include max-screen($desktop){
+        padding: 0 40px 40px;
+        height: calc(100vh - 182px);
     }
-  }
+    @include max-screen($tablet-lg){
+        padding: 30px 15px;
+        height: auto;
+    }
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    h2 {
+        top: 0;
+        z-index: 5;
+        font-size: 32px;
+        position: sticky;
+        font-weight: 500;
+        margin: 0 -66px 34px;
+        color: $color-primary;
+        padding: 66px 66px 10px;
+        background-color: $color-white;
+        font-family: $font-family-secondary;
+        @include max-screen($desktop){
+            margin: 0 -40px 34px;
+            padding: 40px 40px 10px;
+        }
+        @include max-screen($tablet-lg){
+            margin: 0;
+            padding: 0 0 20px;
+            font-size: 25px;
+            position: static;
+        }
+        @include max-screen($mobile){
+            font-size: 20px;            
+        }
+    }
+    &__color {
+        padding: 16px 0 24px;
+        border-top: 1px solid rgba($color-darkBlue, 0.2);
+        p {
+            @include max-screen($mobile){
+                font-size: 14px;
+            }
+        }
+        &-picker {
+            position: relative;
+            span {
+                width: 40px;
+                height: 40px;
+                display: block;
+                margin-right: 8px;
+                border: 1px solid $color-gray-medium;
+            }
+            input {
+                padding: 8px;
+                height: 40px;
+                outline: none;
+                cursor: pointer;
+                font-size: 16px;
+                appearance: none;
+                color: $color-secondary;
+                width: calc(100% - 48px);
+                text-transform: uppercase;
+                border: 1px solid $color-gray-medium;
+                &::placeholder {
+                    opacity: 1;
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+    ::ng-deep .accordion {
+        .accordion-item {
+            border-radius: 0;
+            border-left: 0;
+            border-right: 0;
+            border-color: rgba($color-darkBlue, 0.2);
+            button {
+                border: 0;
+                outline: 0;
+                cursor: pointer;
+                font-size: 20px;
+                box-shadow: none;
+                line-height: 1.2;
+                font-weight: 700;
+                position: relative;
+                color: $color-darkBlue;
+                padding: 16px 20px 16px 0;
+                background-color: transparent;
+                @include max-screen($tablet-lg){
+                    font-size: 16px;
+                }
+                @include max-screen($mobile){
+                    font-size: 14px;
+                }
+                &::after {
+                    top: 22px;
+                    right: 2px;
+                    width: 11px;
+                    height: 11px;
+                    position: absolute;
+                    @include background-image(minus, svg, center, no-repeat, 100%);
+                }
+                &.collapsed {
+                    &::after {
+                        @include background-image(plus, svg, center, no-repeat, 100%);
+                    }                    
+                }
+            }
+            .accordion-body {
+                padding: 0;
+                > p {
+                    line-height: 1.2;
+                    margin-bottom: 30px;
+                    font-family: $font-family-secondary;
+                    @include max-screen($mobile){
+                        font-size: 14px;
+                    }
+                }
+                a {
+                    font-weight: 500;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }

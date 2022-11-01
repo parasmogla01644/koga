@@ -6,6 +6,7 @@ import { ConfigFooterComponent } from './components/config-footer/config-footer.
 import { RouterModule, Routes } from '@angular/router';
 import { FrameComponent } from './components/frame/frame.component';
 import { SharedModule } from '@shared/shared.module';
+import { CardPartComponent } from './components/card-part/card-part.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const COMPONENTS = [
 const MODULES = [SharedModule];
 
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, CardPartComponent],
   imports: [CommonModule, RouterModule.forChild(routes), ...MODULES],
 })
 export class ConfiguratorModule {}

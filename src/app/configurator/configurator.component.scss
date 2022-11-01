@@ -1,13 +1,78 @@
 @import "../../assets/scss/variables.scss";
 .configurator {
-  background-color: $color-cream;
-  min-height: 100vh;
-  &__info {
+    height: 100vh;
+    position: relative;
     padding-bottom: 80px;
-    &-img {
-      max-width: calc(100% - 560px);
-      position: relative;
-      z-index: 3;
+    background-color: $color-cream;
+    @include max-screen($tablet-lg){
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 70px;
+        background-color: $color-white;
     }
-  }
+    &__info {
+        article {
+            z-index: 1;
+            padding-top: 45px;
+            position: relative;
+            width: calc(100% - 503px);
+            height: calc(100vh - 152px);
+            @include max-screen($desktop){
+                padding: 0;
+                height: calc(100vh - 182px);
+                width: calc(100% - 400px);
+            }
+            @include max-screen($tablet-lg){
+                width: 100%;
+                height: auto;
+                padding: 0 15px 45px;
+                background-color: $color-white;
+                @include background-image(bottom-pattern, png, center bottom, repeat-x, 300px);
+            }
+            &::before {
+                @include max-screen($tablet-lg){
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    content: '';
+                    width: 100%;
+                    bottom: 38px;
+                    display: block;
+                    position: absolute;
+                    background-color: $color-cream;
+                }
+            }
+            img {
+                max-height: 100%;
+            }
+        }
+        figure {
+            margin-right: -28px;
+            @include max-screen($tablet-lg){
+                margin-right:0;
+            }
+        }
+        aside {
+            width: 503px;
+            padding-bottom: 30px;
+            background-color: $color-white;           
+            @include max-screen($desktop){
+                width: 400px;
+            }
+            @include max-screen($tablet-lg){
+                width: 100%;
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__bottom {
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        position: fixed;
+        @include max-screen($tablet-lg){
+            box-shadow: 0 -3px 5px rgba($color-black, 0.05);
+        }
+    }
 }
