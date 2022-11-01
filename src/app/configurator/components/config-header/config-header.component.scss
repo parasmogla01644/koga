@@ -84,11 +84,12 @@
     ol {
         padding: 0;
         margin: 0 15px 0 0;
-        @include max-screen($desktop-large) {
+        @include min-screen(2200px){
             margin-left: auto;
         }
         @include max-screen($desktop) {
             margin-right: 0;
+            margin-left: auto;
         }
         li {
             list-style: none;

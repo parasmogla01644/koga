@@ -4,7 +4,7 @@
     position: relative;
     padding-bottom: 80px;
     background-color: $color-cream;
-    @include max-screen($tablet-lg){
+    @include max-screen($tablet-lg) {
         height: auto;
         min-height: 100vh;
         padding-bottom: 70px;
@@ -12,7 +12,7 @@
     }
     &__info {
         padding-top: 24px;
-        @include max-screen($tablet-lg){
+        @include max-screen($tablet-lg) {
             padding-top: 0;
         }
         article {
@@ -21,18 +21,21 @@
             padding: 45px 0 15px 40px;
             width: calc(100% - 503px);
             height: calc(100vh - 152px);
+            @include min-screen(2200px) {
+                justify-content: center !important;
+            }
             @include max-screen($desktop-xlarge) {
                 padding-left: 20px;
             }
             @include max-screen($desktop-large) {
                 padding-left: 15px;
             }
-            @include max-screen($desktop){
+            @include max-screen($desktop) {
                 padding: 15px 0 15px 15px;
                 width: calc(100% - 400px);
                 height: calc(100vh - 182px);
             }
-            @include max-screen($tablet-lg){
+            @include max-screen($tablet-lg) {
                 width: 100%;
                 height: auto;
                 padding: 15px 15px 45px;
@@ -40,11 +43,11 @@
                 @include background-image(bottom-pattern, png, center bottom, repeat-x, 300px);
             }
             &::before {
-                @include max-screen($tablet-lg){
+                @include max-screen($tablet-lg) {
                     top: 0;
                     left: 0;
                     z-index: -1;
-                    content: '';
+                    content: "";
                     width: 100%;
                     bottom: 38px;
                     display: block;
@@ -58,18 +61,21 @@
         }
         figure {
             margin-right: -28px;
-            @include max-screen($tablet-lg){
-                margin-right:0;
+            @include max-screen($tablet-lg) {
+                margin-right: 0;
+            }
+            @include min-screen(2200px) {
+                margin-right: 0;
             }
         }
         aside {
             width: 503px;
             padding-bottom: 30px;
-            background-color: $color-white;           
-            @include max-screen($desktop){
+            background-color: $color-white;
+            @include max-screen($desktop) {
                 width: 400px;
             }
-            @include max-screen($tablet-lg){
+            @include max-screen($tablet-lg) {
                 width: 100%;
                 padding-bottom: 0;
             }
@@ -81,7 +87,7 @@
         z-index: 1;
         width: 100%;
         position: fixed;
-        @include max-screen($tablet-lg){
+        @include max-screen($tablet-lg) {
             box-shadow: 0 -3px 5px rgba($color-black, 0.05);
         }
     }
