@@ -15,3 +15,9 @@
     background-position: $pos;
     background-repeat: $repeat;
 }
+@mixin round-image($imgSize) {
+    width: $imgSize;
+    height: $imgSize;
+    object-fit: cover;
+    border-radius: 50%;
+}

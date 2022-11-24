@@ -1,0 +1,104 @@
+.form-floating{
+    &>.form-control,
+    &>.form-select {
+        border-radius: 0;
+        border-color: $color-borderdark;
+        height: 48px;
+        box-shadow: 0 0 0;
+        padding: 0 12px !important;
+    }
+    &>.form-select {
+    @include background-image(select-arrow, svg, calc(100% - 15px) center, no-repeat, 24px);
+    }
+    &>label {
+        padding: 11px 15px;
+        color: rgba($color-secondary, 0.2);
+        opacity: 1;
+        font-size: 16px;
+        &>span {
+            color: $color-error;
+        }
+    }
+    &>.form-control-plaintext,
+    &>.form-control:focus,
+    &>.form-control:not(:placeholder-shown),
+    &>.form-select{
+        &~label{
+            transform: scale(.85) translateY(-10px) translateX(0.15rem);
+            background-color: $color-white;
+            width: auto;
+            opacity: 1;
+            padding: 0 5px;
+            left: 5px;
+            height: auto;
+            color: rgba($color-secondary, 0.7);
+            font-size: 12px;
+        }
+    }
+
+    .invalid-feedback{
+        color: $color-error;
+    }
+    &.suffix{
+        &>.form-control{
+            padding-right: 50px !important;
+          
+        }
+        img{
+            position: absolute;
+            top: 24px;
+            transform: translateY(-50%);
+            right: 15px;
+        }
+    }
+}
+
+.form-check{
+    position: relative;
+    padding-left: 48px;
+    &>label{
+        font-weight: 700;
+        color: $color-secondary;
+        small{
+            color:  $color-borderdark;
+            font-weight: 400;
+            margin-left: 16px;
+        }
+        &::before{
+          @include round-image(32px);
+         content: "";
+          border: 2px solid $color-secondary;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: -5px;
+          @include max-screen($tablet) {
+            @include round-image(28px);
+          }
+        }
+    }
+    .form-check-input{
+        opacity: 0;
+        &:checked{
+            & + label{
+                &::after{
+                @include round-image(24px);
+                   content: "";
+                    background-color: $color-secondary;
+                    display: block;
+                    position: absolute;
+                    left: 4px;
+                    top: -1px;
+                    @include max-screen($tablet) {
+                        @include round-image(20px);
+                      }
+                  } 
+            }
+        }
+    }
+}
+
+
+
+
+
