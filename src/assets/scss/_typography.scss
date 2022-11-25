@@ -1,4 +1,4 @@
-h1, 
+h1,
 h2 {
     font-size: 32px;
     font-weight: 500;
@@ -12,7 +12,7 @@ h2 {
         font-size: 20px;
     }
 }
-h3{
+h3 {
     font-weight: 500;
     font-size: 24px;
     color: $color-secondary;
@@ -22,7 +22,6 @@ h3{
     @include max-screen($mobile) {
         font-size: 18px;
     }
-
 }
 
 h5 {
@@ -34,7 +33,7 @@ h5 {
         font-size: 16px;
     }
 }
-h6{
+h6 {
     font-weight: 700;
     font-size: 16px;
 }

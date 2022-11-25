@@ -1,0 +1,38 @@
+@import "../../../assets/scss/variables.scss";
+.back-header {
+    z-index: 9;
+    padding: 24px 0;
+    position: relative;
+    @include max-screen($desktop-xlarge) {
+        padding: 24px 0;
+    }
+    @include max-screen($desktop-large) {
+        padding: 24px 0;
+    }
+    @include max-screen($tablet-lg) {
+        background-color: $color-cream;
+    }
+    a {
+        font-weight: 500;
+        font-size: 16px;
+        margin: 0 64px 0 0;
+        text-decoration: none;
+        color: $color-secondary;
+        @include max-screen($desktop-large) {
+            margin-right: 30px;
+        }
+        @include max-screen($desktop) {
+            margin-right: 15px;
+        }
+        @include max-screen($mobile) {
+            font-size: 14px;
+        }
+        img {
+            margin-right: 17px;
+            @include max-screen($mobile) {
+                width: 19px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

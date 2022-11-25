@@ -1,0 +1,110 @@
+@import "../../../assets/scss/variables.scss";
+.product-block {
+    display: flex;
+    flex-direction: column;
+    &__wrap {
+        margin-bottom: auto;
+    }
+    &__left {
+        width: calc(100% - 325px);
+        @include max-screen($desktop) {
+            width: 100%;
+        }
+        h3 {
+            margin: -9px 0 0;
+            padding-bottom: 13px;
+            font-family: $font-family-secondary;
+            border-bottom: 1px solid $color-disabled-dark;
+            @include max-screen($desktop) {
+                margin-top: 0;
+                border-bottom: 0;
+            }
+            @include max-screen($mobile){
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+    &__right {
+        width: 325px;
+        @include max-screen($desktop) {
+            width: 100%;
+            margin-top: 30px;
+        }
+        @include max-screen($desktop) {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-disabled-dark;
+        }
+        ol,
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            @include max-screen($desktop) {
+                flex-direction: column;
+                align-items: flex-start !important;
+            }
+            li {
+                width: 33.3%;
+                font-size: 16px;
+                font-weight: 700;
+                white-space: nowrap;
+                padding: 20px 10px 9px;
+                @include max-screen($desktop) {
+                    border: 0;
+                    width: auto;
+                    padding: 10px 0;
+                    font-size: 14px;
+                }
+                input {
+                    width: 63px;
+                    outline: none;
+                    height: 34px;
+                    padding: 5px 10px;
+                    font-weight: 700;
+                    text-align: right;
+                    color: $color-secondary;
+                    border: 1px solid $color-disabled-dark;
+                }
+            }
+        }
+        ol {
+            @include min-screen($desktop) {
+                border-bottom: 1px solid $color-disabled-dark;
+            }
+            li {
+                @include min-screen($desktop) {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    &__social {
+        margin-top: 63px;
+        @include max-screen($desktop) {
+            margin-top: 33px;
+        }
+        ul {
+            li {
+                @include max-screen($tablet) {
+                    padding-right: 0 !important;
+                }
+                a {
+                    font-weight: 500;
+                    img {
+                        @include max-screen($tablet) {
+                            width: 15px;
+                        }
+                    }
+                    span {
+                        @include max-screen($tablet) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

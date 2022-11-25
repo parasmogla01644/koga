@@ -10,6 +10,13 @@ const routes: Routes = [
         (m) => m.ConfiguratorModule
       ),
   },
+  {
+    path: 'winkelwagen',
+    loadChildren: () =>
+      import('./shopping-cart/shopping-cart.module').then(
+        (m) => m.ShoppingCartModule
+      ),
+  },
 ];
 
 @NgModule({
