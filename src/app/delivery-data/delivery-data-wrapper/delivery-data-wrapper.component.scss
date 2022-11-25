@@ -20,6 +20,9 @@
     }
     &__content {
         width: calc(100% - 390px);
+        @include max-screen($desktop){
+            width: calc(100% - 350px);
+        }
         @include max-screen($tablet) {
             width: 100%;
         }
@@ -27,6 +30,10 @@
     &__info {
         width: 390px;
         padding-left: 44px;
+        @include max-screen($desktop){
+            width: 350px;
+            padding-left: 20px;
+        }
         @include max-screen($tablet) {
             width: 100%;
             margin-top: 30px;

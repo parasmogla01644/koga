@@ -1,5 +1,6 @@
 
 <div class="shipping-form">
+    <h3>Gegevens</h3>
     <form class="mt-4">
         <div class="row">
             <div class="col-md-5">
@@ -89,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 shippingTabs">
+        <div class="mt-4 shipping-form__tabs">
             <h3>Keuze verzending</h3>
             <ul class="nav nav-tabs row mt-4" id="myTabModal2" role="tablist">
                 <li class="nav-item col-6" role="presentation">
@@ -124,7 +125,7 @@
                 <div class="tab-pane fade show active" id="nav-Thuisbezorgen"
                     role="tabpanel"
                     aria-labelledby="nav-Thuisbezorgen">
-                    <div class="addressSection">
+                    <div class="shipping-form__address">
                         <h3>Bezorgadres</h3>
                         <address class="mt-4 ">
                             <h6>Op adres</h6>
@@ -133,7 +134,7 @@
                             <p>1234AB Rotterdam</p>
                             <p>Nederland</p>
                         </address>
-                        <div class="addressSection__btn mt-4 mb-5">
+                        <div class="shipping-form__address-btn mt-4 mb-5">
                             <button class="btn btn-outline w-100">
                                 <span>Ander bezorgadres</span>
                                 <img class="ms-2"
@@ -144,9 +145,9 @@
                         </div>
                     </div>
 
-                    <div class="paymentSection">
+                    <div class="shipping-form__payment">
                         <h3>Betaalmethode</h3>
-                        <div class="paymentSection__form">
+                        <div class="shipping-form__payment-form">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio"
                                     name="flexRadioDefault"
@@ -155,7 +156,7 @@
                                     for="flexRadioDefault1" role="button">
                                     Creditcard <small>(gratis)</small>
                                 </label>
-                                <div class="ccForm">
+                                <div class="shipping-form__payment-option">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control"
                                             id="floatingInput"

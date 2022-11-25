@@ -1,93 +1,96 @@
 @import "../../../assets/scss/variables.scss";
-.shippingTabs {
-    .nav-tabs {
-        border: 0;
-        .nav-item {
-            .nav-link {
-                border-radius: 0;
-                border: 1px solid $color-secondary;
-                width: 100%;
-                font-weight: 500;
-                font-size: 16px;
-                color: $color-secondary;
-                padding: 27px 15px;
+.shipping-form {
+    h3 {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $color-disabled-dark;
+    }
+    &__tabs {
+        .nav-tabs {
+            border: 0;
+            .nav-item {
+                .nav-link {
+                    border-radius: 0;
+                    border: 1px solid $color-secondary;
+                    width: 100%;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $color-secondary;
+                    padding: 27px 15px;
 
-                @include max-screen($tablet) {
-                    padding: 15px;
-                }
-
-                @include max-screen($smobile) {
-                    justify-content: center !important;
-                }
-
-                span {
-                    @include max-screen($smobile) {
-                        display: none;
-                    }
-                }
-
-                img {
                     @include max-screen($tablet) {
-                        max-width: 20px;
+                        padding: 15px;
                     }
 
-                    & + img {
-                        display: none;
+                    @include max-screen($smobile) {
+                        justify-content: center !important;
                     }
-                }
 
-                &.active {
-                    background-color: $color-secondary;
-                    color: $color-white;
+                    span {
+                        @include max-screen($smobile) {
+                            display: none;
+                        }
+                    }
 
                     img {
-                        display: none;
+                        @include max-screen($tablet) {
+                            max-width: 20px;
+                        }
 
                         & + img {
-                            display: block;
+                            display: none;
+                        }
+                    }
+
+                    &.active {
+                        background-color: $color-secondary;
+                        color: $color-white;
+
+                        img {
+                            display: none;
+
+                            & + img {
+                                display: block;
+                            }
                         }
                     }
                 }
             }
         }
-    }
+        .tab-content {
+            padding-top: 58px;
 
-    .tab-content {
-        padding-top: 58px;
-
-        @include max-screen($tablet) {
-            padding-top: 30px;
-        }
-    }
-}
-
-.addressSection {
-    address {
-        border: 1px solid $color-secondary;
-        padding: 16px 32px;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    &__btn {
-        max-width: 374px;
-    }
-}
-.ccForm {
-    max-width: 328px;
-    margin-top: 16px;
-}
-
-.paymentSection {
-    &__form {
-        padding-top: 24px;
-
-        .form-check {
-            &:not(:last-child) {
-                margin-bottom: 32px;
+            @include max-screen($tablet) {
+                padding-top: 30px;
             }
+        }
+    }
+    &__address {
+        address {
+            border: 1px solid $color-secondary;
+            padding: 16px 32px;
+
+            p {
+                margin: 0;
+            }
+        }
+        &-btn {
+            max-width: 374px;
+        }
+    }
+
+    &__payment {
+        &-form {
+            padding-top: 24px;
+
+            .form-check {
+                &:not(:last-child) {
+                    margin-bottom: 32px;
+                }
+            }
+        }
+        &-option {
+            max-width: 328px;
+            margin-top: 16px;
         }
     }
 }
