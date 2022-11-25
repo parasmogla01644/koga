@@ -19,8 +19,8 @@
         border-bottom: 1px solid $color-disabled-dark;
         border-top: 1px solid $color-disabled-dark;
         @include max-screen($tablet) {
-            padding: 15px 0 6px;
             margin-bottom: 15px;
+            padding: 19px 0 13px;
         }
         strong {
             margin: 0;
@@ -33,9 +33,17 @@
         }
     }
     &__social {
+        padding: 5px 0 17px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid $color-disabled-dark;
+        li {
+            cursor: pointer;
+        }
+        img {
+            width: 19px;
+        }
         span {
             font-size: 14px;
-            
         }
     }
 }

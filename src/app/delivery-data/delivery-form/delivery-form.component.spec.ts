@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShippingFormComponent } from './shipping-form.component';
+import { DeliveryFormComponent } from './delivery-form.component';
 
-describe('ShippingFormComponent', () => {
-  let component: ShippingFormComponent;
-  let fixture: ComponentFixture<ShippingFormComponent>;
+describe('DeliveryFormComponent', () => {
+  let component: DeliveryFormComponent;
+  let fixture: ComponentFixture<DeliveryFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShippingFormComponent ]
+      declarations: [ DeliveryFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShippingFormComponent);
+    fixture = TestBed.createComponent(DeliveryFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

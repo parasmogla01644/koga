@@ -6,6 +6,11 @@
     @include max-screen($desktop){
         padding-top: 15px;
     }
+    @include max-screen($tablet){
+        border-top: 0;
+        padding-top: 0;
+        margin: 0 0 13px;
+    }
     ul {
         margin: 0 -20px;
         li {

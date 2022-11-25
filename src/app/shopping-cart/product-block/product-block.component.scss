@@ -1,6 +1,7 @@
 @import "../../../assets/scss/variables.scss";
 .product-block {
     display: flex;
+    width: 100%;
     flex-direction: column;
     &__wrap {
         margin-bottom: auto;
@@ -44,7 +45,6 @@
             margin: 0;
             @include max-screen($desktop) {
                 flex-direction: column;
-                align-items: flex-start !important;
             }
             li {
                 width: 33.3%;

@@ -9,7 +9,7 @@ const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
 @NgModule({
   declarations: [
-    BackHeaderComponent
+    BackHeaderComponent,
   ],
   imports: [CommonModule, ...MODULES],
   exports: [MODULES],
