@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { UspComponent } from './usp/usp.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ModalComponent } from './modal/modal.component';
-import { LanguageSelectorModalComponent } from './language-selector-modal/language-selector-modal.component';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 
 const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
@@ -18,7 +18,7 @@ const COMPONENTS = [
   UspComponent,
   ProductCardComponent,
   ModalComponent,
-  LanguageSelectorModalComponent,
+  LanguageSelectorComponent,
 ];
 
 @NgModule({

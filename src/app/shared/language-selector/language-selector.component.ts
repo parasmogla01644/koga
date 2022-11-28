@@ -1,11 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-language-selector-modal',
-  templateUrl: './language-selector-modal.component.html',
-  styleUrls: ['./language-selector-modal.component.scss'],
+  selector: 'app-language-selector',
+  templateUrl: './language-selector.component.html',
+  styleUrls: ['./language-selector.component.scss'],
 })
-export class LanguageSelectorModalComponent implements OnInit {
+export class LanguageSelectorComponent implements OnInit {
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
