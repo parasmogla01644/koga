@@ -1,5 +1,11 @@
 <div class="configurator">
   <app-config-header></app-config-header>
+  <button type="button" (click)="toggleModal()"> open modal </button>
+  <app-modal *ngIf="openModal" (close)="closeModal()">
+    <ng-container body>
+      body h ye
+    </ng-container>
+  </app-modal>
   <div class="configurator__info d-flex flex-wrap">
     <article class="d-flex justify-content-md-end align-items-center">
       <figure>
@@ -14,6 +20,5 @@
     <app-config-footer></app-config-footer>
   </div>
 </div>
-
 <!-- <app-frame-info></app-frame-info> -->
 <!-- <app-language></app-language> -->
