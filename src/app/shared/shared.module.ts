@@ -7,19 +7,23 @@ import { ProductPriceInfoComponent } from './product-price-info/product-price-in
 import { HeaderComponent } from './header/header.component';
 import { UspComponent } from './usp/usp.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { LanguageComponent } from './language/language.component';
+import { ModalComponent } from './modal/modal.component';
+import { LanguageSelectorModalComponent } from './language-selector-modal/language-selector-modal.component';
 
 const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
+const COMPONENTS = [
+  ProductPriceInfoComponent,
+  HeaderComponent,
+  UspComponent,
+  ProductCardComponent,
+  ModalComponent,
+  LanguageSelectorModalComponent,
+];
+
 @NgModule({
-  declarations: [
-    ProductPriceInfoComponent,
-    HeaderComponent,
-    UspComponent,
-    ProductCardComponent,
-    LanguageComponent
-  ],
+  declarations: [...COMPONENTS],
   imports: [CommonModule, ...MODULES],
-  exports: [MODULES, ProductPriceInfoComponent, HeaderComponent, UspComponent, ProductCardComponent, LanguageComponent],
+  exports: [...MODULES, ...COMPONENTS],
 })
 export class SharedModule {}

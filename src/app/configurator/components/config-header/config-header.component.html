@@ -7,10 +7,10 @@
         <span>Landkeuze</span>
         <img src="assets/images/flag-uk.png" alt="" />
       </p>
-      <ol [ngClass]="dropDownStatus ? 'is-active' : ''">
+      <!-- <ol [ngClass]="dropDownStatus ? 'is-active' : ''">
         <li>EN</li>
         <li>NL</li>
-      </ol>
+      </ol> -->
     </li>
   </ol>
   <ul class="nav nav-tabs align-items-center" id="myTab" role="tablist">
@@ -23,3 +23,6 @@
     </ng-container>
   </ul>
 </div>
+
+<app-language-selector-modal *ngIf="dropDownStatus" (close)='closeModal($event)'>
+</app-language-selector-modal>

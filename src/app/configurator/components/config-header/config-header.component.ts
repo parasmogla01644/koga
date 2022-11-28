@@ -97,4 +97,8 @@ export class ConfigHeaderComponent implements OnInit {
   languageToggle() {
     this.dropDownStatus = !this.dropDownStatus;
   }
+
+  closeModal(event: any) {
+    this.dropDownStatus = false;
+  }
 }
