@@ -8,8 +8,12 @@
         }
     }
     &__box {
+        width: 100%;
         background-color: $color-white;
         padding: 48px 40px 5px;
+        @include max-screen($desktop-large){
+            padding: 30px 20px 5px;
+        }
         @include max-screen($tablet-lg) {
             padding: 15px 15px 5px;
         }
@@ -21,14 +25,17 @@
         }
 
         &-price {
+            width: 90px;
             margin-bottom: 15px;
-
-            @include max-screen($desktop-large) {
+            @include max-screen($desktop){
                 width: 100%;
             }
         }
         &-wrap {
             width: calc(100% - 90px);
+            @include max-screen($desktop){
+                width: 100%;
+            }
         }
         &-list {
             margin: 0 -12px;
@@ -37,11 +44,16 @@
             width: 33.3%;
             display: flex;
             padding: 0 12px;
-            flex-direction: column;
             @include max-screen($desktop-large) {
-                width: 50%;
                 padding: 0 10px;
                 margin-right: 0;
+            }
+            @include max-screen($smobile){
+                width: 50%;
+            }
+            app-product-card {
+                width: 100%;
+                display: flex;
             }
         }
     }

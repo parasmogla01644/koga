@@ -2,14 +2,8 @@
 .product-card {
     width: 100%;
     display: flex;
-    min-height: 195px;
-    margin: 0 24px 15px 0;
+    margin-bottom: 15px;
     flex-direction: column;
-    @include max-screen($desktop-large) {
-        width: 50%;
-        padding: 0 10px;
-        margin-right: 0;
-    }
     &__wrap {
         flex: 1;
         padding: 16px;
@@ -38,5 +32,8 @@
         margin: 10px 0 0;
         min-height: 22px;
         text-transform: uppercase;
+    }
+    &--noprice {
+        max-height: calc(100% - 47px);
     }
 }
