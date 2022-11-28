@@ -7,6 +7,7 @@ import { ProductPriceInfoComponent } from './product-price-info/product-price-in
 import { HeaderComponent } from './header/header.component';
 import { UspComponent } from './usp/usp.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { LanguageComponent } from './language/language.component';
 
 const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
@@ -15,9 +16,10 @@ const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
     ProductPriceInfoComponent,
     HeaderComponent,
     UspComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    LanguageComponent
   ],
   imports: [CommonModule, ...MODULES],
-  exports: [MODULES, ProductPriceInfoComponent, HeaderComponent, UspComponent, ProductCardComponent],
+  exports: [MODULES, ProductPriceInfoComponent, HeaderComponent, UspComponent, ProductCardComponent, LanguageComponent],
 })
 export class SharedModule {}

@@ -27,6 +27,9 @@
                 width: 100%;
             }
         }
+        &-wrap {
+            width: calc(100% - 90px);
+        }
         &-list {
             margin: 0 -12px;
         }

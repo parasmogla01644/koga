@@ -89,19 +89,4 @@
             }
         }
     }
-    &.language{
-        display: none;
-        text-align: center;
-        padding: 72px 45px 30px;
-        .nav-tabs{
-            justify-content: center;
-        }
-        .informationFrame__wrapper{
-            max-width: 1360px;
-            padding: 0;
-        }
-        .tab-content{
-            padding-top: 46px;
-        }
-    }
 }

@@ -2,88 +2,22 @@
     <h2>Overzicht</h2>
     <div class="row">
         <!-- loop for product main product section start -->
-        <div class="col-lg-6 mb-4" *ngFor="let _ of [].constructor(2)">
+        <div class="col-lg-6 mb-4" *ngFor="let _ of [].constructor(4)">
             <div class="oversight__box">
                 <h5>1. Frame</h5>
                 <div class="d-flex align-items-end justify-content-between flex-wrap">
-                    <div class="d-flex flex-wrap oversight__box-list">
-                        <div class="oversight__box-item">
-                            <app-product-card></app-product-card>
-                        </div>
-                        <div class="oversight__box-item">
-                            <app-product-card></app-product-card>
-                        </div>
-                        <div class="oversight__box-item">
-                            <app-product-card></app-product-card>
-                        </div>
-                        <div class="oversight__box-price text-end">
-                            <strong>+ € 300,00</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- loop for product main product section end -->
-        <div class="col-lg-6 mb-4" *ngFor="let _ of [].constructor(2)">
-            <div class="oversight__box">
-                <h5>1. Frame</h5>
-                <div class="d-flex align-items-end justify-content-between flex-wrap">
-                    <div class="d-flex flex-wrap productBox">
-                        <!-- loop for product inner parts section start -->
-                        <div class="productBox__inner">
-                            <div class="productBox__inner-main">
-                                <figure>
-                                    <img src="/assets/images/part.png"
-                                        alt="part" title="part">
-                                </figure>
-                                <figcaption class="d-flex align-items-center
-                                    justify-content-between">
-                                    <span>High frameHigh frameHigh </span>
-                                    <a><img src="/assets/images/edit.svg"
-                                            alt="edit" title="edit"></a>
-                                </figcaption>
+                    <div class="wrap oversight__box-wrap">
+                        <div class="d-flex flex-wrap oversight__box-list">
+                            <div class="oversight__box-item">
+                                <app-product-card infoText="High frame"></app-product-card>
                             </div>
-                            <div class="productBox__inner-title">
-                                <!-- Meerprijs + €200 -->
+                            <div class="oversight__box-item">
+                                <app-product-card infoText="High frame"></app-product-card>
+                            </div>
+                            <div class="oversight__box-item">
+                                <app-product-card infoText="High frame"></app-product-card>
                             </div>
                         </div>
-
-                        <div class="productBox__inner">
-                            <div class="productBox__inner-main">
-                                <figure>
-                                    <img src="/assets/images/part.png"
-                                        alt="part" title="part">
-                                </figure>
-                                <figcaption class="d-flex align-items-center
-                                    justify-content-between">
-                                    <span>High </span>
-                                    <a><img src="/assets/images/edit.svg"
-                                            alt="edit" title="edit"></a>
-                                </figcaption>
-                            </div>
-                            <div class="productBox__inner-title">
-                                <!-- Meerprijs + €200 -->
-                            </div>
-                        </div>
-
-                        <div class="productBox__inner">
-                            <div class="productBox__inner-main">
-                                <figure>
-                                    <img src="/assets/images/part.png"
-                                        alt="part" title="part">
-                                </figure>
-                                <figcaption class="d-flex align-items-center
-                                    justify-content-between">
-                                    <span>High frameHigh </span>
-                                    <a><img src="/assets/images/edit.svg"
-                                            alt="edit" title="edit"></a>
-                                </figcaption>
-                            </div>
-                            <div class="productBox__inner-title">
-                                <!-- Meerprijs + €200 -->
-                            </div>
-                        </div>
-                        <!-- loop for product inner parts section end -->
                     </div>
                     <div class="oversight__box-price text-end">
                         <strong>+ € 300,00</strong>
