@@ -1,91 +1,57 @@
-@import '../../../../assets/scss/variables.scss';
-.informationFrame{
-    display: none;
-    position: fixed;
-    background-color: rgba($color-secondary, 0.9);
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top:0;
-    z-index: 99;
-    padding: 72px 135px 0;
-    overflow-y: auto;
-    mix-blend-mode: normal;
-    backdrop-filter: blur(5px);
-    @include max-screen($tablet){
-        padding:20px 50px 0;
-    }
-    @include max-screen($mobile){
-        padding:15px;
-    }
-    &__cross{
-        img{
-            max-width: 36px;
-            @include max-screen($mobile){
-                max-width: 18px;
-            }
-        }
-        span{
-            font-weight: 500;
-            font-size: 16px;
-            color: $color-white;
-        }
-    }
-    &__wrapper{
-        max-width: 1015px;
-        margin: 0 auto;
-        padding: 44px 15px;
-        @include max-screen($tablet){
-            padding: 24px 15px;
+@import "../../../../assets/scss/variables.scss";
+.frame-info {
+    .nav-tabs {
+        padding: 0 60px;
+        border-bottom: 2px solid rgba($color-white, 0.5);
+        @include max-screen($tablet) {
+            padding: 0px;
         }
         @include max-screen($mobile){
-            padding: 0;
+            border-bottom-color: rgba($color-darkBlue, 0.5);
         }
-        h2{
-            color:$color-white;
-            margin-bottom: 38px;
-            padding: 0 80px;
-            @include max-screen($tablet){
-                padding: 0;
-                margin-bottom: 24px;
+        .nav-item {
+            @include max-screen($mobile){
+                flex: 1;
             }
-         
         }
-        .logo{
-            margin-bottom: 30px;
-        }
-        .nav-tabs {
-            border-bottom: 2px solid rgba($color-white, 0.5);
-            padding: 0 60px;
-            @include max-screen($tablet){
-                padding: 0px;
+        .nav-link {
+            border: 0;
+            padding: 8px 0;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0 20px -2px;
+            color: $color-white;
+            background-color: transparent;
+            border-bottom: 2px solid transparent;
+            @include max-screen($tablet) {
+                font-size: 16px;
             }
-            .nav-link{
-                font-weight: 400;
-                font-size: 20px;
-                color: $color-white;
-                background-color: transparent;
-                border: 0;
-                border-bottom: 2px solid transparent;
-                margin: 0 20px -2px;
-                padding: 8px 0;
-                @include max-screen($tablet){
-                    font-size: 16px;
-                }
-                &.active{
-                    font-weight: 700;
-                    border-bottom: 2px solid $color-white;
+            @include max-screen($mobile){
+                width: 100%;
+                margin: 0 0 -2px;
+                color: $color-darkBlue;
+            }
+            &.active {
+                font-weight: 700;
+                border-bottom: 2px solid $color-white;
+                @include max-screen($mobile){
+                    border-bottom-color: $color-darkBlue;
                 }
             }
-            
         }
-        .tab-content{
-            padding: 24px 80px;
-            @include max-screen($tablet){
-                padding: 20px 0;
+    }
+    .tab-content {
+        padding: 24px 80px;
+        @include max-screen($tablet) {
+            padding: 20px 0;
+        }
+        p {
+            color: $color-white;
+            @include max-screen($mobile){
+                color: $color-darkBlue;
             }
-            p{
-                color: $color-white;
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }

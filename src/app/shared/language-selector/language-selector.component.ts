@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-language-selector',
@@ -7,13 +7,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class LanguageSelectorComponent implements OnInit {
   @Output() close: EventEmitter<boolean> = new EventEmitter();
-
+    @Input() activeClass: boolean =false;
   constructor() {}
 
   ngOnInit(): void {}
 
   closeModal() {
-    console.log('called');
     this.close.emit(true);
+  }
+
+  status: boolean = false;
+  clickToggle(){
+      this.status = !this.status;       
   }
 }

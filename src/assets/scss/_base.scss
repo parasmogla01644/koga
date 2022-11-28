@@ -14,6 +14,9 @@ body {
     @include max-screen($mobile){
         font-size: 14px;
     }
+    &.is-modal {
+        overflow: hidden;
+    }
 }
 a {
     outline: none;
