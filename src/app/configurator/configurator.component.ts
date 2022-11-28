@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StepperService } from './services/stepper.service';
 
 @Component({
   selector: 'app-configurator',
@@ -6,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./configurator.component.scss'],
 })
 export class ConfiguratorComponent implements OnInit {
+  currentStep: any;
   openModal: boolean = false;
 
-  constructor() {}
+  constructor(private readonly stepperService: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subsCurrentSteps();
+  }
+
+  subsCurrentSteps() {
+    this.stepperService.currentStep.subscribe((step: any) => {
+      console.log(step);
+      this.currentStep = step;
+    });
+  }
 
   toggleModal() {
     this.openModal = !this.openModal;

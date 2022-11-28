@@ -10,7 +10,42 @@
       </figure>
     </article>
     <aside class="d-flex">
-      <app-frame class="d-flex w-100"></app-frame>
+      <ng-container [ngSwitch]="currentStep?.ref">
+        <ng-container *ngSwitchCase="'groupSet'">
+          step2
+        </ng-container>
+        <ng-container *ngSwitchCase="'wheels'">
+
+          step3
+        </ng-container>
+        <ng-container *ngSwitchCase="'handleBars'">
+
+          step4
+        </ng-container>
+        <ng-container *ngSwitchCase="'saddle'">
+
+          step5
+        </ng-container>
+        <ng-container *ngSwitchCase="'carriers'">
+
+          step6
+        </ng-container>
+        <ng-container *ngSwitchCase="'lightning'">
+
+          step7
+        </ng-container>
+        <ng-container *ngSwitchCase="'accessoires'">
+
+          step8
+        </ng-container>
+        <ng-container *ngSwitchCase="'size'">
+
+          step9
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <app-frame class="d-flex w-100"></app-frame>
+        </ng-container>
+      </ng-container>
     </aside>
   </div>
   <div class="configurator__bottom">
