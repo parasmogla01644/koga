@@ -5,15 +5,19 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ProductPriceInfoComponent } from './product-price-info/product-price-info.component';
 import { HeaderComponent } from './header/header.component';
+import { UspComponent } from './usp/usp.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
 @NgModule({
   declarations: [
     ProductPriceInfoComponent,
-    HeaderComponent
+    HeaderComponent,
+    UspComponent,
+    ProductCardComponent
   ],
   imports: [CommonModule, ...MODULES],
-  exports: [MODULES, ProductPriceInfoComponent, HeaderComponent],
+  exports: [MODULES, ProductPriceInfoComponent, HeaderComponent, UspComponent, ProductCardComponent],
 })
 export class SharedModule {}

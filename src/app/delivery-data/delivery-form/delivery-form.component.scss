@@ -1,53 +1,51 @@
 @import "../../../assets/scss/variables.scss";
-.shipping-form {
+.delivery-form {
     h3 {
-        padding-bottom: 5px;
+        padding-bottom: 12px;
         border-bottom: 1px solid $color-disabled-dark;
     }
     &__tabs {
+        padding-top: 38px;
+        @include max-screen($mobile){
+            padding-top: 5px;
+        }
         .nav-tabs {
             border: 0;
             .nav-item {
-                .nav-link {
-                    border-radius: 0;
-                    border: 1px solid $color-secondary;
+                @include max-screen($mobile){
                     width: 100%;
-                    font-weight: 500;
+                }
+                .nav-link {
+                    width: 100%;
+                    display: flex;
                     font-size: 16px;
-                    color: $color-secondary;
+                    font-weight: 500;
+                    border-radius: 0;
                     padding: 27px 15px;
-
+                    align-items: center;
+                    color: $color-secondary;
+                    border: 1px solid $color-secondary;
                     @include max-screen($tablet) {
                         padding: 15px;
                     }
-
-                    @include max-screen($smobile) {
-                        justify-content: center !important;
+                    @include max-screen($mobile){
+                        height: 50px;
+                        padding: 10px 15px;
+                        margin-bottom: 10px;
                     }
-
-                    span {
-                        @include max-screen($smobile) {
-                            display: none;
-                        }
-                    }
-
                     img {
                         @include max-screen($tablet) {
                             max-width: 20px;
                         }
-
                         & + img {
                             display: none;
                         }
                     }
-
                     &.active {
-                        background-color: $color-secondary;
                         color: $color-white;
-
+                        background-color: $color-secondary;
                         img {
                             display: none;
-
                             & + img {
                                 display: block;
                             }
@@ -58,19 +56,39 @@
         }
         .tab-content {
             padding-top: 58px;
-
             @include max-screen($tablet) {
                 padding-top: 30px;
             }
         }
     }
     &__address {
+        margin-bottom: 62px;    
+        @include max-screen($mobile){
+            margin-bottom: 40px;
+        }
+        h3 {
+            @include min-screen($mobile){
+                padding-bottom: 17px;
+                margin-bottom: 28px;
+            }
+        }
         address {
-            border: 1px solid $color-secondary;
             padding: 16px 32px;
-
+            margin-bottom: 32px;
+            border: 1px solid $color-secondary;
+            @include max-screen($mobile){
+                padding: 16px 15px;
+                margin-bottom: 20px;
+            }
+            h6 {
+                margin-bottom: 20px;
+                @include max-screen($mobile){
+                    margin-bottom: 10px;
+                }
+                }
             p {
                 margin: 0;
+                line-height: 1.62;
             }
         }
         &-btn {
@@ -80,17 +98,30 @@
 
     &__payment {
         &-form {
-            padding-top: 24px;
-
+            padding-top: 21px;
             .form-check {
                 &:not(:last-child) {
-                    margin-bottom: 32px;
+                    margin-bottom: 42px;
+                    @include max-screen($mobile){
+                        margin-bottom: 18px;
+                    }
+                }
+                input:checked {
+                    &~div{
+                        display: block;
+                    }
                 }
             }
         }
         &-option {
+            display: none;
             max-width: 328px;
             margin-top: 16px;
+            @include max-screen($mobile){
+                max-width: none;
+                margin-left: -35px;
+                width: calc(100% + 35px);
+            }
         }
     }
 }

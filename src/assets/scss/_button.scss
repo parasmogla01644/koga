@@ -9,7 +9,6 @@
     font-size: 16px;
     border-radius: 0;
     @include max-screen($mobile){
-        height: 40px;
         font-size: 14px;
     }
     &-primary {
@@ -20,6 +19,8 @@
         }
     }
     &-outline {
+        font-weight: 700;
+        color: $color-darkBlue;
         background-color: transparent;
         border: 1px solid $color-secondary;
         &:hover {
@@ -27,6 +28,7 @@
         }
     }
     &:disabled {
+        opacity: 1;
         background-color: $color-disabled;
         cursor: not-allowed;
     }

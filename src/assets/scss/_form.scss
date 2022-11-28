@@ -1,30 +1,47 @@
-.form-floating{
-    &>.form-control,
-    &>.form-select {
+.form-floating {
+    margin-bottom: 24px;
+    @include max-screen($mobile){
+        margin-bottom: 15px;
+    }
+    & > .form-control,
+    & > .form-select {
         border-radius: 0;
         border-color: $color-borderdark;
         height: 48px;
         box-shadow: 0 0 0;
         padding: 0 12px !important;
+        @include max-screen($mobile){
+            height: 40px;
+            font-size: 14px
+        }
     }
-    &>.form-select {
-    @include background-image(select-arrow, svg, calc(100% - 15px) center, no-repeat, 24px);
+    & > .form-select {
+        @include background-image(select-arrow, svg, calc(100% - 15px) center, no-repeat, 24px);
+        @include max-screen($mobile){
+            font-size: 14px;
+            background-size: 16px;
+            background-position: calc(100% - 10px);
+        }
     }
-    &>label {
+    & > label {
         padding: 11px 15px;
         color: rgba($color-secondary, 0.2);
         opacity: 1;
         font-size: 16px;
-        &>span {
+        @include max-screen($mobile){
+            padding: 9px 15px;
+            font-size: 14px;
+        }
+        & > span {
             color: $color-error;
         }
     }
-    &>.form-control-plaintext,
-    &>.form-control:focus,
-    &>.form-control:not(:placeholder-shown),
-    &>.form-select{
-        &~label{
-            transform: scale(.85) translateY(-10px) translateX(0.15rem);
+    & > .form-control-plaintext,
+    & > .form-control:focus,
+    & > .form-control:not(:placeholder-shown),
+    & > .form-select {
+        & ~ label {
+            transform: scale(0.85) translateY(-10px) translateX(0.15rem);
             background-color: $color-white;
             width: auto;
             opacity: 1;
@@ -36,54 +53,66 @@
         }
     }
 
-    .invalid-feedback{
+    .invalid-feedback {
         color: $color-error;
     }
-    &.suffix{
-        &>.form-control{
+    &.suffix {
+        & > .form-control {
             padding-right: 50px !important;
-          
         }
-        img{
+        img {
             position: absolute;
             top: 24px;
             transform: translateY(-50%);
             right: 15px;
+            width: 24px;
+            @include max-screen($mobile){
+                top: 20px;
+                width: 20px;
+                right: 12px;
+            }
         }
     }
 }
 
-.form-check{
+.form-check {
     position: relative;
     padding-left: 48px;
-    &>label{
+    @include max-screen($mobile){
+        padding-left: 35px;
+    }
+    & > label {
         font-weight: 700;
         color: $color-secondary;
-        small{
-            color:  $color-borderdark;
+        small {
+            color: $color-borderdark;
             font-weight: 400;
-            margin-left: 16px;
+            margin-left: 14px;
+            font-size: 100%;
+            @include max-screen($mobile){
+                margin-left: 2px;
+            }
         }
-        &::before{
-          @include round-image(32px);
-         content: "";
-          border: 2px solid $color-secondary;
-          display: block;
-          position: absolute;
-          left: 0;
-          top: -5px;
-          @include max-screen($tablet) {
-            @include round-image(28px);
-          }
+        &::before {
+            @include round-image(32px);
+            content: "";
+            border: 2px solid $color-secondary;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            @include max-screen($tablet) {
+                @include round-image(28px);
+            }
         }
     }
-    .form-check-input{
+    .form-check-input {
         opacity: 0;
-        &:checked{
-            & + label{
-                &::after{
-                @include round-image(24px);
-                   content: "";
+        &:checked {
+            & + label {
+                &::after {
+                    @include round-image(24px);
+                    content: "";
                     background-color: $color-secondary;
                     display: block;
                     position: absolute;
@@ -91,14 +120,9 @@
                     top: -1px;
                     @include max-screen($tablet) {
                         @include round-image(20px);
-                      }
-                  } 
+                    }
+                }
             }
         }
     }
 }
-
-
-
-
-

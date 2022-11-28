@@ -20,7 +20,7 @@
                 <strong>€ 4,943.99</strong>
             </div>
         </div>
-        <div class="product-price__social d-block d-md-none">
+        <div class="product-price__social d-block d-md-none" *ngIf="social">
             <ul class="d-flex justify-content-between">
                 <li>
                     <a class="d-flex align-items-center">
@@ -42,14 +42,15 @@
                 </li>
             </ul>
         </div>
-        <!-- <div class="product-price__note">
+      
+        <div class="product-price__note" *ngIf="description">
             <p>Als je op ‘Betalen’ klikt ga je akkoord met de op jouw bestelling van toepassing zijnde (algemene) <a>voorwaarden</a> van Koga. </p>
-        </div> -->
+        </div>
 
-        <!-- <app-usp class="d-block d-lg-none"></app-usp> -->
+        <app-usp *ngIf="usp" class="d-block d-lg-none"></app-usp>
 
-        <button class="btn btn-primary w-100">
-            Naar gegevens
+        <button class="btn btn-primary w-100" disabled>
+            Betalen
         </button>
     </div>
 </div>

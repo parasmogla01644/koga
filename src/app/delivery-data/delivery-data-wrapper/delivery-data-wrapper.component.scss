@@ -1,7 +1,7 @@
 @import "../../../assets/scss/variables.scss";
 .delivery-data {
-    padding-top: 24px;
-    margin-bottom: 64px;
+    padding-top: 18px;
+    margin-bottom: 40px;
     @include max-screen($desktop){
         padding-top: 0;
     }
@@ -9,13 +9,16 @@
         margin-bottom: 30px;
     }
     h1 {
-        margin-bottom: 26px;
+        margin-bottom: 22px;
     }
     &__inner {
-        padding: 40px;
+        padding: 38px 40px;
         background-color: $color-white;
-        @include max-screen($tablet-lg) {
-            padding: 15px;
+        @include max-screen($tablet) {
+            padding: 30px 20px;
+        }
+        @include max-screen($mobile) {
+            padding: 25px 15px;
         }
     }
     &__content {
