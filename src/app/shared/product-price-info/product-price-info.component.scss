@@ -13,6 +13,15 @@
         color: $color-secondary;
         margin-bottom: 8px;
     }
+    aside {
+        display: flex;
+        align-items: center;
+        img {
+            width: 14px;
+            cursor: pointer;
+            margin: -2px 0 0 3px;                        
+        }
+    }
     &__price {
         padding: 88px 0 9px;
         margin: 17px 0 24px;
