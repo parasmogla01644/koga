@@ -273,7 +273,9 @@
             overflow-x: auto;
         }
         ul {
-
+            @include min-screen($mobile){
+                width: 100%;
+            }
         }
     }
     &.active {

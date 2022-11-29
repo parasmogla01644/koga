@@ -29,7 +29,7 @@
 
       <h2 [ngClass]="{'d-none d-md-block': status}">Selecteer uw land en taalkeuze</h2>
 
-      <div class="languageModal__scroll" [ngClass]="{'d-none d-md-flex': status}">
+      <div class="languageModal__scroll d-md-flex" [ngClass]="{'d-none': status}">
         <ul class="nav nav-tabs" id="myTabModal" role="tablist">
             <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
             <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
