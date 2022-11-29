@@ -3,14 +3,14 @@
   <div class="configurator__info d-flex flex-wrap">
     <article class="d-flex justify-content-md-end align-items-center">
       <figure>
-        <button type="button" (click)="toggleModal()"> open modal </button>
-        <br/>
-        <br/>
+        <!-- <button type="button" (click)="toggleModal()"> open modal </button> -->
+        <br />
+        <br />
         <img src="/assets/images/cycle.png" alt="cycle">
       </figure>
     </article>
     <aside class="d-flex">
-      <ng-container [ngSwitch]="currentStep?.ref">
+      <ng-container [ngSwitch]="currentStep.ref">
         <ng-container *ngSwitchCase="'groupSet'">
           step2
         </ng-container>
@@ -52,9 +52,3 @@
     <app-config-footer></app-config-footer>
   </div>
 </div>
-
-<app-modal [activeClass]="openModal" (close)="closeModal()" headerTitle="Meer informatie Frame">
-    <ng-container body>
-        <app-frame-info></app-frame-info>
-    </ng-container>
-</app-modal>

@@ -19,6 +19,7 @@ export class FrameComponent implements OnInit {
   @ViewChild('framekleurRef') framekleurRef: any;
   @ViewChild('frametypeRef') frametypeRef: any;
   @ViewChild('vorkRef') vorkRef: any;
+  openModal: boolean = false;
   color: any;
 
   frames: Iframes[] = [
@@ -68,5 +69,12 @@ export class FrameComponent implements OnInit {
 
   handleChange(event: any) {
     console.log(event);
+  }
+  toggleModal() {
+    this.openModal = !this.openModal;
+  }
+
+  closeModal() {
+    this.openModal = false;
   }
 }

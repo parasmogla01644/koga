@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IHeaderTab } from './models/configurator.models';
 import { StepperService } from './services/stepper.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { StepperService } from './services/stepper.service';
   styleUrls: ['./configurator.component.scss'],
 })
 export class ConfiguratorComponent implements OnInit {
-  currentStep: any;
-  openModal: boolean = false;
+  currentStep!: IHeaderTab;
+  // openModal: boolean = false;
 
   constructor(private readonly stepperService: StepperService) {}
 
@@ -23,11 +24,11 @@ export class ConfiguratorComponent implements OnInit {
     });
   }
 
-  toggleModal() {
-    this.openModal = !this.openModal;
-  }
+  // toggleModal() {
+  //   this.openModal = !this.openModal;
+  // }
 
-  closeModal() {
-    this.openModal = false;
-  }
+  // closeModal() {
+  //   this.openModal = false;
+  // }
 }
