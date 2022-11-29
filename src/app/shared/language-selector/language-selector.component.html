@@ -29,29 +29,31 @@
 
       <h2 [ngClass]="{'d-none d-md-block': status}">Selecteer uw land en taalkeuze</h2>
 
-      <ul [ngClass]="{'d-none d-md-block': status}" class="nav nav-tabs" id="myTabModal" role="tablist">
-        <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
-          <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
-            [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
-            [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
-        </li>
-        <!-- <li class="nav-item" role="presentation">
-          <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-            aria-controls="Asia" aria-selected="false">Asia</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-            aria-controls="Asia" aria-selected="false">Amerika</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-            aria-controls="Asia" aria-selected="false">Europe</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-            aria-controls="Asia" aria-selected="false">Ocenia</button>
-        </li> -->
-      </ul>
+      <div class="languageModal__scroll" [ngClass]="{'d-none d-md-flex': status}">
+        <ul class="nav nav-tabs" id="myTabModal" role="tablist">
+            <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
+            <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
+                [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
+                [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
+                aria-controls="Asia" aria-selected="false">Asia</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
+                aria-controls="Asia" aria-selected="false">Amerika</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
+                aria-controls="Asia" aria-selected="false">Europe</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
+                aria-controls="Asia" aria-selected="false">Ocenia</button>
+            </li> -->
+        </ul>
+     </div>
       <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
           <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">

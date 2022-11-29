@@ -11,6 +11,7 @@ export class ProductPriceInfoComponent implements OnInit {
   @Input() description:boolean=false;  
   @Input() usp:boolean=false;  
   @Input() social:boolean=false;  
+  @Input() accept:boolean=false;  
   ngOnInit(): void {
   }
 
