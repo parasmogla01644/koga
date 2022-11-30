@@ -6,8 +6,24 @@ import { ConfigFooterComponent } from './components/config-footer/config-footer.
 import { FrameComponent } from './components/frame/frame.component';
 import { SharedModule } from '@shared/shared.module';
 import { CardPartComponent } from './components/card-part/card-part.component';
-import { ConfiguratorRoutingModule } from './configurator.routing.module';
+// import { ConfiguratorRoutingModule } from './configurator.routing.module';
 import { FrameInfoComponent } from './components/frame-info/frame-info.component';
+import { RouterModule, Routes } from '@angular/router';
+import { GroupsetComponent } from './components/groupset/groupset.component';
+import { WheelsComponent } from './components/wheels/wheels.component';
+import { HandlebarsComponent } from './components/handlebars/handlebars.component';
+import { SaddleComponent } from './components/saddle/saddle.component';
+import { CarriersComponent } from './components/carriers/carriers.component';
+import { LightningComponent } from './components/lightning/lightning.component';
+import { AccessoiriesComponent } from './components/accessoiries/accessoiries.component';
+import { SizeComponent } from './components/size/size.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ConfiguratorComponent,
+  },
+];
 
 const COMPONENTS = [
   ConfiguratorComponent,
@@ -15,13 +31,21 @@ const COMPONENTS = [
   ConfigFooterComponent,
   FrameComponent,
   CardPartComponent,
-  FrameInfoComponent
+  FrameInfoComponent,
+  GroupsetComponent,
+  WheelsComponent,
+  HandlebarsComponent,
+  SaddleComponent,
+  CarriersComponent,
+  LightningComponent,
+  AccessoiriesComponent,
+  SizeComponent,
 ];
 
-const MODULES = [CommonModule, SharedModule, ConfiguratorRoutingModule];
+const MODULES = [CommonModule, SharedModule, RouterModule];
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [...MODULES],
+  imports: [RouterModule.forChild(routes), ...MODULES],
 })
 export class ConfiguratorModule {}

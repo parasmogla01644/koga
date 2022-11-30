@@ -12,35 +12,28 @@
     <aside class="d-flex">
       <ng-container [ngSwitch]="currentStep.ref">
         <ng-container *ngSwitchCase="'groupSet'">
-          step2
+          <app-groupset></app-groupset>
         </ng-container>
         <ng-container *ngSwitchCase="'wheels'">
-
-          step3
+          <app-wheels></app-wheels>
         </ng-container>
         <ng-container *ngSwitchCase="'handleBars'">
-
-          step4
+          <app-handlebars></app-handlebars>
         </ng-container>
         <ng-container *ngSwitchCase="'saddle'">
-
-          step5
+          <app-saddle></app-saddle>
         </ng-container>
         <ng-container *ngSwitchCase="'carriers'">
-
-          step6
+          <app-carriers></app-carriers>
         </ng-container>
         <ng-container *ngSwitchCase="'lightning'">
-
-          step7
+          <app-lightning></app-lightning>
         </ng-container>
         <ng-container *ngSwitchCase="'accessoires'">
-
-          step8
+          <app-accessoiries></app-accessoiries>
         </ng-container>
         <ng-container *ngSwitchCase="'size'">
-
-          step9
+          <app-size></app-size>
         </ng-container>
         <ng-container *ngSwitchDefault>
           <app-frame class="d-flex w-100"></app-frame>
