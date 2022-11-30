@@ -19,7 +19,6 @@ export class ConfiguratorComponent implements OnInit {
 
   subsCurrentSteps() {
     this.stepperService.currentStep.subscribe((step: any) => {
-      console.log(step);
       this.currentStep = step;
     });
   }

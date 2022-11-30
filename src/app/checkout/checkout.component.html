@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<div class="shopping-cart">
+  <div class="container">
+    <h1 class="d-none d-lg-block">Winkelwagen</h1>
+
+    <div class="shopping-cart__inner d-flex flex-wrap">
+      <div class="shopping-cart__content d-flex">
+        <app-product-block class="d-flex w-100"></app-product-block>
+      </div>
+      <div class="shopping-cart__info">
+        <app-product-price-info [social]="true" [usp]="true"></app-product-price-info>
+      </div>
+      <app-usp class="w-100 d-none d-lg-block"></app-usp>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <app-product-parts></app-product-parts>
+</div>

@@ -10,11 +10,27 @@ import { StepperService } from '../../services/stepper.service';
 })
 export class ConfigHeaderComponent implements OnInit {
   headerTab: IHeaderTab[] = HEADER_TABS;
+  currentStepConfig: any;
   dropDownStatus: boolean = false;
 
   constructor(private readonly stepperService: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subsCurrentStep();
+    this.subsCurrentStepConfig();
+  }
+
+  subsCurrentStep() {
+    this.stepperService.currentStep.subscribe({
+      next: (value) => {
+        if (value) {
+          this.headerTab.forEach((tab: any) => {
+            tab.selected = value.id === tab.id;
+          });
+        }
+      },
+    });
+  }
 
   languageToggle() {
     this.dropDownStatus = !this.dropDownStatus;
@@ -25,13 +41,20 @@ export class ConfigHeaderComponent implements OnInit {
   }
 
   selectTab(index: number) {
-    this.headerTab.forEach((tab: IHeaderTab, i) => {
-      if (i === index) {
-        tab.selected = true;
-      } else {
-        tab.selected = false;
-      }
+    this.stepperService.gotoTab(index);
+    // this.headerTab.forEach((tab: IHeaderTab, i) => {
+    //   if (i === index) {
+    //     tab.selected = true;
+    //   } else {
+    //     tab.selected = false;
+    //   }
+    // });
+    // this.stepperService.updateCurrentStep(this.headerTab?.[index]);
+  }
+
+  subsCurrentStepConfig() {
+    this.stepperService.stepsConfig.subscribe((data: any) => {
+      this.currentStepConfig = data;
     });
-    this.stepperService.updateCurrentStep(this.headerTab?.[index]);
   }
 }

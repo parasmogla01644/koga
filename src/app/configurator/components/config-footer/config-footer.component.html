@@ -1,19 +1,18 @@
-
 <div class="d-flex align-items-center justify-content-between configFooter">
-    <h5 class="mb-0 d-none d-md-block">Worldtraveller-S</h5>
-    
-    <div class="configFooter__right d-flex align-items-center">
-        <div class="configFooter__right-price d-flex">
-            <h5><strong>12,1</strong> <span> kg</span></h5>
-            <h5><span class="is-euro">€</span><strong>2998</strong><cite>,50</cite></h5>
-        </div>
-        <div class="d-flex align-items-center configFooter__right-button">
-            <button class="btn btn-outline">
-                <img src="assets/images/arrow-back.svg" alt="back">
-            </button>
-            <button class="btn btn-primary" disabled>
-                Naar stap 2 remmen
-            </button>
-        </div>
+  <h5 class="mb-0 d-none d-md-block">Worldtraveller-S</h5>
+
+  <div class="configFooter__right d-flex align-items-center">
+    <div class="configFooter__right-price d-flex">
+      <h5><strong>12,1</strong> <span> kg</span></h5>
+      <h5><span class="is-euro">€</span><strong>2998</strong><cite>,50</cite></h5>
     </div>
+    <div class="d-flex align-items-center configFooter__right-button">
+      <button class="btn btn-outline" (click)="gotoPrevious()">
+        <img src="assets/images/arrow-back.svg" alt="back">
+      </button>
+      <button class="btn btn-primary" [disabled]="!isDisabled" (click)="gotoNext()">
+        Naar stap 2 remmen
+      </button>
+    </div>
+  </div>
 </div>

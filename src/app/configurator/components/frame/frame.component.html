@@ -12,7 +12,7 @@
 
               <div class="row">
                 <ng-container *ngFor="let card of AppCards">
-                  <div class="col-6 d-flex mb-3">
+                  <div class="col-6 d-flex mb-3" (click)="selectCard(card)">
                     <app-card-part class="d-flex w-100" [isDisabled]="card.isDisabled" [caption]="card.caption"
                       [infoTitle]="card.infoTitle"></app-card-part>
                   </div>

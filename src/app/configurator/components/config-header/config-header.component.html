@@ -16,9 +16,10 @@
   <ul class="nav nav-tabs align-items-center" id="myTab" role="tablist">
     <ng-container *ngFor="let tab of headerTab; let i = index">
       <li class="nav-item" role="presentation">
-        <button class="nav-link" [disabled]="tab.disabled" (click)="selectTab(i)" [ngClass]="{'active': tab.selected}"
-          [id]="tab.id" data-bs-toggle="tab" [attr.data-bs-target]="tab.target" type="button" role="tab"
-          [attr.aria-controls]="tab.controls" [attr.aria-selected]="tab.selected">{{i+1}}. {{tab.title}}</button>
+        <button class="nav-link" [disabled]="!currentStepConfig?.[tab.id]" (click)="selectTab(i)"
+          [ngClass]="{'active': tab.selected}" [id]="tab.id" data-bs-toggle="tab" [attr.data-bs-target]="tab.target"
+          type="button" role="tab" [attr.aria-controls]="tab.controls" [attr.aria-selected]="tab.selected"> {{i+1}}.
+          {{tab.title}}</button>
       </li>
     </ng-container>
   </ul>

@@ -1,17 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-card-part',
-    templateUrl: './card-part.component.html',
-    styleUrls: ['./card-part.component.scss']
+  selector: 'app-card-part',
+  templateUrl: './card-part.component.html',
+  styleUrls: ['./card-part.component.scss'],
 })
 export class CardPartComponent implements OnInit {
+  @Input() infoTitle: string = '';
+  @Input() caption: string = '';
+  @Input() isDisabled: boolean = false;
 
-    constructor() { }
-    @Input() caption: string = '';
-    @Input() infoTitle: string = '';
-    @Input() isDisabled: boolean = false;
-    ngOnInit(): void {
-    }
+  @Output() selectedCard: EventEmitter<any> = new EventEmitter();
 
+  constructor() {}
+  ngOnInit(): void {}
 }

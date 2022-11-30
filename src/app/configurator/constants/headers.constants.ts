@@ -11,7 +11,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'frame',
   },
   {
-    id: 'profile-tab',
+    id: 'groupSet-tab',
     disabled: false,
     target: '#profile',
     controls: 'profile',
@@ -20,7 +20,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'groupSet',
   },
   {
-    id: 'contact-tab',
+    id: 'wheels-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -29,7 +29,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'wheels',
   },
   {
-    id: 'contact-tab',
+    id: 'handleBars-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -38,7 +38,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'handleBars',
   },
   {
-    id: 'contact-tab',
+    id: 'saddle-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -47,7 +47,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'saddle',
   },
   {
-    id: 'contact-tab',
+    id: 'carriers-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -56,7 +56,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'carriers',
   },
   {
-    id: 'contact-tab',
+    id: 'lightning-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -65,7 +65,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'lightning',
   },
   {
-    id: 'contact-tab',
+    id: 'accessoires-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',
@@ -74,7 +74,7 @@ export const HEADER_TABS: IHeaderTab[] = [
     ref: 'accessoires',
   },
   {
-    id: 'contact-tab',
+    id: 'size-tab',
     disabled: false,
     target: '#contact',
     controls: 'contact',

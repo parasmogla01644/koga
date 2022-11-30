@@ -7,3 +7,15 @@ export interface IHeaderTab {
   title: string;
   ref: string;
 }
+
+export interface IExpansionTabs {
+  title: string;
+  ref: any;
+  expand: boolean;
+}
+
+export interface IAppCards {
+  isDisabled: boolean;
+  caption: string;
+  infoTitle: string;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { StepperService } from '../../services/stepper.service';
 export interface IAppCards {
   isDisabled: boolean;
   caption: string;
@@ -63,7 +64,7 @@ export class FrameComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private readonly stepperService: StepperService) {}
 
   ngOnInit(): void {}
 
@@ -76,5 +77,17 @@ export class FrameComponent implements OnInit {
 
   closeModal() {
     this.openModal = false;
+  }
+
+  selectCard(card: any) {
+    console.log(card);
+    this.updateCurrentStep(card);
+  }
+
+  updateCurrentStep(value: any) {
+    let id: string = this.stepperService.currentStep.value?.id;
+    let data: any = {};
+    data[id] = value;
+    this.stepperService.updateCurrentStepConfig(data);
   }
 }
