@@ -81,6 +81,9 @@
             padding-left: 30px;
             display: inline-flex;
             position: relative;
+            @include max-screen($mobile){
+                padding-left: 25px;
+            }
             &::before {
                 top: 3px;
                 left: 0;
