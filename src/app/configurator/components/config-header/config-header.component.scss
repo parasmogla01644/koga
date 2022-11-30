@@ -88,8 +88,11 @@
             margin-left: auto;
         }
         @include max-screen($desktop) {
+            padding: 3px;
             margin-right: 0;
             margin-left: auto;
+            border-radius: 5px;
+            background-color: $color-white;
         }
         li {
             list-style: none;

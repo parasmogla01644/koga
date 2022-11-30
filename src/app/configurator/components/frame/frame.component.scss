@@ -116,21 +116,3 @@
         }
     }
 }
-
-
-.flag{
-    margin: 10px 15px;
-    width: 16.66%;
-    img{
-        width: 32px;
-        height: 24px;
-        object-fit: cover;
-    }
-    span{
-        font-size: 20px;
-        color: $color-white;
-    }
-    &.active{
-        border: 2px solid $color-white;
-    }
-}

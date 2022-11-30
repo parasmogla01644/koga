@@ -20,17 +20,23 @@
                 margin-top: 0;
                 border-bottom: 0;
             }
-            @include max-screen($mobile){
+            @include max-screen($mobile) {
                 font-size: 14px;
                 font-weight: 600;
+            }
+        }
+        picture {
+            @include min-screen($desktop) {
+                display: block;
+                margin: 24px 0 0 -10px;
             }
         }
     }
     &__download {
         margin-top: 20px;
-        @include max-screen($tablet){
+        @include max-screen($tablet) {
             display: flex;
-            justify-content: flex-end;    
+            justify-content: flex-end;
         }
         img {
             width: 27px;
@@ -73,11 +79,21 @@
                     width: 63px;
                     outline: none;
                     height: 34px;
-                    padding: 5px 10px;
+                    padding: 5px 13px;
                     font-weight: 700;
                     text-align: right;
                     color: $color-secondary;
                     border: 1px solid $color-disabled-dark;
+                }
+                &:nth-child(1) {
+                    @include min-screen($desktop) {
+                        width: 36.6%;
+                    }
+                }
+                &:nth-child(2) {
+                    @include min-screen($desktop) {
+                        width: 30%;
+                    }
                 }
             }
         }
@@ -93,7 +109,7 @@
         }
     }
     &__social {
-        margin-top: 63px;
+        margin-top: 57px;
         @include max-screen($desktop) {
             margin-top: 33px;
         }

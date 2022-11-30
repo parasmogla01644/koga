@@ -9,6 +9,7 @@
         border-color: $color-borderdark;
         height: 48px;
         box-shadow: 0 0 0;
+        color: $color-secondary;
         padding: 0 12px !important;
         @include max-screen($mobile){
             height: 40px;

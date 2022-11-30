@@ -1,26 +1,25 @@
-
 // colors
-$color-primary: #0E7CC7;
-$color-secondary: #041E42;
-$color-cream: #FFF5E9;
+$color-primary: #0e7cc7;
+$color-secondary: #041e42;
+$color-cream: #fff5e9;
 $color-white: #fff;
-$color-error: #D30E29;
-$color-success: #03D26F;
+$color-error: #d30e29;
+$color-success: #03d26f;
 $color-black: #000;
-$color-borderdark:#656D8E;
-$color-darkBlue:#232F5D;
-$color-disabled:#CFE5F4;
-$color-disabled-dark: #D3D5DF;
-$color-disabled-gray: #D8D8D8;
-$color-disabled-light: #EAEAEA;
+$color-borderdark: #656d8e;
+$color-darkBlue: #232f5d;
+$color-disabled: #cfe5f4;
+$color-disabled-dark: #d3d5df;
+$color-disabled-gray: #d8d8d8;
+$color-disabled-light: #eaeaea;
 
 // base
 $font-size-base: 16px;
 $line-height-base: 1.5;
-$font-family-base: 'Quatro', sans-serif;
-$font-family-secondary: 'Quatro Slab', sans-serif;
-$radius:10px;
-$radius-xl:55px;
+$font-family-base: "Quatro", sans-serif;
+$font-family-secondary: "Quatro Slab", sans-serif;
+$radius: 10px;
+$radius-xl: 55px;
 
 // breakpoints
 $smobile: 575px;
@@ -36,4 +35,3 @@ $imgPath: "/assets/images/";
 
 // mixins
 @import "mixins";
-

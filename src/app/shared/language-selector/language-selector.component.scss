@@ -23,6 +23,11 @@
         padding: 0;
         overflow: hidden;
     }
+    &__logo {
+        @include max-screen($mobile){
+            margin-bottom: 30px;
+        }
+    }
     &__wrapper {
         @include max-screen($mobile) {
             left: 0;
@@ -216,7 +221,6 @@
         &-child {
             @include max-screen($mobile){
                 display: none;
-                padding-top: 20px;
             }
             .nav-tabs {
                 @include max-screen($mobile){
@@ -271,6 +275,9 @@
         @include max-screen($mobile){
             position: relative;
             overflow-x: auto;
+        }
+        &::-webkit-scrollbar {
+            display: none;
         }
         ul {
             @include min-screen($mobile){

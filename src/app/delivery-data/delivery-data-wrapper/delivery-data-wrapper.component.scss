@@ -22,12 +22,14 @@
         }
     }
     &__content {
+        margin-top: -8px;
         width: calc(100% - 390px);
         @include max-screen($desktop){
             width: calc(100% - 350px);
         }
         @include max-screen($tablet) {
             width: 100%;
+            margin-top: 0;
         }
     }
     &__info {

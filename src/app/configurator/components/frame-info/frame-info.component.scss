@@ -7,7 +7,7 @@
             padding: 0px;
         }
         @include max-screen($mobile){
-            border-bottom-color: rgba($color-darkBlue, 0.5);
+            border-bottom-color: rgba($color-darkBlue, 0.2);
         }
         .nav-item {
             @include max-screen($mobile){
