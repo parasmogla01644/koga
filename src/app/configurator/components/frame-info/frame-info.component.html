@@ -22,21 +22,8 @@
         mattis quis egestas at. Pretium nunc pretium sit a erat curabitur in.</p>
     </div>
     <div class="tab-pane fade" id="nav-Foto" role="tabpanel" aria-labelledby="nav-Foto">
-      <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
-        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
-        (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem class="slide category__item" *ngFor="let _ of [].constructor(4)">
-          <a>
-            <figure>
-              <img [src]="slide?.icons?.website" [alt]="slide.name" [title]="slide.name">
-            </figure>
-            <figcaption>
-            </figcaption>
-          </a>
-        </div>
-      </ngx-slick-carousel> -->
       <!-- <img src="/assets/images/foto.jpg" role="button" alt="Foto" title="Foto"> -->
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div id="imagesCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="/assets/images/foto.jpg" role="button" alt="Foto" title="Foto">
@@ -48,6 +35,14 @@
             <img src="/assets/images/foto.jpg" role="button" alt="Foto" title="Foto">
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#imagesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imagesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </div>
