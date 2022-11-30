@@ -57,7 +57,7 @@
         <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
           <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">
             <div (click)="clickToggle()" *ngFor="let item of countryList; let i = index"
-              class="d-flex align-items-center flag notActive" [ngClass]="{'notActive': item !== selectedCountry}"
+              class="d-flex align-items-center flag notActive" [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}"
               role="button" (click)="selectCountry(item)">
               <img src="/assets/images/angola.svg" [alt]="item?.['name']" [title]="item?.['name']" class="me-2">
               <span>{{item?.['name']}}</span>

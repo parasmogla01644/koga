@@ -12,28 +12,28 @@
     <aside class="d-flex">
       <ng-container [ngSwitch]="currentStep.ref">
         <ng-container *ngSwitchCase="'groupSet'">
-          <app-groupset></app-groupset>
+          <app-groupset class="d-flex w-100"></app-groupset>
         </ng-container>
         <ng-container *ngSwitchCase="'wheels'">
-          <app-wheels></app-wheels>
+          <app-wheels class="d-flex w-100"></app-wheels>
         </ng-container>
         <ng-container *ngSwitchCase="'handleBars'">
-          <app-handlebars></app-handlebars>
+          <app-handlebars class="d-flex w-100"></app-handlebars>
         </ng-container>
         <ng-container *ngSwitchCase="'saddle'">
-          <app-saddle></app-saddle>
+          <app-saddle class="d-flex w-100"></app-saddle>
         </ng-container>
         <ng-container *ngSwitchCase="'carriers'">
-          <app-carriers></app-carriers>
+          <app-carriers class="d-flex w-100"></app-carriers>
         </ng-container>
         <ng-container *ngSwitchCase="'lightning'">
-          <app-lightning></app-lightning>
+          <app-lightning class="d-flex w-100"></app-lightning>
         </ng-container>
         <ng-container *ngSwitchCase="'accessoires'">
-          <app-accessoiries></app-accessoiries>
+          <app-accessoiries class="d-flex w-100"></app-accessoiries>
         </ng-container>
         <ng-container *ngSwitchCase="'size'">
-          <app-size></app-size>
+          <app-size class="d-flex w-100"></app-size>
         </ng-container>
         <ng-container *ngSwitchDefault>
           <app-frame class="d-flex w-100"></app-frame>

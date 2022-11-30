@@ -1,1 +1,20 @@
-<p>carriers works!</p>
+<div class="bike-info">
+    <h1>Dragers</h1>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ng-container>
+        <ngb-panel title="Lorem ipsum text" *ngFor="let i of [].constructor(3)">
+          <ng-template ngbPanelContent>
+            <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
+
+            <div class="row">
+                <ng-container *ngFor="let i of [].constructor(4)">
+                    <div class="col-6 d-flex mb-3">
+                        <app-card-part class="d-flex w-100" [isDisabled]="false" [caption]="'Lorem ipsum dolor sit amet.'" [infoTitle]="'Dummy title'"></app-card-part>
+                    </div>
+                </ng-container>
+            </div>            
+          </ng-template>
+        </ngb-panel>
+      </ng-container>
+    </ngb-accordion>
+</div>

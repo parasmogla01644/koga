@@ -1,4 +1,4 @@
-<div class="frame">
+<div class="bike-info">
   <h1>Frame</h1>
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
     <ng-container *ngFor="let frame of frames">
@@ -20,10 +20,10 @@
 
               </div>
 
-              <div class="frame__color">
+              <div class="bike-info__color">
                 <p>Maak je Koga nog persoonlijker met een zelf gekozen kleur</p>
 
-                <div class="frame__color-picker d-flex flex-wrap">
+                <div class="bike-info__color-picker d-flex flex-wrap">
                   <span [style.background]="color"></span>
                   <input #colorPicker [(colorPicker)]="color" placeholder="{{color}}" [cpDisabled]="false"
                     [cpPosition]="'bottom'" [cpToggle]="false" [cpDialogDisplay]="'inline'" />
