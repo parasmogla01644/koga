@@ -1,0 +1,94 @@
+<div class="delivery-form">
+  <h3>Gegevens</h3>
+  <form class="mt-md-4 mt-3" *ngIf="groupName" [formGroup]="groupName">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-floating">
+          <input type="text" formControlName="firstName" class="form-control" id="floatingInput"
+            placeholder="enter first name">
+          <label for="floatingInput">Voornaam<span>*</span></label>
+          <app-error-msg [groupName]="groupName" controlName="firstName"></app-error-msg>
+          <span class="invalid-feedback">Please add error msg </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" formControlName="middleName" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Tussenvoegsel</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input type="text" formControlName="lastName" class="form-control" id="floatingInput"
+            placeholder="enter last name">
+          <label for="floatingInput">Achternaam<span>*</span></label>
+          <app-error-msg [groupName]="groupName" controlName="lastName"></app-error-msg>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5 col-6">
+        <div class="form-floating">
+          <input type="text" formControlName="postCode" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Postcode<span>*</span></label>
+          <app-error-msg [groupName]="groupName" controlName="postCode"></app-error-msg>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="form-floating">
+          <input type="text" formControlName="houseNumber" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Huisnr</label>
+          <app-error-msg [groupName]="groupName" controlName="houseNumber"></app-error-msg>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input type="text" formControlName="streetName" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Straatnaam</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-floating">
+          <select class="form-select" formControlName="landMark" id="floatingSelect"
+            aria-label="Floating label select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label for="floatingSelect">Land<span>*</span></label>
+          <app-error-msg [groupName]="groupName" controlName="landMark"></app-error-msg>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-floating suffix">
+          <input type="text" formControlName="email" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">name@email.com<span>*</span></label>
+          <img src="/assets/images/attherate.svg" alt="@" title="@">
+          <app-error-msg [groupName]="groupName" patternErrorMsg="Please enter a valid email." controlName="email">
+          </app-error-msg>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-floating suffix">
+          <input type="text" appDigitOnly formControlName="phone" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">+31-XXXXXXX<span>*</span></label>
+          <img src="/assets/images/phone.svg" alt="phone" title="phone">
+          <app-error-msg [groupName]="groupName" controlName="phone"></app-error-msg>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StepperService } from '@service/stepper.service';
 import { IHeaderTab } from './models/configurator.models';
-import { StepperService } from './services/stepper.service';
 
 @Component({
   selector: 'app-configurator',

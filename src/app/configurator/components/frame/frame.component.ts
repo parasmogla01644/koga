@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { StepperService } from '../../services/stepper.service';
+import { StepperService } from '@service/stepper.service';
 export interface IAppCards {
   isDisabled: boolean;
   caption: string;

@@ -9,6 +9,8 @@ import { UspComponent } from './usp/usp.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ModalComponent } from './modal/modal.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
+import { DigitOnlyDirective } from './directives/digit-only.directive';
 
 const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
 
@@ -19,11 +21,14 @@ const COMPONENTS = [
   ProductCardComponent,
   ModalComponent,
   LanguageSelectorComponent,
+  ErrorMsgComponent,
 ];
 
+const DIRECTIVES = [DigitOnlyDirective];
+
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
   imports: [CommonModule, ...MODULES],
-  exports: [...MODULES, ...COMPONENTS],
+  exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
 export class SharedModule {}

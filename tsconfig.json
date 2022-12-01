@@ -21,7 +21,9 @@
     "lib": ["es2020", "dom"],
     "paths": {
       "@shared/*": ["./src/app/shared/*"],
-      "@configurator": ["./src/app/configurator/*"]
+      "@configurator/*": ["./src/app/configurator/*"],
+      "@service/*": ["./src/app/services/*"],
+      "@vaildators/*": ["./src/app/validators/*"]
     }
   },
   "angularCompilerOptions": {

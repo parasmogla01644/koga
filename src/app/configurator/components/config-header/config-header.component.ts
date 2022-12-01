@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HEADER_TABS } from '../../constants/headers.constants';
 import { IHeaderTab } from '../../models/configurator.models';
-import { StepperService } from '../../services/stepper.service';
+import { StepperService } from '@service/stepper.service';
 
 @Component({
   selector: 'app-config-header',

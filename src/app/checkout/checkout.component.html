@@ -1,21 +1,51 @@
 <app-header></app-header>
 
-<div class="shopping-cart">
+<div class="delivery-data">
   <div class="container">
-    <h1 class="d-none d-lg-block">Winkelwagen</h1>
+    <h1>Verzending</h1>
 
-    <div class="shopping-cart__inner d-flex flex-wrap">
-      <div class="shopping-cart__content d-flex">
-        <app-product-block class="d-flex w-100"></app-product-block>
+    <div class="delivery-data__inner d-flex flex-wrap">
+      <div class="delivery-data__content d-flex">
+        <app-user-form [groupName]="userForm"></app-user-form>
+
+        <div class="delivery-form__tabs">
+          <h3>Keuze verzending</h3>
+          <ul class="nav nav-tabs row mt-4" id="myTabModal2" role="tablist">
+            <li class="nav-item col-6" role="presentation">
+              <button class="nav-link d-flex justify-content-between
+                      active" id="homeDelivery" data-bs-toggle="tab" data-bs-target="#nav-homeDelivery" type="button"
+                role="tab" aria-controls="homeDelivery" aria-selected="true">
+                <span>Thuisbezorgen</span>
+                <img src="/assets/images/home-blue.svg" alt="home" title="home">
+                <img src="/assets/images/home.svg" alt="home" title="home">
+              </button>
+            </li>
+            <li class="nav-item col-6" role="presentation">
+              <button class="nav-link d-flex justify-content-between" id="pickup" data-bs-toggle="tab"
+                data-bs-target="#nav-pickup" type="button" role="tab" aria-controls="pickup" aria-selected="false">
+                <span>Afhalen bij dealer</span>
+                <img src="/assets/images/pin-blue.svg" alt="pin" title="pin">
+                <img src="/assets/images/pin.svg" alt="pin" title="pin">
+              </button>
+            </li>
+
+          </ul>
+          <div class="tab-content" id="myTabContent2">
+            <div class="tab-pane fade show active" id="nav-homeDelivery" role="tabpanel"
+              aria-labelledby="nav-homeDelivery">
+              <app-home-delivery></app-home-delivery>
+            </div>
+            <div class="tab-pane fade" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup">
+              <app-pickup></app-pickup>
+            </div>
+          </div>
+        </div>
+
+        <!-- <app-delivery-form class="w-100"></app-delivery-form> -->
       </div>
-      <div class="shopping-cart__info">
-        <app-product-price-info [social]="true" [usp]="true"></app-product-price-info>
+      <div class="delivery-data__info">
+        <app-product-price-info [description]="true" [accept]="true"></app-product-price-info>
       </div>
-      <app-usp class="w-100 d-none d-lg-block"></app-usp>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <app-product-parts></app-product-parts>
 </div>

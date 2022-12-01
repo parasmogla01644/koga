@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IHeaderTab } from '../models/configurator.models';
+import { IHeaderTab } from '../configurator/models/configurator.models';
 import { BehaviorSubject } from 'rxjs';
-import { HEADER_TABS } from '../constants/headers.constants';
+import { HEADER_TABS } from '../configurator/constants/headers.constants';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -32,7 +32,7 @@ export class StepperService {
       return tab?.id === stepId;
     });
     if (index === HEADER_TABS.length - 1) {
-      this.gotoCheckout();
+      this.gotoCart();
     } else if (index > -1) {
       this.currentStep.next({ ...HEADER_TABS[index + 1], disabled: false });
     } else {
@@ -52,7 +52,7 @@ export class StepperService {
     }
   }
 
-  gotoCheckout() {
-    this.router.navigate(['checkout']);
+  gotoCart() {
+    this.router.navigate(['cart-details']);
   }
 }

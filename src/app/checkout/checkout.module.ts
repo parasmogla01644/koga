@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { CheckoutComponent } from './checkout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
-import { ProductBlockComponent } from './components/product-block/product-block.component';
-import { ProductPartsComponent } from './components/product-parts/product-parts.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeDeliveryComponent } from './components/home-delivery/home-delivery.component';
+import { PickupComponent } from './components/pickup/pickup.component';
 
 const routes: Routes = [
   {
@@ -15,11 +17,18 @@ const routes: Routes = [
 
 const COMPONENTS = [
   CheckoutComponent,
-  ProductBlockComponent,
-  ProductPartsComponent,
+  UserFormComponent,
+  HomeDeliveryComponent,
+  PickupComponent,
 ];
 
-const MODULES = [CommonModule, SharedModule, RouterModule];
+const MODULES = [
+  CommonModule,
+  SharedModule,
+  RouterModule,
+  FormsModule,
+  ReactiveFormsModule,
+];
 
 @NgModule({
   declarations: [...COMPONENTS],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StepperService } from '../../services/stepper.service';
+import { StepperService } from '../../../services/stepper.service';
 import { IHeaderTab } from '../../models/configurator.models';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StepperService } from '../../services/stepper.service';
 import { IAppCards, IExpansionTabs } from '../../models/configurator.models';
 import { AppCards } from '../../constants/cards.contants';
+import { StepperService } from '@service/stepper.service';
 
 @Component({
   selector: 'app-wheels',
