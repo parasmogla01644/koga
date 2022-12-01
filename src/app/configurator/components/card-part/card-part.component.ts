@@ -9,6 +9,7 @@ export class CardPartComponent implements OnInit {
   @Input() infoTitle: string = '';
   @Input() caption: string = '';
   @Input() isDisabled: boolean = false;
+  @Input() checked: boolean = false;
 
   @Output() selectedCard: EventEmitter<any> = new EventEmitter();
 

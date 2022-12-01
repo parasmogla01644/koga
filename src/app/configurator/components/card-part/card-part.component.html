@@ -1,12 +1,12 @@
 <label class="card-part" [ngClass]="{'is-disabled': isDisabled}">
-    <input type="radio" name="design"/>
-    <cite></cite>
-    <picture>
-        <img src="assets/images/part.png" alt=""/>
-    </picture>
-    <article>
-        <strong *ngIf="infoTitle">{{infoTitle}}</strong>
-        <p>{{caption}}</p>
-        <span>€120</span>    
-    </article>
+  <input type="radio" [value]="checked" name="design" />
+  <cite></cite>
+  <picture>
+    <img src="assets/images/part.png" alt="" />
+  </picture>
+  <article>
+    <strong *ngIf="infoTitle">{{infoTitle}}</strong>
+    <p>{{caption}}</p>
+    <span>€120</span>
+  </article>
 </label>

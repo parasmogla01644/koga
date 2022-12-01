@@ -4,6 +4,8 @@ export interface IAppCards {
   isDisabled: boolean;
   caption: string;
   infoTitle: string;
+  id: number;
+  checked: boolean;
 }
 
 export interface Iframes {
@@ -46,27 +48,49 @@ export class FrameComponent implements OnInit {
       isDisabled: false,
       caption: 'Graphite black shiny',
       infoTitle: 'meest gekozen',
+      checked: false,
+      id: 1,
     },
     {
       isDisabled: false,
       caption: 'Graphite black shiny',
       infoTitle: '',
+      checked: false,
+      id: 2,
     },
     {
       isDisabled: false,
       caption: 'Graphite black shiny',
       infoTitle: 'meest gekozen',
+      checked: false,
+      id: 3,
     },
     {
       isDisabled: true,
       caption: 'Graphite black shiny',
       infoTitle: '',
+      checked: false,
+      id: 4,
     },
   ];
 
   constructor(private readonly stepperService: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setData();
+  }
+
+  setData() {
+    let id = this.stepperService.currentStep.value?.id;
+    let savedData = this.stepperService.stepsConfig.value?.[id];
+    this.AppCards = this.AppCards.map((item: any) => {
+      if (item.id === savedData?.id) {
+        return savedData;
+      } else {
+        return item;
+      }
+    });
+  }
 
   handleChange(event: any) {
     console.log(event);
@@ -80,6 +104,10 @@ export class FrameComponent implements OnInit {
   }
 
   selectCard(card: any) {
+    if (card.isDisabled) {
+      return;
+    }
+    card.checked = true;
     console.log(card);
     this.updateCurrentStep(card);
   }

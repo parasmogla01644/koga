@@ -25,7 +25,21 @@ export class WheelsComponent implements OnInit {
 
   constructor(private readonly stepperService: StepperService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setData();
+  }
+
+  setData() {
+    let id = this.stepperService.currentStep.value?.id;
+    let savedData = this.stepperService.stepsConfig.value?.[id];
+    this.AppCards = this.AppCards.map((item: any) => {
+      if (item.id === savedData?.id) {
+        return savedData;
+      } else {
+        return item;
+      }
+    });
+  }
 
   handleChange(event: any) {
     console.log(event);
@@ -39,7 +53,10 @@ export class WheelsComponent implements OnInit {
   // }
 
   selectCard(card: any) {
-    console.log(card);
+    if (card.isDisabled) {
+      return;
+    }
+    card.checked = true;
     this.updateCurrentStep(card);
   }
 

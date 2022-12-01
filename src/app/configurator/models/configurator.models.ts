@@ -18,4 +18,6 @@ export interface IAppCards {
   isDisabled: boolean;
   caption: string;
   infoTitle: string;
+  id: number;
+  checked: boolean;
 }
