@@ -1,0 +1,19 @@
+@import '../../../../assets/scss/variables.scss';
+.pickup {
+    h3 {
+        padding-bottom: 12px;
+        border-bottom: 1px solid $color-disabled-dark;
+    }
+    iframe {
+        height: 569px;
+        @include max-screen($desktop){
+            height: 500px;
+        }
+        @include max-screen($tablet){
+            height: 350px;
+        }
+        @include max-screen($mobile){
+            height: 210px;
+        }
+    }
+}

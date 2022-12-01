@@ -1,0 +1,70 @@
+@import "../../../../assets/scss/variables.scss";
+.home-delivery {
+    h3 {
+        padding-bottom: 12px;
+        border-bottom: 1px solid $color-disabled-dark;
+    }
+    &__address {
+        margin-bottom: 62px;
+        @include max-screen($mobile) {
+            margin-bottom: 40px;
+        }
+        h3 {
+            @include min-screen($mobile) {
+                padding-bottom: 17px;
+                margin-bottom: 28px;
+            }
+        }
+        address {
+            padding: 16px 32px;
+            margin-bottom: 32px;
+            border: 1px solid $color-secondary;
+            @include max-screen($mobile) {
+                padding: 16px 15px;
+                margin-bottom: 20px;
+            }
+            h6 {
+                margin-bottom: 20px;
+                @include max-screen($mobile) {
+                    margin-bottom: 10px;
+                }
+            }
+            p {
+                margin: 0;
+                line-height: 1.62;
+            }
+        }
+      
+    }
+    &__btn {
+        max-width: 374px;
+    }
+    &__payment {
+        &-form {
+            padding-top: 21px;
+            .form-check {
+                &:not(:last-child) {
+                    margin-bottom: 42px;
+                    @include max-screen($mobile) {
+                        margin-bottom: 18px;
+                    }
+                }
+                input:checked {
+                    & ~ div {
+                        display: block;
+                    }
+                }
+            }
+        }
+        &-option {
+            display: none;
+            max-width: 328px;
+            margin-top: 16px;
+            @include max-screen($mobile) {
+                max-width: none;
+                margin-left: -35px;
+                width: calc(100% + 35px);
+            }
+        }
+    }
+}
