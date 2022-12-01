@@ -1,65 +1,66 @@
 <div class="product-price">
-    <h5>Overzicht</h5>
-    <div class="mt-md-4 mt-3">
-        <div class="mb-2 d-flex justify-content-between">
-            <p>Configuratie <br class="d-none d-md-block">(stap 1 - 9)</p>
-            <strong>€ 4,903.00</strong>
-        </div>
-        <div class="mb-2 d-flex justify-content-between">
-            <p>Maat</p>
-            <strong>€ 43.99</strong>
-        </div>
-        <div class="mb-2 d-flex justify-content-between">
-            <p>Signature</p>
-            <strong>€ 0.00</strong>
-        </div>
-        <div class="product-price__price d-flex justify-content-between align-items-end">
-            <strong>Totaal</strong>
-            <div class="text-end">
-                <aside class="mb-2">
-                    <p class="mb-0">incl. BTW €434,32</p>
-                    <img src="assets/images/info.svg" alt="Info"/>
-                </aside>
-                <strong>€ 4,943.99</strong>
-            </div>
-        </div>
-        <div class="product-price__social d-block d-md-none" *ngIf="social">
-            <ul class="d-flex justify-content-between">
-                <li>
-                    <a class="d-flex align-items-center">
-                        <img src="/assets/images/mail.svg" alt="mail" class="me-2">
-                        <span>Mail me</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="d-flex align-items-center">
-                        <img src="/assets/images/call.svg" alt="call" class="me-2">
-                        <span>Contact us</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="d-flex align-items-center">
-                        <img src="/assets/images/share.svg" alt="share" class="me-2">
-                        <span>Share</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      
-        <div class="product-price__note" *ngIf="description">
-            <p>Als je op ‘Betalen’ klikt ga je akkoord met de op jouw bestelling van toepassing zijnde (algemene) <a>voorwaarden</a> van Koga. </p>
-        </div>
-
-        <app-usp *ngIf="usp" class="d-block d-lg-none"></app-usp>
-
-        <div class="product-price__accept" *ngIf="accept">
-            <input type="checkbox" id="accept">
-            <label for="accept">Lorem ipsum dolor sit amet.</label>
-            <img src="assets/images/info.svg" alt="Info"/>
-        </div>
-
-        <button class="btn btn-primary w-100" disabled>
-            Betalen
-        </button>
+  <h5>Overzicht</h5>
+  <div class="mt-md-4 mt-3">
+    <div class="mb-2 d-flex justify-content-between">
+      <p>Configuratie <br class="d-none d-md-block">(stap 1 - 9)</p>
+      <strong>€ 4,903.00</strong>
     </div>
+    <div class="mb-2 d-flex justify-content-between">
+      <p>Maat</p>
+      <strong>€ 43.99</strong>
+    </div>
+    <div class="mb-2 d-flex justify-content-between">
+      <p>Signature</p>
+      <strong>€ 0.00</strong>
+    </div>
+    <div class="product-price__price d-flex justify-content-between align-items-end">
+      <strong>Totaal</strong>
+      <div class="text-end">
+        <aside class="mb-2">
+          <p class="mb-0">incl. BTW €434,32</p>
+          <img src="assets/images/info.svg" alt="Info" />
+        </aside>
+        <strong>€ 4,943.99</strong>
+      </div>
+    </div>
+    <div class="product-price__social d-block d-md-none" *ngIf="social">
+      <ul class="d-flex justify-content-between">
+        <li>
+          <a class="d-flex align-items-center">
+            <img src="/assets/images/mail.svg" alt="mail" class="me-2">
+            <span>Mail me</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-items-center">
+            <img src="/assets/images/call.svg" alt="call" class="me-2">
+            <span>Contact us</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-items-center">
+            <img src="/assets/images/share.svg" alt="share" class="me-2">
+            <span>Share</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="product-price__note" *ngIf="description">
+      <p>Als je op ‘Betalen’ klikt ga je akkoord met de op jouw bestelling van toepassing zijnde (algemene)
+        <a>voorwaarden</a> van Koga. </p>
+    </div>
+
+    <app-usp *ngIf="usp" class="d-block d-lg-none"></app-usp>
+
+    <div class="product-price__accept" *ngIf="accept">
+      <input type="checkbox" id="accept">
+      <label for="accept">Lorem ipsum dolor sit amet.</label>
+      <img src="assets/images/info.svg" alt="Info" />
+    </div>
+
+    <button class="btn btn-primary w-100" (click)="gotoCheckout()" [disabled]="isDisable">
+      Betalen
+    </button>
+  </div>
 </div>
