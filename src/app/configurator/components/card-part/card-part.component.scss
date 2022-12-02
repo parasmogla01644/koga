@@ -60,4 +60,12 @@
         opacity: 0.3;
         pointer-events: none;
     }
+    &.active {
+        cite {
+            border-color: $color-primary;
+            &::before {
+                display: block;
+            }
+        }
+    }
 }
