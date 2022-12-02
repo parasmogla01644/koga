@@ -17,41 +17,42 @@ export class AccessoiriesComponent implements OnInit {
     {
       title: 'Kickstand',
       ref: 'kickstandRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'Lock',
       ref: 'lockRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'Pump',
       ref: 'pumpRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'Bottle & bottle holder',
       ref: 'bottleHolderRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'USB Device',
       ref: 'usbDeviceRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'Mudguards',
       ref: 'mudguardsRef',
-      expand: true,
+      expand: false,
     },
     {
       title: 'Bosch options',
       ref: 'boschOptionsRef',
-      expand: true,
+      expand: false,
     },
   ];
   openModal: boolean = false;
-  AppCards: IAppCards[] = AppCards;
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
+  activeIds: string[] = ['0'];
 
   constructor(private readonly stepperService: StepperService) {}
 

@@ -9,7 +9,8 @@ import { StepperService } from '@service/stepper.service';
   styleUrls: ['./wheels.component.scss'],
 })
 export class WheelsComponent implements OnInit {
-  AppCards: IAppCards[] = AppCards;
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
+  activeIds: string[] = ['0'];
   expansionList: IExpansionTabs[] = [
     {
       title: 'Rims',

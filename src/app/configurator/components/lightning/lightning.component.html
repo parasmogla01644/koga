@@ -1,16 +1,16 @@
 <div class="bike-info">
   <h1>Verlichting</h1>
-  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
     <ng-container>
-      <ngb-panel *ngFor="let tab of expansionList" [title]="tab.title">
+      <ngb-panel *ngFor="let tab of expansionList let i = index;" [id]="(i).toString()" [title]="tab.title">
         <ng-template ngbPanelContent>
           <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
 
           <div class="row">
             <ng-container *ngFor="let card of AppCards">
               <div class="col-6 d-flex mb-3" (click)="selectCard(card)">
-                <app-card-part class="d-flex w-100" [isDisabled]="card.isDisabled" [caption]="card.caption"
-                  [infoTitle]="card.infoTitle"></app-card-part>
+                <app-card-part class="d-flex w-100" [checked]="card.checked" [isDisabled]="card.isDisabled"
+                  [caption]="card.caption" [infoTitle]="card.infoTitle"></app-card-part>
               </div>
             </ng-container>
           </div>

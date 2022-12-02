@@ -24,6 +24,7 @@ export class FrameComponent implements OnInit {
   @ViewChild('vorkRef') vorkRef: any;
   openModal: boolean = false;
   color: any;
+  activeIds: string[] = ['0'];
 
   frames: Iframes[] = [
     {
@@ -108,7 +109,6 @@ export class FrameComponent implements OnInit {
       return;
     }
     card.checked = true;
-    console.log(card);
     this.updateCurrentStep(card);
   }
 

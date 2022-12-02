@@ -1,8 +1,8 @@
 <div class="bike-info">
   <h1>Frame</h1>
-  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ng-container *ngFor="let frame of frames">
-      <ngb-panel [title]="frame?.title || ''">
+  <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ng-container *ngFor="let frame of frames; let i = index;">
+      <ngb-panel [title]="frame?.title || ''" [id]="(i).toString()">
         <ng-template ngbPanelContent>
           <ng-container [ngSwitch]="frame.ref">
             <ng-container *ngSwitchCase="'framekleurRef'">

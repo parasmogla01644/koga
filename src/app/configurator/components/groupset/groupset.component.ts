@@ -8,7 +8,8 @@ import { AppCards } from '../../constants/cards.contants';
   styleUrls: ['./groupset.component.scss'],
 })
 export class GroupsetComponent implements OnInit {
-  AppCards: IAppCards[] = AppCards;
+  activeIds: string[] = ['0'];
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
   expansionList: IExpansionTabs[] = [
     {
       title: 'Groupset',
@@ -18,7 +19,7 @@ export class GroupsetComponent implements OnInit {
     {
       title: 'Brakes',
       ref: 'brakesRef',
-      expand: true,
+      expand: false,
     },
   ];
 

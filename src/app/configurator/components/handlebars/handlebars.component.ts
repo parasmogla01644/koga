@@ -9,7 +9,8 @@ import { AppCards } from '../../constants/cards.contants';
   styleUrls: ['./handlebars.component.scss'],
 })
 export class HandlebarsComponent implements OnInit {
-  AppCards: IAppCards[] = AppCards;
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
+  activeIds: string[] = ['0'];
   expansionList: IExpansionTabs[] = [
     {
       title: 'Bar',

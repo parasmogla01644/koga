@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() infoText: string = 'High frameHigh frameHigh';
+  @Input() infoText: string = 'High frame';
   @Input() price: boolean = true;
 
   constructor() {}

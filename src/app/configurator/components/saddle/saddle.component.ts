@@ -9,7 +9,8 @@ import { AppCards } from '../../constants/cards.contants';
   styleUrls: ['./saddle.component.scss'],
 })
 export class SaddleComponent implements OnInit {
-  AppCards: IAppCards[] = AppCards;
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
+  activeIds: string[] = ['0'];
   expansionList: IExpansionTabs[] = [
     {
       title: 'Saddle',

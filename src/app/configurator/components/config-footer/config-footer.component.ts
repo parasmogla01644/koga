@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StepperService } from '../../../services/stepper.service';
-import { IHeaderTab } from '../../models/configurator.models';
+import { HEADER_TABS } from '@configurator/constants/headers.constants';
+import { IHeaderTab } from '@configurator/models/configurator.models';
+import { StepperService } from '@service/stepper.service';
 
 @Component({
   selector: 'app-config-footer',
@@ -8,6 +9,7 @@ import { IHeaderTab } from '../../models/configurator.models';
   styleUrls: ['./config-footer.component.scss'],
 })
 export class ConfigFooterComponent implements OnInit {
+  steps: IHeaderTab[] = HEADER_TABS;
   currentStep!: IHeaderTab;
   currentStepConfig: any;
 
@@ -36,6 +38,15 @@ export class ConfigFooterComponent implements OnInit {
     this.stepperService.stepsConfig.subscribe((data: any) => {
       this.currentStepConfig = data;
     });
+  }
+
+  get nextStepText() {
+    let index = HEADER_TABS.findIndex(
+      (step) => step.id === this.currentStep.id
+    );
+    return HEADER_TABS?.length - 1 === index
+      ? 'Goto Checkout Cart'
+      : `Naar stap ${index + 2} ${HEADER_TABS?.[index + 1]?.title}`;
   }
 
   get isDisabled() {

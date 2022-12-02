@@ -8,7 +8,8 @@ import { AppCards } from '../../constants/cards.contants';
   styleUrls: ['./lightning.component.scss'],
 })
 export class LightningComponent implements OnInit {
-  AppCards: IAppCards[] = AppCards;
+  AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
+  activeIds: string[] = ['0'];
   expansionList: IExpansionTabs[] = [
     {
       title: 'Lightsets',
