@@ -1,5 +1,5 @@
-<label class="card-part" [ngClass]="{'is-disabled': isDisabled}">
-  <input type="radio" [value]="checked" name="design" />
+<label class="card-part" [ngClass]="{'is-disabled': isDisabled, 'active': checked}">
+  <input type="radio" [value]="checked" name="design"/>
   <cite></cite>
   <picture>
     <img src="assets/images/part.png" alt="" />
