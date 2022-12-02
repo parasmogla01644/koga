@@ -2,21 +2,21 @@
   <h2>Overzicht</h2>
   <div class="row">
     <!-- loop for product main product section start -->
-    <div class="col-lg-6 mb-4 d-flex" *ngFor="let _ of [].constructor(4)">
+    <div class="col-lg-6 mb-4 d-flex" *ngFor="let step of steps; let i = index">
       <div class="oversight__box">
-        <h5>1. Frame</h5>
+        <h5> {{i+1}}. {{tabs?.[step]?.title}} </h5>
         <div class="d-flex align-items-end justify-content-between flex-wrap">
           <div class="wrap oversight__box-wrap">
             <div class="d-flex flex-wrap oversight__box-list">
-              <div class="oversight__box-item" (click)="editTabDetails()">
-                <app-product-card infoText="High frame"></app-product-card>
+              <div class="oversight__box-item" (click)="editTabDetails(i)">
+                <app-product-card [infoText]="stepsDetails?.[step]?.infoText"></app-product-card>
               </div>
-              <div class="oversight__box-item">
+              <!-- <div class="oversight__box-item">
                 <app-product-card [price]="false" infoText="High frame"></app-product-card>
               </div>
               <div class="oversight__box-item">
                 <app-product-card infoText="High frame"></app-product-card>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="oversight__box-price text-end">
