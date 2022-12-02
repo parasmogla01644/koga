@@ -167,6 +167,8 @@
                 margin-bottom: 18px;
                 text-align: left;
                 line-height: 1.1;
+                padding: 0 0 0 2px;
+                border: 2px solid transparent;
                 @include max-screen($desktop-large) {
                     width: calc(20% - 32px);
                     margin: 0 15px 15px;
@@ -176,6 +178,7 @@
                     width: 100%;
                     padding: 15px;
                     margin: 0;
+                    border: 0;
                 }
 
                 span {
@@ -190,12 +193,9 @@
                 }
 
                 &.active {
-                    border: 2px solid $color-white;
-                    padding: 0 0 0 2px;
-
+                    border-color: $color-white;
                     @include max-screen($mobile) {
                         background-color: rgba($color-darkBlue, 0.2);
-                        padding: 15px;
                         border: 0;
                     }
                 }
