@@ -32,17 +32,6 @@
       }
     }
   }
-  &__download {
-    margin-top: 20px;
-    @include max-screen($tablet) {
-      display: flex;
-      justify-content: flex-end;
-    }
-    img {
-      width: 27px;
-      height: 23px;
-    }
-  }
   &__right {
     width: 325px;
     @include max-screen($desktop) {
@@ -121,6 +110,7 @@
         a {
           font-weight: 500;
           img {
+            max-height: 23px;
             @include max-screen($tablet) {
               width: 15px;
             }

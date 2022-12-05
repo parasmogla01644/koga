@@ -13,16 +13,19 @@
         }
         &-price {
             margin-right: 48px;
+            @include max-screen($desktop){
+                margin-right: 15px;
+            }
             @include max-screen($smobile) {
                 margin-right: 0;
             }
             h5 {
                 margin: 0;
                 font-size: 12px;
-                @include max-screen($mobile){
+                @include max-screen($mobile) {
                     font-size: 8px;
                 }
-                &+h5 {
+                & + h5 {
                     margin-left: 16px;
                     @include max-screen($smobile) {
                         margin-left: 10px;
@@ -32,7 +35,7 @@
                     font-size: 167%;
                     font-weight: 700;
                     padding-left: 5px;
-                    @include max-screen($mobile){
+                    @include max-screen($mobile) {
                         font-size: 14px;
                         padding-left: 3px;
                     }
@@ -44,7 +47,7 @@
                 }
                 span {
                     &.is-euro {
-                        @include max-screen($mobile){
+                        @include max-screen($mobile) {
                             font-size: 14px;
                             font-weight: 700;
                         }
@@ -58,6 +61,42 @@
                     width: 40px;
                     padding: 5px 10px;
                 }
+            }
+            .btn {
+                @include max-screen($mobile) {
+                    font-size: 10px;                    
+                }
+            }
+        }
+    }
+    &__save {
+        cursor: pointer;
+        font-weight: 500;
+        margin: 0 28px 0 auto;
+        color: $color-secondary;
+        @include max-screen($tablet){
+            margin: 0;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            bottom: 90px;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba($color-black, 0.2);
+            background-color: $color-white;
+        }
+        @include max-screen($mobile){
+            bottom: 80px;
+        }
+        img {
+            width: 20px;
+            margin-right: 5px;
+            @include max-screen($tablet){
+                margin: 0;
+                width: 15px;
             }
         }
     }
