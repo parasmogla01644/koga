@@ -17,6 +17,11 @@ export class SizeComponent implements OnInit {
       ref: 'sizeRef',
       expand: true,
     },
+    {
+      title: 'Signature',
+      ref: 'signatureRef',
+      expand: false,
+    },
   ];
   openModal: boolean = false;
   constructor(private readonly stepperService: StepperService) {}

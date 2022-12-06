@@ -1,14 +1,32 @@
 <div class="configFooter d-flex align-items-center justify-content-between">
   <h5 class="mb-0 d-none d-md-block">Worldtraveller-S</h5>
   
-  <div class="configFooter__save d-flex align-center">
-      <img src="assets/images/save.svg" alt="Save"/>
-      <span class="d-none d-lg-block">Open saved configuration</span>  
-  </div>
+  <div class="configFooter__save ms-auto">
+    <div class="configFooter__save-wrap" [ngClass]="{'active': contextToggle}">
+        <div class="configFooter__save-item d-flex align-center" *ngIf="openSaved">
+            <img src="assets/images/configuration.svg" alt="Save"/>
+            <span>Open saved configuration</span>  
+        </div>
+        <div class="configFooter__save-item d-flex d-xl-none align-center">
+            <img src="assets/images/save.svg" alt="Save"/>
+            <span>Save configuration</span>  
+        </div>
+    </div>
+
+    <div class="configFooter__save-holder d-flex d-xl-none" [ngClass]="{'active': contextToggle}" (click)="clickContextToggle()">
+        <img *ngIf="!contextToggle" src="assets/images/angle-up.svg" alt="Up"/>
+        <img *ngIf="contextToggle" src="assets/images/close.svg" alt="close"/>
+    </div>
+   </div>
+
   <div class="configFooter__right d-flex align-items-center">
     <div class="configFooter__right-price d-flex">
       <h5><strong>12,1</strong> <span> kg</span></h5>
       <h5><span class="is-euro">€</span><strong>2998</strong><cite>,50</cite></h5>
+    </div>
+    <div class="configFooter__save-item me-3 d-none d-xl-flex align-center">
+        <img src="assets/images/save.svg" alt="Save"/>
+        <span class="d-none d-xl-block">Save configuration</span>  
     </div>
     <div class="d-flex align-items-center configFooter__right-button">
       <button class="btn btn-outline" (click)="gotoPrevious()">

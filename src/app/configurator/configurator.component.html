@@ -1,7 +1,11 @@
-<div class="configurator">
+<div class="configurator" [ngClass]="{'configurator--view': viewToggle}">
   <app-config-header></app-config-header>
   <div class="configurator__info d-flex flex-wrap">
     <article class="d-flex justify-content-md-end align-items-center">
+        <div class="configurator__view d-flex">
+            <a [ngClass]="{'active': !viewToggle}" (click)="clickViewToggle()"><img src="assets/images/eye.svg" alt="Eye"/></a>
+            <a [ngClass]="{'active': viewToggle}" (click)="clickViewToggle()"><img src="assets/images/edit.svg" alt="Edit"/></a>
+        </div>
       <figure>
         <img src="/assets/images/cycle.png" alt="cycle">
       </figure>
@@ -39,6 +43,6 @@
     </aside>
   </div>
   <div class="configurator__bottom">
-    <app-config-footer></app-config-footer>
+    <app-config-footer [openSaved]="currentStep.ref ==='frame'"></app-config-footer>
   </div>
 </div>

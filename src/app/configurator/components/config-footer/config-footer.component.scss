@@ -12,7 +12,7 @@
             justify-content: space-between;
         }
         &-price {
-            margin-right: 48px;
+            margin-right: 35px;
             @include max-screen($desktop){
                 margin-right: 15px;
             }
@@ -70,34 +70,82 @@
         }
     }
     &__save {
-        cursor: pointer;
-        font-weight: 500;
         margin: 0 28px 0 auto;
-        color: $color-secondary;
-        @include max-screen($tablet){
+        @include max-screen($desktop){
             margin: 0;
             right: 10px;
-            width: 40px;
-            height: 40px;
             bottom: 90px;
-            position: fixed;
-            display: flex;
-            align-items: center;
-            border-radius: 50%;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba($color-black, 0.2);
-            background-color: $color-white;
+            position: fixed;           
         }
         @include max-screen($mobile){
             bottom: 80px;
         }
-        img {
-            width: 20px;
-            margin-right: 5px;
-            @include max-screen($tablet){
-                margin: 0;
-                width: 15px;
+        &-holder {
+            @include max-screen($desktop){
+                width: 35px;
+                height: 35px;
+                padding: 8px;
+                display: flex;
+                cursor: pointer;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;    
+                background-color: $color-white;
+                box-shadow: 0 0 15px rgba($color-black, 0.15);
+            }
+            &.active {
+                @include max-screen($desktop){
+                    padding: 10px;
+                }
+            }
+        }
+        &-wrap {
+            @include max-screen($desktop){
+                right: 0;
+                opacity: 0;
+                width: 190px;
+                border-radius: 2px;
+                visibility: hidden;
+                position: absolute;
+                transition: 0.3s ease-in-out;
+                bottom: calc(100% + 12px);
+                background-color: $color-white;
+                box-shadow: 0 0 10px rgba($color-black, 0.1);
+            }
+            &::after {
+                top: 100%;
+                content: '';
+                right: 8px;
+                position: absolute;
+                border: 10px solid transparent;
+                border-top-color: $color-white;
+            }
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &-item {
+            cursor: pointer;
+            font-weight: 500;
+            color: $color-secondary;
+            @include max-screen($desktop){
+                padding: 8px 10px;
+                border-top: 1px solid rgba($color-black, 0.05);
+            }
+            img {
+                width: 20px;
+                margin-right: 5px;
+                @include max-screen($desktop){
+                    width: 15px;
+                }
+            }
+            span {
+                @include max-screen($desktop){
+                    font-size: 12px;
+                }
             }
         }
     }
+   
 }

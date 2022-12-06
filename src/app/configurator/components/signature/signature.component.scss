@@ -1,0 +1,12 @@
+@import '../../../../assets/scss/variables.scss';
+.signature {
+    img {
+        max-height: 15px;
+        @include max-screen($mobile){
+            max-height: 12px;
+        }
+    }
+    label {
+        font-size: 14px;
+    }
+}

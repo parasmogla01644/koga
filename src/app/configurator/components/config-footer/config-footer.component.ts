@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HEADER_TABS } from '@configurator/constants/headers.constants';
 import { IHeaderTab } from '@configurator/models/configurator.models';
 import { StepperService } from '@service/stepper.service';
@@ -12,6 +12,7 @@ export class ConfigFooterComponent implements OnInit {
   steps: IHeaderTab[] = HEADER_TABS;
   currentStep!: IHeaderTab;
   currentStepConfig: any;
+  @Input() openSaved: boolean=false;
 
   constructor(private readonly stepperService: StepperService) {}
 
@@ -51,5 +52,10 @@ export class ConfigFooterComponent implements OnInit {
 
   get isDisabled() {
     return this.currentStepConfig?.[this.currentStep?.id];
+  }
+
+  contextToggle: boolean = false;
+  clickContextToggle() {
+      this.contextToggle = !this.contextToggle;
   }
 }

@@ -30,4 +30,8 @@ export class ConfiguratorComponent implements OnInit {
   // closeModal() {
   //   this.openModal = false;
   // }
+  viewToggle: boolean = false;
+  clickViewToggle() {
+      this.viewToggle = !this.viewToggle;
+  }
 }

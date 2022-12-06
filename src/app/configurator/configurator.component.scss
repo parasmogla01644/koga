@@ -11,6 +11,33 @@
         padding-bottom: 70px;
         background-color: $color-white;
     }
+    &__view {
+        top: 0;
+        right: 15px;
+        overflow: hidden;
+        border-radius: 2px;
+        position: absolute;
+        background-color: $color-white;
+        a {
+            width: 40px;
+            height: 35px;
+            display: flex;
+            padding: 5px 10px;
+            align-items: center;
+            justify-content: center;
+            @include max-screen($mobile){
+                width: 30px;
+                height: 27px;
+                padding: 7px;
+            }
+            &+a {
+                border-left: 1px solid rgba($color-black, 0.05)
+            }
+            &.active {
+                background-color: rgba($color-primary, 0.7);
+            }
+        }
+    }
     &__info {
         padding-top: 24px;
         @include max-screen($tablet-lg) {
@@ -22,6 +49,7 @@
             padding: 45px 0 15px 40px;
             width: calc(100% - 503px);
             height: calc(100vh - 152px);
+            transition: 0.3s ease-in-out width;
             @include min-screen(2200px) {
                 justify-content: center !important;
             }
@@ -73,6 +101,7 @@
             width: 503px;
             padding-bottom: 30px;
             background-color: $color-white;
+            transition: 0.3s ease-in-out transform;
 
             @include max-screen($desktop) {
                 width: 400px;
@@ -92,6 +121,15 @@
         position: fixed;
         @include max-screen($tablet-lg) {
             box-shadow: 0 -3px 5px rgba($color-black, 0.05);
+        }
+    }
+    &--view {
+        overflow: hidden;
+        article {
+            width: 100%;
+        }
+        aside {
+            transform: translateX(105%);
         }
     }
 }

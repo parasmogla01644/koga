@@ -17,6 +17,8 @@ import { CarriersComponent } from './components/carriers/carriers.component';
 import { LightningComponent } from './components/lightning/lightning.component';
 import { AccessoiriesComponent } from './components/accessoiries/accessoiries.component';
 import { SizeComponent } from './components/size/size.component';
+import { SignatureComponent } from './components/signature/signature.component';
+import { FrameSizeComponent } from './components/frame-size/frame-size.component';
 
 const routes: Routes = [
   {
@@ -45,7 +47,7 @@ const COMPONENTS = [
 const MODULES = [CommonModule, SharedModule, RouterModule];
 
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, SignatureComponent, FrameSizeComponent],
   imports: [RouterModule.forChild(routes), ...MODULES],
 })
 export class ConfiguratorModule {}
