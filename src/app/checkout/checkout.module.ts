@@ -7,6 +7,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeDeliveryComponent } from './components/home-delivery/home-delivery.component';
 import { PickupComponent } from './components/pickup/pickup.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const MODULES = [
 ];
 
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, MapComponent],
   imports: [RouterModule.forChild(routes), ...MODULES],
 })
 export class CheckoutModule {}

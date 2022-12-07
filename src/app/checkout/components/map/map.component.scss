@@ -1,0 +1,72 @@
+@import '../../../../assets/scss/variables.scss';
+.map-block {
+    position: relative;
+    iframe {
+        height: 569px;
+        @include max-screen($desktop) {
+            height: 500px;
+        }
+        @include max-screen($tablet) {
+            height: 350px;
+        }
+        @include max-screen($mobile) {
+            height: 210px;
+        }
+    }
+    &__card {
+        top: 50%;
+        left: 50%;
+        width: 193px;
+        margin: 0 auto;
+        padding: 0 12px 12px;
+        position: absolute !important;
+        background-color: $color-white;
+        transform: translate(-50%, -50%);
+        border: 1px solid $color-secondary;
+        &::after {
+            top: 100%;
+            right: 22px;
+            content: '';
+            display: block;
+            position: absolute;
+            border: 11px solid transparent;
+            border-top-color: $color-secondary;
+        }
+       > img {
+            position: absolute;
+            left: calc(50% - 14px);
+            bottom: calc(100% - 12px);
+        }
+        header {
+            margin-bottom: 8px;
+            padding: 13px 0 8px;
+            border-bottom: 1px solid rgba($color-primary, 0.2);
+            img {
+                width: 13px;
+            }
+            span {
+                line-height: 1;
+                font-size: 12px;
+                padding-left: 7px;
+                width: calc(100% - 13px);
+            }
+        }
+        article {
+            h6 {
+                line-height: 1.4;
+                margin-bottom: 2px;
+                color: $color-secondary;
+            }
+            p {
+                line-height: 1.9;
+                font-size: 12px;
+            }
+            .btn {
+                img {
+                    width: 16px;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
