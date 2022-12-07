@@ -5,42 +5,48 @@
     position: relative;
     padding-bottom: 80px;
     background-color: $color-cream;
-    @include max-screen($tablet-lg) {
+    @include max-screen($desktop){
+        padding-bottom: 115px;
+    }
+    @include max-screen($tablet) {
         height: auto;
         min-height: 100vh;
-        padding-bottom: 70px;
         background-color: $color-white;
+    }
+    @include max-screen($mobile){
+        padding-bottom: 105px;
     }
     &__view {
         top: 0;
         right: 15px;
-        overflow: hidden;
-        border-radius: 2px;
         position: absolute;
-        background-color: $color-white;
         a {
             width: 40px;
-            height: 35px;
+            height: 40px;
             display: flex;
-            padding: 5px 10px;
+            padding: 12px 10px;
             align-items: center;
             justify-content: center;
+            background-color: darken(desaturate(adjust-hue($color-cream, 1), 57.43), 15.49);
             @include max-screen($mobile){
                 width: 30px;
                 height: 27px;
                 padding: 7px;
             }
+            img {
+                max-height: 100% !important;
+            }
             &+a {
-                border-left: 1px solid rgba($color-black, 0.05)
+                margin-left: 2px;
             }
             &.active {
-                background-color: rgba($color-primary, 0.7);
+                background-color: $color-primary;
             }
         }
     }
     &__info {
         padding-top: 24px;
-        @include max-screen($tablet-lg) {
+        @include max-screen($tablet) {
             padding-top: 0;
         }
         article {
@@ -48,7 +54,7 @@
             position: relative;
             padding: 45px 0 15px 40px;
             width: calc(100% - 503px);
-            height: calc(100vh - 152px);
+            height: calc(100vh - 220px);
             transition: 0.3s ease-in-out width;
             @include min-screen(2200px) {
                 justify-content: center !important;
@@ -62,9 +68,9 @@
             @include max-screen($desktop) {
                 padding: 15px 0 15px 15px;
                 width: calc(100% - 400px);
-                height: calc(100vh - 182px);
+                height: calc(100vh - 210px);
             }
-            @include max-screen($tablet-lg) {
+            @include max-screen($tablet) {
                 width: 100%;
                 height: auto;
                 padding: 15px 15px 45px;
@@ -72,7 +78,7 @@
                 @include background-image(bottom-pattern, png, center bottom, repeat-x, 300px);
             }
             &::before {
-                @include max-screen($tablet-lg) {
+                @include max-screen($tablet) {
                     top: 0;
                     left: 0;
                     z-index: -1;
@@ -90,10 +96,7 @@
         }
         figure {
             margin-right: -28px;
-            @include max-screen($tablet-lg) {
-                margin-right: 0;
-            }
-            @include min-screen(2200px) {
+            @include max-screen($desktop) {
                 margin-right: 0;
             }
         }
@@ -102,12 +105,10 @@
             padding-bottom: 30px;
             background-color: $color-white;
             transition: 0.3s ease-in-out transform;
-
             @include max-screen($desktop) {
                 width: 400px;
             }
-
-            @include max-screen($tablet-lg) {
+            @include max-screen($tablet) {
                 width: 100%;
                 padding-bottom: 0;
             }
@@ -119,7 +120,7 @@
         z-index: 5;
         width: 100%;
         position: fixed;
-        @include max-screen($tablet-lg) {
+        @include max-screen($tablet) {
             box-shadow: 0 -3px 5px rgba($color-black, 0.05);
         }
     }
@@ -130,6 +131,9 @@
         }
         aside {
             transform: translateX(105%);
+            @include max-screen($tablet){
+                transform: none;
+            }
         }
     }
 }

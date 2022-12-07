@@ -3,7 +3,7 @@
     padding: 15px 24px;
     background-color: $color-white;
     @include max-screen($desktop) {
-        padding: 15px;
+        padding: 15px 15px 50px;
     }
     &__right {
         color: $color-secondary;
@@ -69,83 +69,36 @@
             }
         }
     }
-    &__save {
-        margin: 0 28px 0 auto;
+    &__config {
+        cursor: pointer;
+        font-weight: 500;
+        color: $color-secondary;
         @include max-screen($desktop){
-            margin: 0;
-            right: 10px;
-            bottom: 90px;
-            position: fixed;           
+            left: 15px;
+            bottom: 14px;
+            position: absolute;
         }
-        @include max-screen($mobile){
-            bottom: 80px;
-        }
-        &-holder {
+       
+        img {
+            width: 20px;
+            margin-right: 5px;
             @include max-screen($desktop){
-                width: 35px;
-                height: 35px;
-                padding: 8px;
-                display: flex;
-                cursor: pointer;
-                border-radius: 50%;
-                align-items: center;
-                justify-content: center;    
-                background-color: $color-white;
-                box-shadow: 0 0 15px rgba($color-black, 0.15);
-            }
-            &.active {
-                @include max-screen($desktop){
-                    padding: 10px;
-                }
+                width: 16px;
             }
         }
-        &-wrap {
+        span {
             @include max-screen($desktop){
-                right: 0;
-                opacity: 0;
-                width: 190px;
-                border-radius: 2px;
-                visibility: hidden;
-                position: absolute;
-                transition: 0.3s ease-in-out;
-                bottom: calc(100% + 12px);
-                background-color: $color-white;
-                box-shadow: 0 0 10px rgba($color-black, 0.1);
+                font-size: 14px;
             }
-            &::after {
-                top: 100%;
-                content: '';
-                right: 8px;
-                position: absolute;
-                border: 10px solid transparent;
-                border-top-color: $color-white;
-            }
-            &.active {
-                opacity: 1;
-                visibility: visible;
+            @include max-screen($mobile){
+                font-size: 13px;
             }
         }
-        &-item {
-            cursor: pointer;
-            font-weight: 500;
-            color: $color-secondary;
+        &--save {
             @include max-screen($desktop){
-                padding: 8px 10px;
-                border-top: 1px solid rgba($color-black, 0.05);
-            }
-            img {
-                width: 20px;
-                margin-right: 5px;
-                @include max-screen($desktop){
-                    width: 15px;
-                }
-            }
-            span {
-                @include max-screen($desktop){
-                    font-size: 12px;
-                }
+                left: auto;
+                right: 15px;
             }
         }
     }
-   
 }

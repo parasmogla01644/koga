@@ -53,9 +53,4 @@ export class ConfigFooterComponent implements OnInit {
   get isDisabled() {
     return this.currentStepConfig?.[this.currentStep?.id];
   }
-
-  contextToggle: boolean = false;
-  clickContextToggle() {
-      this.contextToggle = !this.contextToggle;
-  }
 }
