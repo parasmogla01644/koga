@@ -158,7 +158,7 @@
             @include max-screen($mobile){
                 overflow-y: auto;
                 padding: 0;
-                height: calc(100vh - 303px);
+                height: calc(100vh - 320px);
             }
 
             .flag {
