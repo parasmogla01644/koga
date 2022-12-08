@@ -2,6 +2,7 @@
 
 .configurator {
     height: 100vh;
+    overflow: hidden;
     position: relative;
     padding-bottom: 80px;
     background-color: $color-cream;
@@ -45,9 +46,8 @@
         }
     }
     &__info {
-        padding-top: 24px;
-        @include max-screen($tablet) {
-            padding-top: 0;
+        @include min-screen($desktop) {
+            padding-top: 24px;
         }
         article {
             z-index: 1;
@@ -101,17 +101,29 @@
             }
         }
         aside {
+            right: 0;
+            top: 96px;
             width: 503px;
-            padding-bottom: 30px;
+            position: absolute;
+            padding-bottom: 80px;
+            height: calc(100vh - 96px);
             background-color: $color-white;
             transition: 0.3s ease-in-out transform;
             @include max-screen($desktop) {
+                top: 72px;
                 width: 400px;
+                padding-bottom: 115px;
+                height: calc(100vh - 72px);
             }
             @include max-screen($tablet) {
                 width: 100%;
+                height: auto;
+                position: static;
                 padding-bottom: 0;
             }
+            &::-webkit-scrollbar {
+                width: 0;
+            }        
         }
     }
     &__bottom {

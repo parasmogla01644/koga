@@ -1,19 +1,14 @@
 .bike-info {
     width: 100%;
+    height: 100%;
     overflow-y: auto;
     padding: 0 90px 66px;
-    height: calc(100vh - 152px);
     background-color: $color-white;
     @include max-screen($desktop){
         padding: 0 40px 40px;
-        height: calc(100vh - 182px);
     }
-    @include max-screen($tablet-lg){
+    @include max-screen($tablet){
         padding: 30px 15px;
-        height: auto;
-    }
-    &::-webkit-scrollbar {
-        width: 0;
     }
     h1{
         top: 0;
@@ -23,10 +18,10 @@
         padding: 66px 66px 10px;
         background-color: $color-white;
         @include max-screen($desktop){
-            margin: 0 -40px 34px;
+            margin: 0 -40px 15px;
             padding: 40px 40px 10px;
         }
-        @include max-screen($tablet-lg){
+        @include max-screen($tablet){
             margin: 0;
             padding: 0 0 20px;
             position: static;
