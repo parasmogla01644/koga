@@ -1,7 +1,14 @@
 <div class="frame-size pb-2">
-    <p>Select your frame size</p>
-
-    <div class="form-check my-3">
+  <p>Select your frame size</p>
+  <ng-container *ngFor="let size of sizeConfig">
+    <div class="form-check my-3" (click)="selectSize(size)">
+      <input class="form-check-input" type="radio" name="size" [id]="size.id">
+      <label class="form-check-label fw-normal" [attr.for]="size.id" role="button">
+        {{size.value}}{{size.unit}}
+      </label>
+    </div>
+  </ng-container>
+  <!-- <div class="form-check my-3">
         <input class="form-check-input" type="radio" name="signature" id="signature01">
         <label class="form-check-label fw-normal" for="signature01" role="button">50cm</label>
     </div>
@@ -20,5 +27,5 @@
     <div class="form-check my-3">
         <input class="form-check-input" type="radio" name="signature" id="signature05">
         <label class="form-check-label fw-normal" for="signature05" role="button">63cm</label>
-    </div>
+    </div> -->
 </div>

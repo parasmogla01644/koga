@@ -53,12 +53,20 @@ export class SizeComponent implements OnInit {
     this.openModal = false;
   }
 
-  selectCard(card: any) {
-    if (card.isDisabled) {
-      return;
-    }
-    card.checked = true;
-    this.updateCurrentStep(card);
+  // selectCard(card: any) {
+  //   if (card.isDisabled) {
+  //     return;
+  //   }
+  //   card.checked = true;
+
+  //   this.updateCurrentStep(card);
+  // }
+  selectedSize(value: any) {
+    this.updateCurrentStep(value);
+  }
+
+  selectedSignature(value: any) {
+    this.updateCurrentStep(value);
   }
 
   updateCurrentStep(value: any) {
@@ -66,5 +74,10 @@ export class SizeComponent implements OnInit {
     let data: any = {};
     data[id] = value;
     this.stepperService.updateCurrentStepConfig(data);
+  }
+
+  get stepData() {
+    let id = this.stepperService.currentStep.value?.id;
+    return this.stepperService.stepsConfig.value?.[id];
   }
 }

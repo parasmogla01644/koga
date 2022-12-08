@@ -6,10 +6,10 @@
         <ng-template ngbPanelContent>
           <ng-container [ngSwitch]="tab.ref">
             <ng-container *ngSwitchCase="'sizeRef'">
-              <app-frame-size></app-frame-size>
+              <app-frame-size (selectedSize)="selectedSize($event)"></app-frame-size>
             </ng-container>
             <ng-container *ngSwitchCase="'signatureRef'">
-              <app-signature></app-signature>
+              <app-signature (selectedSignature)="selectedSignature($event)"></app-signature>
             </ng-container>
           </ng-container>
         </ng-template>
