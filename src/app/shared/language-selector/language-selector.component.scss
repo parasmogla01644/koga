@@ -173,7 +173,12 @@
                     width: calc(20% - 32px);
                     margin: 0 15px 15px;
                 }
-
+                @include max-screen($desktop){
+                    width: calc(25% - 30px);
+                }
+                @include max-screen($tablet){
+                    width: calc(33.3% - 30px);
+                }
                 @include max-screen($mobile) {
                     width: 100%;
                     padding: 15px;
@@ -182,13 +187,11 @@
                 }
 
                 span {
-                    color: $color-white;
-                    font-size: 20px;
+                    font-size: 16px;
                     font-weight: 400;
-
+                    color: $color-white;
                     @include max-screen($mobile) {
                         color: $color-darkBlue;
-                        font-size: 16px;
                     }
                 }
 
@@ -234,6 +237,16 @@
                         @include max-screen($mobile){
                             white-space: normal;
                         }
+                    }
+                }
+            }
+            .languageModal__wrapper-flags {
+                .flag {
+                    @include max-screen($tablet){
+                        width: calc(25% - 30px);
+                    }
+                    @include max-screen($mobile){
+                        width: 100%;
                     }
                 }
             }

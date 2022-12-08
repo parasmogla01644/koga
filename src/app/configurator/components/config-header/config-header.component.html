@@ -1,23 +1,17 @@
 <div class="d-flex flex-wrap align-items-center configHeader">
   <a [routerLink]="['/']" class="configHeader__back d-flex align-items-center"><img src="assets/images/back.svg"
       alt="back">WorldTraveller-S</a>
-  <ol>
-    <li>
-      <p class="mb-0" (click)="languageToggle()">
+
+    <div class="configHeader__language" (click)="languageToggle()">
         <span>Landkeuze</span>
         <img src="assets/images/flag-uk.png" alt="" />
-      </p>
-      <!-- <ol [ngClass]="dropDownStatus ? 'is-active' : ''">
-        <li>EN</li>
-        <li>NL</li>
-      </ol> -->
-    </li>
-  </ol>
+    </div>
+
   <ul class="nav nav-tabs align-items-center" id="myTab" role="tablist">
     <ng-container *ngFor="let tab of headerTab; let i = index">
       <li class="nav-item" role="presentation">
         <button class="nav-link" [disabled]="!currentStepConfig?.[tab.id]" (click)="selectTab(i)"
-          [ngClass]="{'active': tab.selected}" [id]="tab.id" data-bs-toggle="tab" [attr.data-bs-target]="tab.target"
+          [ngClass]="{'is-active': tab.selected, 'is-previous': currentStepConfig?.[tab.id]}" [id]="tab.id" data-bs-toggle="tab" [attr.data-bs-target]="tab.target"
           type="button" role="tab" [attr.aria-controls]="tab.controls" [attr.aria-selected]="tab.selected"> {{i+1}}.
           {{tab.title}}</button>
       </li>

@@ -56,6 +56,8 @@
                 color: $color-darkBlue;
                 padding: 0;
                 border: 0;
+                opacity: 0.5;
+                cursor: not-allowed;
                 border-radius: 0;
                 position: relative;
                 background-color: transparent;
@@ -72,74 +74,44 @@
                         display: none;
                     }
                 }
-                &.active {
+                &.is-active {
+                    opacity: 1;
                     color: $color-primary;
+                    cursor: pointer;
                     &::after {
                         opacity: 1;
                     }
                 }
+                &.is-previous {
+                    opacity: 1;
+                    cursor: pointer;
+                }
             }
         }
     }
-    ol {
-        padding: 0;
+    &__language {
         margin: 0 15px 0 0;
+        cursor: pointer;
         @include min-screen(2200px){
             margin-left: auto;
         }
         @include max-screen($desktop) {
             margin-right: 0;
             margin-left: auto;
+            padding-right: 12px;
+            @include background-image(angle-down, svg, right, no-repeat, 8px);
         }
-        li {
-            list-style: none;
-            position: relative;
-            p {
-                cursor: pointer;
-                @include max-screen($desktop) {
-                    padding-right: 12px;
-                    @include background-image(angle-down, svg, right, no-repeat, 8px);
-                }
-                span {
-                    user-select: none;
-                    @include max-screen($desktop) {
-                        display: none;
-                    }
-                }
-                img {
-                    width: 27px;
-                    display: block;
-                    @include min-screen($desktop) {
-                        display: none;
-                    }
-                }
-            }
-            ol {
-                left: 0;
-                top: 23px;
-                padding: 0;
+        span {
+            user-select: none;
+            @include max-screen($desktop) {
                 display: none;
-                min-width: 100%;
-                position: absolute;
-                border-radius: 4px;
-                background-color: $color-white;
-                box-shadow: 0 3px 5px rgba($color-black, 0.05);
-                @include max-screen($desktop){
-                    right: 0;
-                    left: auto;
-                    min-width: 70px;
-                }
-                li {
-                    cursor: pointer;
-                    padding: 5px 10px;
-                    font-size: 14px;
-                    & + li {
-                        border-top: 1px solid rgba($color-black, 0.05);
-                    }
-                }
-                &.is-active {
-                    display: block;
-                }
+            }
+        }
+        img {
+            width: 27px;
+            display: block;
+            @include min-screen($desktop) {
+                display: none;
             }
         }
     }

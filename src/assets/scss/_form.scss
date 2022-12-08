@@ -78,9 +78,9 @@
 
 .form-check {
     position: relative;
-    padding-left: 48px;
-    @include max-screen($mobile){
-        padding-left: 35px;
+    padding-left: 35px;
+    @include max-screen($tablet){
+        padding-left: 30px;
     }
     & > label {
         font-weight: 700;
@@ -95,15 +95,16 @@
             }
         }
         &::before {
-            @include round-image(32px);
+            @include round-image(26px);
             content: "";
             border: 2px solid $color-secondary;
             display: block;
             position: absolute;
             left: 0;
-            top: -4px;
+            top: -3px;
             @include max-screen($tablet) {
-                @include round-image(28px);
+                top: -1px;
+                @include round-image(22px);
             }
         }
     }
@@ -112,15 +113,17 @@
         &:checked {
             & + label {
                 &::after {
-                    @include round-image(24px);
+                    @include round-image(16px);
                     content: "";
                     background-color: $color-secondary;
                     display: block;
                     position: absolute;
-                    left: 4px;
-                    top: 0;
+                    left: 5px;
+                    top: 2px;
                     @include max-screen($tablet) {
-                        @include round-image(20px);
+                        top: 3px;
+                        left: 4px;
+                        @include round-image(14px);
                     }
                 }
             }
