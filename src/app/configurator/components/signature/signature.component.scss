@@ -8,5 +8,14 @@
     }
     label {
         font-size: 14px;
+        &::before {
+            top: -1px;
+        }
+        &::after {
+            top: 4px;
+            @include max-screen($tablet){
+                top: 3px;
+            }
+        }
     }
 }
