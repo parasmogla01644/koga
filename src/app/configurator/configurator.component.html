@@ -1,11 +1,14 @@
 <div class="configurator" [ngClass]="{'configurator--view': viewToggle}">
   <app-config-header></app-config-header>
   <div class="configurator__info d-flex flex-wrap">
-    <article class="d-flex justify-content-lg-end justify-content-center align-items-center" [ngClass]="{'justify-content-md-center px-3':viewToggle}">
-        <div class="configurator__view d-none d-lg-flex">
-            <a [ngClass]="{'active': viewToggle}" (click)="clickViewToggle()"><img src="assets/images/eye.svg" alt="Eye"/></a>
-            <a [ngClass]="{'active': !viewToggle}" (click)="clickViewToggle()"><img src="assets/images/edit-solid.svg" alt="Edit"/></a>
-        </div>
+    <article class="d-flex justify-content-lg-end justify-content-center align-items-center"
+      [ngClass]="{'justify-content-md-center px-3':viewToggle}">
+      <div class="configurator__view d-none d-lg-flex">
+        <a [ngClass]="{'active': viewToggle}" (click)="clickViewToggle(true)"><img src="assets/images/eye.svg"
+            alt="Eye" /></a>
+        <a [ngClass]="{'active': !viewToggle}" (click)="clickViewToggle(false)"><img src="assets/images/edit-solid.svg"
+            alt="Edit" /></a>
+      </div>
       <figure>
         <img src="/assets/images/cycle.png" alt="cycle">
       </figure>

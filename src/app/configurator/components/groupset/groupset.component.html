@@ -4,8 +4,8 @@
     <ng-container *ngFor="let group of expansionList; let i = index">
       <ngb-panel [title]="group.title" [id]="(i).toString()">
         <ng-template ngbPanelContent>
-          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a>meer informatie</a></p>
-
+          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri..<a (click)="toggleModal()">meer
+              informatie</a></p>
           <div class="row">
             <ng-container *ngFor="let card of AppCards">
               <div class="col-6 d-flex mb-3" (click)="selectCard(card)">
@@ -19,3 +19,9 @@
     </ng-container>
   </ngb-accordion>
 </div>
+
+<app-modal [activeClass]="openModal" (close)="closeModal()" headerTitle="Meer informatie Frame">
+  <ng-container body>
+    <app-frame-info></app-frame-info>
+  </ng-container>
+</app-modal>

@@ -11,6 +11,7 @@ import { StepperService } from '@service/stepper.service';
 export class WheelsComponent implements OnInit {
   AppCards: IAppCards[] = JSON.parse(JSON.stringify(AppCards));
   activeIds: string[] = ['0'];
+  openModal: boolean = false;
   expansionList: IExpansionTabs[] = [
     {
       title: 'Rims',
@@ -45,13 +46,13 @@ export class WheelsComponent implements OnInit {
   handleChange(event: any) {
     console.log(event);
   }
-  // toggleModal() {
-  //   this.openModal = !this.openModal;
-  // }
+  toggleModal() {
+    this.openModal = !this.openModal;
+  }
 
-  // closeModal() {
-  //   this.openModal = false;
-  // }
+  closeModal() {
+    this.openModal = false;
+  }
 
   selectCard(card: any) {
     if (card.isDisabled) {
