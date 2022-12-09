@@ -2,7 +2,7 @@
   <h3>Gegevens</h3>
   <form class="mt-md-4 mt-3" *ngIf="groupName" [formGroup]="groupName">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-12">
         <div class="form-floating">
           <input type="text" formControlName="name" class="form-control" id="floatingInput"
             placeholder="enter first name">
@@ -26,30 +26,30 @@
           <app-error-msg [groupName]="groupName" controlName="lastName"></app-error-msg>
         </div>
       </div> -->
-    </div>
-    <div class="row">
-      <div class="col-md-5 col-6">
-        <div class="col-md-3 col-6">
+      
+        <div class="col-md-6">
           <div class="form-floating">
             <input type="text" formControlName="address" class="form-control" id="floatingInput" placeholder="Address">
             <label for="floatingInput">Address</label>
             <app-error-msg [groupName]="groupName" controlName="address"></app-error-msg>
           </div>
         </div>
-        <div class="form-floating">
-          <input type="text" formControlName="postCode" class="form-control" id="floatingInput"
-            placeholder="name@example.com">
-          <label for="floatingInput">Postcode<span>*</span></label>
-          <app-error-msg [groupName]="groupName" controlName="postCode"></app-error-msg>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" formControlName="postCode" class="form-control" id="floatingInput"
+                  placeholder="name@example.com">
+                <label for="floatingInput">Postcode<span>*</span></label>
+                <app-error-msg [groupName]="groupName" controlName="postCode"></app-error-msg>
+              </div>      
         </div>
-        <div class="col-md-3 col-6">
+        <div class="col-md-6">
           <div class="form-floating">
             <input type="text" formControlName="city" class="form-control" id="floatingInput" placeholder="City">
             <label for="floatingInput">City</label>
             <app-error-msg [groupName]="groupName" controlName="city"></app-error-msg>
           </div>
         </div>
-      </div>
+      
       <!-- <div class="col-md-3 col-6">
         <div class="form-floating">
           <input type="text" formControlName="houseNumber" class="form-control" id="floatingInput"
@@ -65,9 +65,7 @@
           <label for="floatingInput">Straatnaam</label>
         </div>
       </div> -->
-    </div>
-    <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="form-floating">
           <select class="form-select" formControlName="country" id="floatingSelect"
             aria-label="Floating label select example">
@@ -80,8 +78,6 @@
           <app-error-msg [groupName]="groupName" controlName="country"></app-error-msg>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-md-12">
         <div class="form-floating suffix">
           <input type="text" formControlName="email" class="form-control" id="floatingInput"
@@ -92,8 +88,6 @@
           </app-error-msg>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-md-12">
         <div class="form-floating suffix">
           <input type="text" appDigitOnly formControlName="phone" class="form-control" id="floatingInput"
