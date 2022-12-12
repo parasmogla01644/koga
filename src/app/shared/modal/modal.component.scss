@@ -68,9 +68,11 @@
         }
     }
     &__body {
+        color: $color-white;
         @include max-screen($mobile){
             overflow-y: auto;
             margin: 0 -15px;
+            color: $color-secondary;
             padding: 0 15px 15px;
             height: calc(100vh - 173px);
         }

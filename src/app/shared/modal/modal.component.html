@@ -6,7 +6,7 @@
         </span>
         <div class="modal-block__inner">
             <div class="modal-block__header" *ngIf="headerTitle">
-                <h2>{{headerTitle}}</h2>
+                <h2 [ngClass]="headerCustomClass">{{headerTitle}}</h2>
             </div>
             <ng-container>
                 <div class="modal-block__body">

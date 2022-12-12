@@ -96,8 +96,8 @@
         }
         label {
             padding-left: 30px;
-            display: inline-flex;
             position: relative;
+            display: inline-flex;
             @include max-screen($mobile) {
                 padding-left: 25px;
             }
@@ -112,6 +112,9 @@
                 border-radius: 2px;
                 position: absolute;
                 border: 1px solid $color-secondary;
+                @include max-screen($mobile){
+                    top: 2px;
+                }
             }
             &::after {
                 content: "";
@@ -125,7 +128,10 @@
                 position: absolute;
                 border-radius: 2px;
                 background-color: $color-secondary;
+                @include max-screen($mobile){
+                    top: 4px;
+                }
             }
         }
-    }
+    } 
 }

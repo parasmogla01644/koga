@@ -71,12 +71,8 @@
   </div>
 </div>
 
-<app-modal [activeClass]="showInfoModal" (close)="closeModal()" headerTitle="Information">
+<app-modal [activeClass]="showInfoModal" (close)="closeModal()" [headerCustomClass]="['px-0']" headerTitle="Title">
   <ng-container body>
-    <div class="tab-pane fade show" id="nav-Specificaties" role="tabpanel" aria-labelledby="nav-Specificaties">
-      <p>
-        Description
-      </p>
-    </div>
-  </ng-container>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse atque eos harum, officia maiores ab dolorum voluptates enim mollitia, modi debitis doloremque aliquam inventore nesciunt dolore magnam minus iusto. Nam, dolorum porro adipisci quae officiis neque aut nulla consequatur, accusantium non earum similique culpa voluptatibus! Nihil cumque est, aperiam expedita quasi et quia nostrum? Soluta vero ullam aperiam, magnam corporis autem explicabo, officia cum temporibus facere quod quia consequatur veniam et? Ipsa tempore nihil vero vel iure quae, placeat animi eius quas sit reprehenderit quam obcaecati eos magnam nisi doloribus! Provident voluptatibus ullam accusamus perspiciatis ea omnis magni aperiam repudiandae?</p>
+    </ng-container>
 </app-modal>
