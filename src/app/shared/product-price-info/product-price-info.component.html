@@ -13,21 +13,22 @@
       <p>Signature</p>
       <strong>€ 0.00</strong>
     </div> -->
-    <div class="product-price__price d-flex justify-content-between align-items-end">
-      <strong>Total</strong>
-      <div class="text-end">
-        <aside class="mb-2">
-          <!-- Condition may updated as per logic for VAT calculation. -->
-          <p class="mb-0">
+    
+    <div class="product-price__info d-flex justify-content-end" [ngClass]="{'product-price__info-text': !priceConfig?.vat}">
+        <!-- Condition may updated as per logic for VAT calculation. -->
+        <p class="mb-0">
             <ng-container *ngIf="priceConfig?.vat;else textRef">
-              incl. BTW €{{priceConfig?.vat | number : '0.0-2'}}
+            incl. BTW €{{priceConfig?.vat | number : '0.0-2'}}
             </ng-container>
             <ng-template #textRef>
-              The VAT will be calculated in the next step.
+            The VAT will be calculated in the next step.
             </ng-template>
-          </p>
-          <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
-        </aside>
+        </p>
+        <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
+    </div>
+    <div class="product-price__price d-flex flex-wrap justify-content-between align-items-end">
+      <strong>Total</strong>
+      <div class="text-end">
         <strong>€ {{priceConfig?.totalPrice | number : '0.0-2'}}</strong>
       </div>
     </div>
@@ -61,7 +62,7 @@
     </div>
 
     <div class="product-price__note" *ngIf="description">
-      <p>Als je op ‘Betalen’ klikt ga je akkoord met de op jouw bestelling van toepassing zijnde (algemene)
+      <p>Als je op 'Betalen' klikt ga je akkoord met de op jouw bestelling van toepassing zijnde (algemene)
         <a>voorwaarden</a> van Koga. </p>
     </div>
 
