@@ -71,9 +71,12 @@ export class SizeComponent implements OnInit {
 
   updateCurrentStep(value: any) {
     let id: string = this.stepperService.currentStep.value?.id;
-    let data: any = {};
-    data[id] = value;
-    this.stepperService.updateCurrentStepConfig(data);
+    let details: any = {};
+    details[id] = {
+      ...this.stepData,
+      ...value,
+    };
+    this.stepperService.updateCurrentStepConfig(details);
   }
 
   get stepData() {

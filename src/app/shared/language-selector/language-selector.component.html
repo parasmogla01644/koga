@@ -30,12 +30,12 @@
 
       <div class="languageModal__scroll d-md-flex" [ngClass]="{'d-none': status}">
         <ul class="nav nav-tabs" id="myTabModal" role="tablist">
-            <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
+          <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
             <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
-                [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
-                [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
-            </li>
-            <!-- <li class="nav-item" role="presentation">
+              [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
+              [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
+          </li>
+          <!-- <li class="nav-item" role="presentation">
             <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
                 aria-controls="Asia" aria-selected="false">Asia</button>
             </li>
@@ -52,13 +52,14 @@
                 aria-controls="Asia" aria-selected="false">Ocenia</button>
             </li> -->
         </ul>
-     </div>
+      </div>
       <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
           <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">
             <div (click)="clickToggle()" *ngFor="let item of countryList; let i = index"
-              class="d-flex align-items-center flag notActive" [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}"
-              role="button" (click)="selectCountry(item)">
+              class="d-flex align-items-center flag notActive"
+              [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}" role="button"
+              (click)="selectCountry(item)">
               <img src="/assets/images/angola.svg" [alt]="item?.['name']" [title]="item?.['name']" class="me-2">
               <span>{{item?.['name']}}</span>
             </div>
@@ -86,7 +87,8 @@
         </div>
       </div>
     </div>
-    <div class="d-md-flex justify-content-end languageModal__next" [ngClass]="{'active': status}">
+    <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedLanguage"
+      [ngClass]="{'active': status}">
       <button class="btn btn-white" [disabled]="!selectedLanguage" (click)="saveLanguage()">Bevestig en start</button>
     </div>
   </div>

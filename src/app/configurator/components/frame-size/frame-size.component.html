@@ -2,8 +2,8 @@
   <p>Select your frame size</p>
   <ng-container *ngFor="let size of sizeConfig">
     <div class="form-check my-3" (click)="selectSize(size)">
-      <input class="form-check-input" type="radio" name="size" [id]="size.id">
-      <label class="form-check-label fw-normal" [attr.for]="size.id" role="button">
+      <input class="form-check-input" [value]="size?.checked" type="radio" name="size" [id]="size.id">
+      <label class="form-check-label fw-normal" [ngClass]="{'active': size.checked}" [attr.for]="size.id" role="button">
         {{size.value}}{{size.unit}}
       </label>
     </div>

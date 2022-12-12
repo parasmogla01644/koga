@@ -42,7 +42,7 @@ export class LanguageSelectorComponent implements OnInit {
   setCountryList() {
     this.countryList =
       COUNTRIES_AS_PER_CONTINETS?.[this.selectedContinent?.continent_code];
-    this.selectCountry(this.countryList?.[0]);
+    // this.selectCountry(this.countryList?.[0]);
   }
 
   selectContinent(index: number) {

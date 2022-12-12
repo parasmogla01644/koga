@@ -12,26 +12,31 @@ export class FrameSizeComponent implements OnInit {
       id: 'size01',
       value: 50,
       unit: 'cm',
+      checked: false,
     },
     {
       id: 'size02',
       value: 54,
       unit: 'cm',
+      checked: false,
     },
     {
       id: 'size03',
       value: 57,
       unit: 'cm',
+      checked: false,
     },
     {
       id: 'size04',
       value: 60,
       unit: 'cm',
+      checked: false,
     },
     {
       id: 'size05',
       value: 63,
       unit: 'cm',
+      checked: false,
     },
   ];
   @Output() selectedSize: EventEmitter<any> = new EventEmitter();
@@ -43,6 +48,13 @@ export class FrameSizeComponent implements OnInit {
   }
 
   selectSize(size: any) {
+    this.sizeConfig.forEach((item) => {
+      if (item?.id !== size?.id) {
+        item.checked = false;
+      } else {
+        item.checked = true;
+      }
+    });
     this.selectedSize.emit({ size: size });
   }
 

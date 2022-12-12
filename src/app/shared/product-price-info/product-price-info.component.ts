@@ -12,6 +12,7 @@ export class ProductPriceInfoComponent implements OnInit {
   @Input() social: boolean = false;
   @Input() accept: boolean = false;
   @Input() isDisable: boolean = true;
+  showInfoModal: boolean = false;
 
   constructor(private readonly router: Router) {}
 
@@ -19,5 +20,13 @@ export class ProductPriceInfoComponent implements OnInit {
 
   gotoCheckout() {
     this.router.navigate(['checkout']);
+  }
+
+  openModal() {
+    this.showInfoModal = true;
+  }
+
+  closeModal() {
+    this.showInfoModal = false;
   }
 }

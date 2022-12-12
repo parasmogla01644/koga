@@ -18,7 +18,7 @@
       <div class="text-end">
         <aside class="mb-2">
           <p class="mb-0">incl. BTW €434,32</p>
-          <img src="assets/images/info.svg" alt="Info" />
+          <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
         </aside>
         <strong>€ 4,943.99</strong>
       </div>
@@ -70,3 +70,13 @@
     </button>
   </div>
 </div>
+
+<app-modal [activeClass]="showInfoModal" (close)="closeModal()" headerTitle="Information">
+  <ng-container body>
+    <div class="tab-pane fade show" id="nav-Specificaties" role="tabpanel" aria-labelledby="nav-Specificaties">
+      <p>
+        Description
+      </p>
+    </div>
+  </ng-container>
+</app-modal>
