@@ -3,8 +3,8 @@ import {
   countries,
   COUNTRIES_AS_PER_CONTINETS,
 } from '@shared/constants/countries.contants';
-import { CONTINENTS_CONFIG } from '../constants/languageSelector.constants';
-import { IContinentsConfig } from '../models/languageSelector.models';
+import { CONTINENTS_CONFIG } from '../../constants/languageSelector.constants';
+import { IContinentsConfig } from '../../models/languageSelector.models';
 @Component({
   selector: 'app-language-selector',
   templateUrl: './language-selector.component.html',

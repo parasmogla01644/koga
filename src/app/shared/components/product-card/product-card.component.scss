@@ -1,0 +1,39 @@
+@import "../../../../assets/scss/variables.scss";
+.product-card {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+  flex-direction: column;
+  &__wrap {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $color-disabled;
+    figure {
+      flex: 1;
+      height: 98px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    figcaption {
+      flex: 0;
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.8;
+        width: calc(100% - 20px);
+      }
+    }
+  }
+  &__price {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 10px 0 0;
+    min-height: 22px;
+    text-transform: uppercase;
+  }
+  &--noprice {
+    max-height: calc(100% - 47px);
+  }
+}
