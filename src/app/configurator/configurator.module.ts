@@ -42,12 +42,14 @@ const COMPONENTS = [
   LightningComponent,
   AccessoiriesComponent,
   SizeComponent,
+  SignatureComponent,
+  FrameSizeComponent,
 ];
 
 const MODULES = [CommonModule, SharedModule, RouterModule];
 
 @NgModule({
-  declarations: [...COMPONENTS, SignatureComponent, FrameSizeComponent],
+  declarations: [...COMPONENTS],
   imports: [RouterModule.forChild(routes), ...MODULES],
 })
 export class ConfiguratorModule {}
