@@ -144,6 +144,9 @@ export class FrameComponent implements OnInit {
     if (card.isDisabled) {
       return;
     }
+    this.AppCards.forEach((item: any) => {
+      item.checked = false;
+    });
     card.checked = true;
     this.selectedFrame = card;
     this.updateCurrentStep(card);
