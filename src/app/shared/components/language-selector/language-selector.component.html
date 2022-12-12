@@ -35,22 +35,6 @@
               [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
               [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
           </li>
-          <!-- <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-                aria-controls="Asia" aria-selected="false">Asia</button>
-            </li>
-            <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-                aria-controls="Asia" aria-selected="false">Amerika</button>
-            </li>
-            <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-                aria-controls="Asia" aria-selected="false">Europe</button>
-            </li>
-            <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Asia" data-bs-toggle="tab" data-bs-target="#nav-Asia" type="button" role="tab"
-                aria-controls="Asia" aria-selected="false">Ocenia</button>
-            </li> -->
         </ul>
       </div>
       <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
@@ -80,9 +64,6 @@
               (click)="selectLanguages(lang)">
               <span>{{lang}}</span>
             </div>
-            <!-- <div class="d-flex align-items-center flag active" role="button">
-              <span>English</span>
-            </div> -->
           </div>
         </div>
       </div>

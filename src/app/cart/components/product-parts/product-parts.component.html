@@ -1,7 +1,6 @@
 <div class="oversight">
   <h2>Overzicht</h2>
   <div class="row">
-    <!-- loop for product main product section start -->
     <div class="col-lg-6 mb-4 d-flex" *ngFor="let step of steps; let i = index">
       <div class="oversight__box">
         <h5> {{i+1}}. {{tabs?.[step]?.title}} </h5>
@@ -11,12 +10,6 @@
               <div class="oversight__box-item" (click)="editTabDetails(i)">
                 <app-product-card [infoText]="stepsDetails?.[step]?.infoText"></app-product-card>
               </div>
-              <!-- <div class="oversight__box-item">
-                <app-product-card [price]="false" infoText="High frame"></app-product-card>
-              </div>
-              <div class="oversight__box-item">
-                <app-product-card infoText="High frame"></app-product-card>
-              </div> -->
             </div>
           </div>
           <div class="oversight__box-price text-end">

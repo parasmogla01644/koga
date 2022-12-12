@@ -11,21 +11,6 @@
           <span class="invalid-feedback">Please add error msg </span>
         </div>
       </div>
-      <!-- <div class="col-md-3">
-        <div class="form-floating">
-          <input type="text" formControlName="middleName" class="form-control" id="floatingInput"
-            placeholder="name@example.com">
-          <label for="floatingInput">Tussenvoegsel</label>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-floating">
-          <input type="text" formControlName="lastName" class="form-control" id="floatingInput"
-            placeholder="enter last name">
-          <label for="floatingInput">Achternaam<span>*</span></label>
-          <app-error-msg [groupName]="groupName" controlName="lastName"></app-error-msg>
-        </div>
-      </div> -->
 
       <div class="col-md-6">
         <div class="form-floating">
@@ -49,35 +34,8 @@
           <app-error-msg [groupName]="groupName" controlName="city"></app-error-msg>
         </div>
       </div>
-
-      <!-- <div class="col-md-3 col-6">
-        <div class="form-floating">
-          <input type="text" formControlName="houseNumber" class="form-control" id="floatingInput"
-            placeholder="name@example.com">
-          <label for="floatingInput">Huisnr</label>
-          <app-error-msg [groupName]="groupName" controlName="houseNumber"></app-error-msg>
-        </div>
-      </div> -->
-      <!-- <div class="col-md-4">
-        <div class="form-floating">
-          <input type="text" formControlName="streetName" class="form-control" id="floatingInput"
-            placeholder="name@example.com">
-          <label for="floatingInput">Straatnaam</label>
-        </div>
-      </div> -->
       <div class="col-md-6">
         <app-select [fgroup]="groupName" controlName="country"></app-select>
-        <!-- <div class="form-floating">
-          <select class="form-select" formControlName="country" id="floatingSelect"
-            aria-label="Floating label select example">
-            <option selected>Open this select menu</option>
-            <option value="1">UK</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <label for="floatingSelect">Country<span>*</span></label>
-          <app-error-msg [groupName]="groupName" controlName="country"></app-error-msg>
-        </div> -->
       </div>
       <div class="col-md-12">
         <div class="form-floating suffix">

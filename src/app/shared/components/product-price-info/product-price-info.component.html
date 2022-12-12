@@ -5,26 +5,19 @@
       <p>Configuratie <br class="d-none d-md-block">(stap 1 - 9)</p>
       <strong>€ {{priceConfig?.price | number : '0.2-2'}}</strong>
     </div>
-    <!-- <div class="mb-2 d-flex justify-content-between">
-      <p>Maat</p>
-      <strong>€ 43.99</strong>
-    </div>
-    <div class="mb-2 d-flex justify-content-between">
-      <p>Signature</p>
-      <strong>€ 0.00</strong>
-    </div> -->
-    
-    <div class="product-price__info d-flex justify-content-end" [ngClass]="{'product-price__info-text': !priceConfig?.vat}">
-        <!-- Condition may updated as per logic for VAT calculation. -->
-        <p class="mb-0">
-            <ng-container *ngIf="priceConfig?.vat;else textRef">
-            incl. BTW €{{priceConfig?.vat | number : '0.0-2'}}
-            </ng-container>
-            <ng-template #textRef>
-            The VAT will be calculated in the next step.
-            </ng-template>
-        </p>
-        <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
+
+    <div class="product-price__info d-flex justify-content-end"
+      [ngClass]="{'product-price__info-text': !priceConfig?.vat}">
+      <!-- Condition may updated as per logic for VAT calculation. -->
+      <p class="mb-0">
+        <ng-container *ngIf="priceConfig?.vat;else textRef">
+          incl. BTW €{{priceConfig?.vat | number : '0.0-2'}}
+        </ng-container>
+        <ng-template #textRef>
+          The VAT will be calculated in the next step.
+        </ng-template>
+      </p>
+      <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
     </div>
     <div class="product-price__price d-flex flex-wrap justify-content-between align-items-end">
       <strong>Total</strong>
