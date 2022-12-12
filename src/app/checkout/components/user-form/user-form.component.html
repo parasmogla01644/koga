@@ -26,30 +26,30 @@
           <app-error-msg [groupName]="groupName" controlName="lastName"></app-error-msg>
         </div>
       </div> -->
-      
-        <div class="col-md-6">
-          <div class="form-floating">
-            <input type="text" formControlName="address" class="form-control" id="floatingInput" placeholder="Address">
-            <label for="floatingInput">Address</label>
-            <app-error-msg [groupName]="groupName" controlName="address"></app-error-msg>
-          </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" formControlName="address" class="form-control" id="floatingInput" placeholder="Address">
+          <label for="floatingInput">Address</label>
+          <app-error-msg [groupName]="groupName" controlName="address"></app-error-msg>
         </div>
-        <div class="col-md-6">
-            <div class="form-floating">
-                <input type="text" formControlName="postCode" class="form-control" id="floatingInput"
-                  placeholder="name@example.com">
-                <label for="floatingInput">Postcode<span>*</span></label>
-                <app-error-msg [groupName]="groupName" controlName="postCode"></app-error-msg>
-              </div>      
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" formControlName="postCode" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Postcode<span>*</span></label>
+          <app-error-msg [groupName]="groupName" controlName="postCode"></app-error-msg>
         </div>
-        <div class="col-md-6">
-          <div class="form-floating">
-            <input type="text" formControlName="city" class="form-control" id="floatingInput" placeholder="City">
-            <label for="floatingInput">City</label>
-            <app-error-msg [groupName]="groupName" controlName="city"></app-error-msg>
-          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" formControlName="city" class="form-control" id="floatingInput" placeholder="City">
+          <label for="floatingInput">City</label>
+          <app-error-msg [groupName]="groupName" controlName="city"></app-error-msg>
         </div>
-      
+      </div>
+
       <!-- <div class="col-md-3 col-6">
         <div class="form-floating">
           <input type="text" formControlName="houseNumber" class="form-control" id="floatingInput"
@@ -66,7 +66,8 @@
         </div>
       </div> -->
       <div class="col-md-6">
-        <div class="form-floating">
+        <app-select [fgroup]="groupName" controlName="country"></app-select>
+        <!-- <div class="form-floating">
           <select class="form-select" formControlName="country" id="floatingSelect"
             aria-label="Floating label select example">
             <option selected>Open this select menu</option>
@@ -76,7 +77,7 @@
           </select>
           <label for="floatingSelect">Country<span>*</span></label>
           <app-error-msg [groupName]="groupName" controlName="country"></app-error-msg>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-12">
         <div class="form-floating suffix">

@@ -11,9 +11,16 @@ import { ModalComponent } from './components/modal/modal.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
 import { DigitOnlyDirective } from './directives/digit-only.directive';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { SelectComponent } from './components/select/select.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const MODULES = [NgbModule, ColorPickerModule, ColorSketchModule];
+const MODULES = [
+  NgbModule,
+  ColorPickerModule,
+  ColorSketchModule,
+  ReactiveFormsModule,
+  FormsModule,
+];
 
 const COMPONENTS = [
   ProductPriceInfoComponent,
@@ -23,7 +30,7 @@ const COMPONENTS = [
   ModalComponent,
   LanguageSelectorComponent,
   ErrorMsgComponent,
-  DropdownComponent,
+  SelectComponent,
 ];
 
 const DIRECTIVES = [DigitOnlyDirective];

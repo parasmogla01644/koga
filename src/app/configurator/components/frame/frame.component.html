@@ -9,12 +9,15 @@
               <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal()">meer
                   informatie</a>
               </p>
-
+              <app-select *ngIf="selectedFrame?.showColorOptions" label='Color' [options]="colorOptions"
+                [fgroup]="colorFormGroup" controlName="frameColor">
+              </app-select>
               <div class="row">
                 <ng-container *ngFor="let card of AppCards">
                   <div class="col-6 d-flex mb-3">
-                    <app-card-part class="d-flex w-100" (click)="selectCard(card)" [checked]="card.checked" [isDisabled]="card.isDisabled"
-                      [caption]="card.caption" [infoTitle]="card.infoTitle"></app-card-part>
+                    <app-card-part class="d-flex w-100" (click)="selectCard(card)" [checked]="card.checked"
+                      [isDisabled]="card.isDisabled" [caption]="card.caption" [infoTitle]="card.infoTitle">
+                    </app-card-part>
                   </div>
                 </ng-container>
 

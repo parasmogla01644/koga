@@ -1,8 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   countries,
   COUNTRIES_AS_PER_CONTINETS,
 } from '@shared/constants/countries.contants';
+import { addClassToBody, removeClassToBody } from 'src/app/utils/utils';
 import { CONTINENTS_CONFIG } from '../../constants/languageSelector.constants';
 import { IContinentsConfig } from '../../models/languageSelector.models';
 @Component({
@@ -10,7 +19,7 @@ import { IContinentsConfig } from '../../models/languageSelector.models';
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.scss'],
 })
-export class LanguageSelectorComponent implements OnInit {
+export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
   languages: string[] = ['English', 'Deutsch', 'German', 'French'];
   countryList: any[] = [];
   countriesAsPerContinents: any = COUNTRIES_AS_PER_CONTINETS;
@@ -22,6 +31,14 @@ export class LanguageSelectorComponent implements OnInit {
   @Output() close: EventEmitter<boolean> = new EventEmitter();
   @Input() activeClass: boolean = false;
   constructor() {}
+
+  ngOnChanges() {
+    if (this.activeClass) {
+      addClassToBody('is-modal');
+    } else {
+      removeClassToBody('is-modal');
+    }
+  }
 
   ngOnInit(): void {
     this.setCountryList();
@@ -63,5 +80,9 @@ export class LanguageSelectorComponent implements OnInit {
 
   selectLanguages(lang: string) {
     this.selectedLanguage = lang;
+  }
+
+  ngOnDestroy() {
+    removeClassToBody('is-modal');
   }
 }

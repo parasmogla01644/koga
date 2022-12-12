@@ -1,0 +1,13 @@
+<form [formGroup]="fgroup" *ngIf="fgroup">
+  <div class="form-floating">
+    <select class="form-select" [formControlName]="controlName" id="floatingSelect"
+      aria-label="Floating label select example">
+      <option selected value="">{{default}}</option>
+      <ng-container *ngFor="let option of options; let i = index">
+        <option [value]="option.value">{{option.title}}</option>
+      </ng-container>
+    </select>
+    <label for="floatingSelect">{{label}}<span>*</span></label>
+    <app-error-msg [groupName]="fgroup" [controlName]="controlName"></app-error-msg>
+  </div>
+</form>

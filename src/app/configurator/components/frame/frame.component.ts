@@ -1,11 +1,14 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { StepperService } from '@service/stepper.service';
+import { ISelect } from '@shared/components/select/select.component';
 export interface IAppCards {
   isDisabled: boolean;
   caption: string;
   infoTitle: string;
   id: number;
   checked: boolean;
+  showColorOptions?: boolean;
 }
 
 export interface Iframes {
@@ -50,6 +53,7 @@ export class FrameComponent implements OnInit {
       caption: 'Graphite black shiny',
       infoTitle: 'meest gekozen',
       checked: false,
+      showColorOptions: true,
       id: 1,
     },
     {
@@ -74,11 +78,42 @@ export class FrameComponent implements OnInit {
       id: 4,
     },
   ];
+  colorFormGroup!: FormGroup;
+  colorOptions: ISelect[] = [
+    {
+      title: 'Red',
+      value: 'red',
+    },
+    {
+      title: 'Graphite black shiny',
+      value: 'graphite_black_shiny',
+    },
+    {
+      title: 'Black shiny',
+      value: 'black_shiny',
+    },
+    {
+      title: 'Black',
+      value: 'black',
+    },
+  ];
 
-  constructor(private readonly stepperService: StepperService) {}
+  selectedFrame: any;
+
+  constructor(
+    private readonly stepperService: StepperService,
+    private _fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
+    this.initForm();
     this.setData();
+  }
+
+  initForm() {
+    this.colorFormGroup = this._fb.group({
+      frameColor: [''],
+    });
   }
 
   setData() {
@@ -86,6 +121,7 @@ export class FrameComponent implements OnInit {
     let savedData = this.stepperService.stepsConfig.value?.[id];
     this.AppCards = this.AppCards.map((item: any) => {
       if (item.id === savedData?.id) {
+        this.selectedFrame = savedData;
         return savedData;
       } else {
         return item;
@@ -109,6 +145,7 @@ export class FrameComponent implements OnInit {
       return;
     }
     card.checked = true;
+    this.selectedFrame = card;
     this.updateCurrentStep(card);
   }
 
