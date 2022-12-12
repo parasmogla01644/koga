@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class ProductPriceInfoComponent implements OnInit {
   @Input() priceConfig: any = {
-    price: 4903,
+    price: 4000.99,
     vat: 434.32,
-    totalPrice: 5337.32,
+    totalPrice: 4435.31,
   };
   @Input() description: boolean = false;
   @Input() usp: boolean = false;

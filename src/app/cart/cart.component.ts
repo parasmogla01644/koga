@@ -8,8 +8,8 @@ import { StepperService } from '@service/stepper.service';
 })
 export class CartComponent implements OnInit {
   priceConfig: any = {
-    price: 4903,
-    totalPrice: 4943.99,
+    price: 4000.99,
+    totalPrice: 4000.99,
   };
   constructor(private readonly stepperService: StepperService) {}
 
