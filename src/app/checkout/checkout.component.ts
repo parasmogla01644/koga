@@ -11,6 +11,7 @@ import {
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
+  deliveryOptionPopup: boolean = false;
   userForm!: FormGroup;
 
   constructor(private _fb: FormBuilder) {}
@@ -39,5 +40,13 @@ export class CheckoutComponent implements OnInit {
       city: ['', [Validators.required]],
       country: ['', [Validators.required]],
     });
+  }
+
+  openDeliveryOptionPopup() {
+    this.deliveryOptionPopup = true;
+  }
+
+  closeDeliveryOptionPopup() {
+    this.deliveryOptionPopup = false;
   }
 }

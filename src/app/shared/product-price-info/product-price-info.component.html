@@ -3,7 +3,7 @@
   <div class="mt-md-4 mt-3">
     <div class="mb-2 d-flex justify-content-between">
       <p>Configuratie <br class="d-none d-md-block">(stap 1 - 9)</p>
-      <strong>€ 4,903.00</strong>
+      <strong>€ {{priceConfig?.price | number : '0.2-2'}}</strong>
     </div>
     <!-- <div class="mb-2 d-flex justify-content-between">
       <p>Maat</p>
@@ -14,13 +14,21 @@
       <strong>€ 0.00</strong>
     </div> -->
     <div class="product-price__price d-flex justify-content-between align-items-end">
-      <strong>Totaal</strong>
+      <strong>Total</strong>
       <div class="text-end">
         <aside class="mb-2">
-          <p class="mb-0">incl. BTW €434,32</p>
+          <!-- Condition may updated as per logic for VAT calculation. -->
+          <p class="mb-0">
+            <ng-container *ngIf="priceConfig?.vat;else textRef">
+              incl. BTW €{{priceConfig?.vat | number : '0.0-2'}}
+            </ng-container>
+            <ng-template #textRef>
+              The VAT will be calculated in the next step.
+            </ng-template>
+          </p>
           <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
         </aside>
-        <strong>€ 4,943.99</strong>
+        <strong>€ {{priceConfig?.totalPrice | number : '0.0-2'}}</strong>
       </div>
     </div>
     <div class="product-price__social d-block d-lg-none" *ngIf="social">
@@ -62,7 +70,7 @@
     <div class="product-price__accept" *ngIf="accept">
       <input type="checkbox" id="accept">
       <label for="accept">Lorem ipsum dolor sit amet.</label>
-      <img src="assets/images/info.svg" alt="Info" />
+      <img (click)="openSubsModal()" src="assets/images/info.svg" alt="Info" />
     </div>
 
     <button class="btn btn-primary w-100" (click)="gotoCheckout()" [disabled]="isDisable">
@@ -73,6 +81,25 @@
 
 <app-modal [activeClass]="showInfoModal" (close)="closeModal()" [headerCustomClass]="['px-0']" headerTitle="Title">
   <ng-container body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse atque eos harum, officia maiores ab dolorum voluptates enim mollitia, modi debitis doloremque aliquam inventore nesciunt dolore magnam minus iusto. Nam, dolorum porro adipisci quae officiis neque aut nulla consequatur, accusantium non earum similique culpa voluptatibus! Nihil cumque est, aperiam expedita quasi et quia nostrum? Soluta vero ullam aperiam, magnam corporis autem explicabo, officia cum temporibus facere quod quia consequatur veniam et? Ipsa tempore nihil vero vel iure quae, placeat animi eius quas sit reprehenderit quam obcaecati eos magnam nisi doloribus! Provident voluptatibus ullam accusamus perspiciatis ea omnis magni aperiam repudiandae?</p>
-    </ng-container>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse atque eos harum, officia maiores ab dolorum
+      voluptates enim mollitia, modi debitis doloremque aliquam inventore nesciunt dolore magnam minus iusto. Nam,
+      dolorum porro adipisci quae officiis neque aut nulla consequatur, accusantium non earum similique culpa
+      voluptatibus! Nihil cumque est, aperiam expedita quasi et quia nostrum? Soluta vero ullam aperiam, magnam corporis
+      autem explicabo, officia cum temporibus facere quod quia consequatur veniam et? Ipsa tempore nihil vero vel iure
+      quae, placeat animi eius quas sit reprehenderit quam obcaecati eos magnam nisi doloribus! Provident voluptatibus
+      ullam accusamus perspiciatis ea omnis magni aperiam repudiandae?</p>
+  </ng-container>
+</app-modal>
+
+<app-modal [activeClass]="showSubsDetailPopup" (close)="closeSubsModal()" [headerCustomClass]="['px-0']"
+  headerTitle="Meer informatie Frame">
+  <ng-container body>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus temporibus fuga aut odit maiores alias
+    sequi excepturi labore ratione minus reiciendis tempora ullam, odio vero perferendis distinctio harum sunt? Ad
+    recusandae natus pariatur repellendus provident obcaecati quisquam vitae, aliquam aspernatur asperiores quae
+    inventore deleniti voluptatem, nesciunt blanditiis consequatur nam! Explicabo ab distinctio reprehenderit neque a
+    unde quia ea iusto! Eaque, doloribus delectus! Sequi sed asperiores vitae aliquid et illum eaque enim, consequatur
+    eum! Sint quaerat quo possimus inventore dolorum ullam laboriosam, enim repellendus, debitis magnam quibusdam
+    placeat autem nemo provident, quod est consequatur sit nihil. Ipsum dolor odit autem laudantium.
+  </ng-container>
 </app-modal>

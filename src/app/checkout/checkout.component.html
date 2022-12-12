@@ -31,7 +31,7 @@
           </ul>
 
           <div class="delivery-data__question">
-              <a>Why can I only select home delivery or click & collect?</a>  
+            <a (click)="openDeliveryOptionPopup()">Why can I only select home delivery or click & collect?</a>
           </div>
 
           <div class="tab-content" id="myTabContent2">
@@ -53,3 +53,15 @@
     </div>
   </div>
 </div>
+<app-modal [activeClass]="deliveryOptionPopup" (close)="closeDeliveryOptionPopup()" [headerCustomClass]="['px-0']"
+  headerTitle="Meer informatie Frame">
+  <ng-container body>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus temporibus fuga aut odit maiores alias
+    sequi excepturi labore ratione minus reiciendis tempora ullam, odio vero perferendis distinctio harum sunt? Ad
+    recusandae natus pariatur repellendus provident obcaecati quisquam vitae, aliquam aspernatur asperiores quae
+    inventore deleniti voluptatem, nesciunt blanditiis consequatur nam! Explicabo ab distinctio reprehenderit neque a
+    unde quia ea iusto! Eaque, doloribus delectus! Sequi sed asperiores vitae aliquid et illum eaque enim, consequatur
+    eum! Sint quaerat quo possimus inventore dolorum ullam laboriosam, enim repellendus, debitis magnam quibusdam
+    placeat autem nemo provident, quod est consequatur sit nihil. Ipsum dolor odit autem laudantium.
+  </ng-container>
+</app-modal>

@@ -7,12 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-price-info.component.scss'],
 })
 export class ProductPriceInfoComponent implements OnInit {
+  @Input() priceConfig: any = {
+    price: 4903,
+    vat: 434.32,
+    totalPrice: 5337.32,
+  };
   @Input() description: boolean = false;
   @Input() usp: boolean = false;
   @Input() social: boolean = false;
   @Input() accept: boolean = false;
   @Input() isDisable: boolean = true;
   showInfoModal: boolean = false;
+  showSubsDetailPopup: boolean = false;
 
   constructor(private readonly router: Router) {}
 
@@ -28,5 +34,13 @@ export class ProductPriceInfoComponent implements OnInit {
 
   closeModal() {
     this.showInfoModal = false;
+  }
+
+  openSubsModal() {
+    this.showSubsDetailPopup = true;
+  }
+
+  closeSubsModal() {
+    this.showSubsDetailPopup = false;
   }
 }
