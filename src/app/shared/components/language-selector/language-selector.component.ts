@@ -24,8 +24,7 @@ export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
   countryList: any[] = [];
   countriesAsPerContinents: any = COUNTRIES_AS_PER_CONTINETS;
   continentsConfig: IContinentsConfig[] = CONTINENTS_CONFIG;
-  selectedContinent!: IContinentsConfig;
-  // = CONTINENTS_CONFIG[0];
+  selectedContinent: IContinentsConfig = CONTINENTS_CONFIG[0];
   selectedCountry: any;
   selectedLanguage: string = 'English';
   status: boolean = false;
