@@ -28,19 +28,10 @@
 
       <h2 [ngClass]="{'d-none d-md-block': status}">Selecteer uw land en taalkeuze</h2>
 
-      <div class="languageModal__scroll d-md-flex" [ngClass]="{'d-none': status}">
-        <ul class="nav nav-tabs" id="myTabModal" role="tablist">
-          <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
-            <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
-              [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
-              [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
-          </li>
-        </ul>
-      </div>
       <div class="languageModal__wrapper-child" [ngClass]="{'active': status}">
         <ul class="nav nav-tabs languageModal__wrapper-levelTwo ms-0">
           <li>
-            <button class="nav-link"><strong>{{selectedCountry?.name}}</strong></button>
+            <!-- <button class="nav-link"><strong>{{selectedCountry?.name}}</strong></button> -->
           </li>
         </ul>
         <div class="tab-content">
@@ -52,6 +43,15 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="languageModal__scroll d-md-flex" [ngClass]="{'d-none': status}">
+        <ul class="nav nav-tabs" id="myTabModal" role="tablist">
+          <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
+            <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
+              [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
+              [attr.aria-selected]="item?.selected" (click)="selectContinent(i)">{{item?.title}}</button>
+          </li>
+        </ul>
       </div>
       <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
