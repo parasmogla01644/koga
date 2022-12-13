@@ -2,7 +2,6 @@ import { AbstractControl, FormGroup } from '@angular/forms';
 
 export class RegularExpressionConstant {
   static EMAIL: RegExp = /^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-  // /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   static PASSWORD: string =
     '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{7,}';
   static PHONE: string = '^(\\+?d{1,4}[s-])?(?!0+s+,?$)\\d{9}s*,?$';

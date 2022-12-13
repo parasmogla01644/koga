@@ -24,8 +24,6 @@ export class CheckoutComponent implements OnInit {
     this.userForm = this._fb.group({
       name: ['', [Validators.required, noWhitespaceValidator]],
       address: ['', [Validators.required]],
-      // middleName: [''],
-      // lastName: ['', [Validators.required]],
       email: [
         '',
         [
@@ -35,8 +33,6 @@ export class CheckoutComponent implements OnInit {
       ],
       phone: ['', [Validators.required]],
       postCode: ['', [Validators.required]],
-      // houseNumber: [''],
-      // streetName: [''],
       city: ['', [Validators.required]],
       country: ['', [Validators.required]],
     });

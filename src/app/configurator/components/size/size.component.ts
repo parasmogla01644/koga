@@ -53,14 +53,6 @@ export class SizeComponent implements OnInit {
     this.openModal = false;
   }
 
-  // selectCard(card: any) {
-  //   if (card.isDisabled) {
-  //     return;
-  //   }
-  //   card.checked = true;
-
-  //   this.updateCurrentStep(card);
-  // }
   selectedSize(value: any) {
     this.updateCurrentStep(value);
   }

@@ -42,14 +42,6 @@ export class ConfigHeaderComponent implements OnInit {
 
   selectTab(index: number) {
     this.stepperService.gotoTab(index);
-    // this.headerTab.forEach((tab: IHeaderTab, i) => {
-    //   if (i === index) {
-    //     tab.selected = true;
-    //   } else {
-    //     tab.selected = false;
-    //   }
-    // });
-    // this.stepperService.updateCurrentStep(this.headerTab?.[index]);
   }
 
   subsCurrentStepConfig() {
