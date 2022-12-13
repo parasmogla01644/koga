@@ -37,21 +37,7 @@
           </li>
         </ul>
       </div>
-      <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
-          <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">
-            <div (click)="clickToggle()" *ngFor="let item of countryList; let i = index"
-              class="d-flex align-items-center flag notActive"
-              [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}" role="button"
-              (click)="selectCountry(item)">
-              <img src="/assets/images/angola.svg" [alt]="item?.['name']" [title]="item?.['name']" class="me-2">
-              <span>{{item?.['name']}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="languageModal__wrapper-child" *ngIf="selectedCountry" [ngClass]="{'active': status}">
+      <div class="languageModal__wrapper-child" [ngClass]="{'active': status}">
         <ul class="nav nav-tabs languageModal__wrapper-levelTwo ms-0">
           <li>
             <button class="nav-link"><strong>{{selectedCountry?.name}}</strong></button>
@@ -67,8 +53,21 @@
           </div>
         </div>
       </div>
+      <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
+          <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">
+            <div (click)="clickToggle()" *ngFor="let item of countryList; let i = index"
+              class="d-flex align-items-center flag notActive"
+              [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}" role="button"
+              (click)="selectCountry(item)">
+              <img src="/assets/images/angola.svg" [alt]="item?.['name']" [title]="item?.['name']" class="me-2">
+              <span>{{item?.['name']}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedLanguage"
+    <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedCountry && selectedLanguage"
       [ngClass]="{'active': status}">
       <button class="btn btn-white" [disabled]="!selectedLanguage" (click)="saveLanguage()">Bevestig en start</button>
     </div>
