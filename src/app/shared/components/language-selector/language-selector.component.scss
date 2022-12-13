@@ -4,14 +4,9 @@
     left: 0;
     z-index: 9;
     opacity: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
     position: fixed;
     overflow-y: auto;
-    text-align: center;
     visibility: hidden;
-    mix-blend-mode: normal;
     padding: 66px 40px 20px;
     backdrop-filter: blur(5px);
     transition: 0.3s ease-in-out;
@@ -23,20 +18,13 @@
         padding: 0;
         overflow: hidden;
     }
-    &__logo {
-        @include max-screen($mobile) {
-            margin-bottom: 30px;
-        }
-    }
     &__wrapper {
         @include max-screen($mobile) {
             left: 0;
             bottom: 0;
-            top: auto;
-            width: 100%;
-            padding: 20px 0 0;
             position: fixed;
             overflow-y: auto;
+            padding: 20px 0 0;
             height: calc(100% - 82px);
             transition: 0.3s ease-in-out;
             transform: translateY(100px);
@@ -49,33 +37,25 @@
             }
             span {
                 font-weight: 500;
-                font-size: 16px;
-                color: $color-white;
             }
         }
         h2 {
-            color: $color-white;
             font-size: 40px;
             margin: 40px 0 0;
-            padding: 0 80px;
+            color: $color-white;
             @include max-screen($tablet-lg) {
-                padding: 0;
                 margin-top: 15px;
                 font-size: 22px;
             }
             @include max-screen($mobile) {
                 color: $color-darkBlue;
-                font-weight: 500;
             }
         }
         .nav-tabs {
-            padding: 0 60px;
             margin-top: 49px;
-            justify-content: center;
             position: relative;
-            border: 0 !important;
+            justify-content: center;
             @include max-screen($tablet-lg) {
-                padding: 0px;
                 margin-top: 15px;
             }
             @include max-screen($mobile) {
@@ -87,15 +67,14 @@
                 border-bottom: 2px solid rgba($color-darkBlue, 0.2) !important;
             }
             &:after {
-                content: "";
-                width: 100%;
-                height: 2px;
-                background-color: rgba($color-white, 0.5);
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                @include max-screen($mobile) {
-                    display: none;
+                @include min-screen($mobile) {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba($color-white, 0.5);
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
                 }
             }
             .nav-link {
@@ -177,13 +156,11 @@
                 }
                 span {
                     font-size: 16px;
-                    font-weight: 400;
                     color: $color-white;
                     @include max-screen($mobile) {
                         color: $color-darkBlue;
                     }
                 }
-
                 &.active {
                     border-color: $color-white;
                     @include max-screen($mobile) {
@@ -199,14 +176,12 @@
             margin-top: 19px !important;
             @include max-screen($mobile) {
                 justify-content: center !important;
-                margin-top: 0px !important;
+                margin-top: 0 !important;
             }
         }
         &-flags {
-            margin-right: -32px;
-
-            @include max-screen($desktop-large) {
-                margin-right: 0;
+            @include min-screen($desktop-large) {
+                margin-right: -32px;
             }
         }
         &-child {
@@ -219,17 +194,10 @@
             }
             .nav-tabs {
                 @include max-screen($mobile) {
-                    overflow: hidden;
                     padding: 0;
+                    overflow: hidden;
                     margin: 0 auto !important;
                     width: calc(100% - 30px);
-                }
-                li {
-                    strong {
-                        @include max-screen($mobile) {
-                            white-space: normal;
-                        }
-                    }
                 }
             }
             .languageModal__wrapper-flags {
@@ -252,10 +220,10 @@
     &__next {
         margin-top: auto;
         @include max-screen($mobile) {
-            padding: 15px;
             left: 0;
             bottom: 0;
             width: 100%;
+            padding: 15px;
             position: fixed;
             background-color: $color-white;
         }

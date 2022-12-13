@@ -1,5 +1,5 @@
 <!--  language modal-->
-<div class="languageModal d-flex flex-wrap" [ngClass]="{'active': activeClass}">
+<div class="languageModal text-center d-flex flex-wrap w-100 h-100" [ngClass]="{'active': activeClass}">
   <div class="languageModal__wrapper d-flex flex-column w-100">
     <div class="languageModal__inner w-100">
       <div class="d-flex justify-content-md-start justify-content-end align-items-center languageModal__wrapper-back">
@@ -7,12 +7,12 @@
           <img src="/assets/images/arrow-back-white.svg" role="button" alt="back" title="back"
             class="d-none d-md-block">
           <img src="/assets/images/back.svg" role="button" alt="back" title="back" class="d-md-none">
-          <span class="ms-2">Ga terug</span>
+          <span class="ms-2 text-white">Ga terug</span>
         </span>
         <img src="/assets/images/cross-blue.svg" role="button" alt="close" (click)="closeModal()">
       </div>
 
-      <div class="languageModal__logo d-none d-md-block">
+      <div class="languageModal__logo mb-4 d-none d-md-block">
         <img src="/assets/images/logo-signature.svg" alt="logo" />
       </div>
       <div class="languageModal__logo d-md-none">
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="languageModal__scroll d-md-flex">
-        <ul class="nav nav-tabs" id="myTabModal" role="tablist">
+        <ul class="nav nav-tabs border-0" id="myTabModal" role="tablist">
           <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
             <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
               [attr.data-bs-target]="item?.target" type="button" role="tab" [attr.aria-controls]="item?.title"
