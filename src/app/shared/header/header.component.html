@@ -2,5 +2,9 @@
   <div class="container">
     <a (click)="gotoConfigurationPage()" class="configHeader__back d-flex align-items-center"><img
         src="assets/images/back-blue.svg" alt="back">{{buttonText}}</a>
+
   </div>
 </div>
+
+<app-language-selector [activeClass]="showLangPopup" (close)='closeModal($event)'>
+</app-language-selector>
