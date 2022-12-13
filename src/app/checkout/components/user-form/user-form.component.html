@@ -6,7 +6,7 @@
         <div class="form-floating">
           <input type="text" formControlName="name" class="form-control" id="floatingInput"
             placeholder="enter first name">
-          <label for="floatingInput">Voornaam<span>*</span></label>
+          <label for="floatingInput">Voornaam</label>
           <app-error-msg [groupName]="groupName" controlName="name"></app-error-msg>
           <span class="invalid-feedback">Please add error msg </span>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-floating suffix">
           <input type="text" formControlName="email" class="form-control" id="floatingInput"
             placeholder="name@example.com">
-          <label for="floatingInput">name@email.com<span>*</span></label>
+          <label for="floatingInput">name@email.com</label>
           <img src="/assets/images/attherate.svg" alt="@" title="@">
           <app-error-msg [groupName]="groupName" patternErrorMsg="Please enter a valid email." controlName="email">
           </app-error-msg>
@@ -51,7 +51,7 @@
         <div class="form-floating suffix">
           <input type="text" appDigitOnly formControlName="phone" class="form-control" id="floatingInput"
             placeholder="name@example.com">
-          <label for="floatingInput">+31-XXXXXXX<span>*</span></label>
+          <label for="floatingInput">+31-XXXXXXX</label>
           <img src="/assets/images/phone.svg" alt="phone" title="phone">
           <app-error-msg [groupName]="groupName" controlName="phone"></app-error-msg>
         </div>
