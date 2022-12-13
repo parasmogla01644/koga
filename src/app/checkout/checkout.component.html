@@ -31,7 +31,8 @@
           </ul>
 
           <div class="delivery-data__question">
-            <p class="d-flex align-items-center">Why can I only select home delivery or click & collect? <img (click)="openDeliveryOptionPopup()" src="assets/images/info.svg" alt="Info"></p>
+            <p class="d-flex align-items-center">Why can I only select home delivery or click & collect? <img
+                (click)="openDeliveryOptionPopup()" src="assets/images/info.svg" alt="Info"></p>
           </div>
 
           <div class="tab-content" id="myTabContent2">
@@ -46,7 +47,7 @@
         </div>
       </div>
       <div class="delivery-data__info">
-        <app-product-price-info [description]="true" [accept]="true"></app-product-price-info>
+        <app-product-price-info [description]="true" [isDisable]="false" [accept]="true"></app-product-price-info>
       </div>
     </div>
   </div>

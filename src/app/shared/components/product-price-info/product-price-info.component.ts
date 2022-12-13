@@ -19,10 +19,14 @@ export class ProductPriceInfoComponent implements OnInit {
   @Input() isDisable: boolean = true;
   showInfoModal: boolean = false;
   showSubsDetailPopup: boolean = false;
+  currentRoute!: string;
+  pay: boolean = false;
 
   constructor(private readonly router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentRoute = this.router.url === '/checkout' ? 'checkout' : '';
+  }
 
   gotoCheckout() {
     this.router.navigate(['checkout']);
@@ -42,5 +46,10 @@ export class ProductPriceInfoComponent implements OnInit {
 
   closeSubsModal() {
     this.showSubsDetailPopup = false;
+  }
+
+  saveDetails() {
+    // TODO: have to change var name after functionality discussion.
+    this.pay = true;
   }
 }
