@@ -71,7 +71,7 @@
       [disabled]="isDisable">
       {{ currentRoute === 'checkout' ? 'Verstuurd!' : 'Betalen'}}
 
-      <img *ngIf="currentRoute === 'checkout'" src="assets/images/tick.svg" alt="tick"/>
+      <img *ngIf="pay" src="assets/images/tick.svg" alt="tick"/>
     </button>
     <div class="product-price__text d-flex" *ngIf="pay">
         <img class="align-self-start" src="assets/images/info-o.svg" alt="Info"/>
