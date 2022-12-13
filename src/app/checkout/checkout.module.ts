@@ -21,6 +21,7 @@ const COMPONENTS = [
   UserFormComponent,
   HomeDeliveryComponent,
   PickupComponent,
+  MapComponent,
 ];
 
 const MODULES = [
@@ -32,7 +33,7 @@ const MODULES = [
 ];
 
 @NgModule({
-  declarations: [...COMPONENTS, MapComponent],
+  declarations: [...COMPONENTS],
   imports: [RouterModule.forChild(routes), ...MODULES],
 })
 export class CheckoutModule {}

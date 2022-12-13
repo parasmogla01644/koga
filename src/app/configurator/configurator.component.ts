@@ -10,7 +10,6 @@ import { IHeaderTab } from './models/configurator.models';
 export class ConfiguratorComponent implements OnInit {
   currentStep!: IHeaderTab;
   viewToggle: boolean = false;
-  // openModal: boolean = false;
 
   constructor(private readonly stepperService: StepperService) {}
 
@@ -23,14 +22,6 @@ export class ConfiguratorComponent implements OnInit {
       this.currentStep = step;
     });
   }
-
-  // toggleModal() {
-  //   this.openModal = !this.openModal;
-  // }
-
-  // closeModal() {
-  //   this.openModal = false;
-  // }
   clickViewToggle(value: boolean): void {
     this.viewToggle = value;
   }
