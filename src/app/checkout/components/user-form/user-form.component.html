@@ -15,7 +15,7 @@
       <div class="col-md-6">
         <div class="form-floating">
           <input type="text" formControlName="address" class="form-control" id="floatingInput" placeholder="Address">
-          <label for="floatingInput">Address</label>
+          <label for="floatingInput">Address<span>*</span></label>
           <app-error-msg [groupName]="groupName" controlName="address"></app-error-msg>
         </div>
       </div>
@@ -30,7 +30,7 @@
       <div class="col-md-6">
         <div class="form-floating">
           <input type="text" formControlName="city" class="form-control" id="floatingInput" placeholder="City">
-          <label for="floatingInput">City</label>
+          <label for="floatingInput">City<span>*</span></label>
           <app-error-msg [groupName]="groupName" controlName="city"></app-error-msg>
         </div>
       </div>

@@ -2,15 +2,8 @@
 <div class="languageModal d-flex flex-wrap" [ngClass]="{'active': activeClass}">
   <div class="languageModal__wrapper d-flex flex-column w-100">
     <div class="languageModal__inner w-100">
-      <div class="d-flex justify-content-between align-items-center languageModal__wrapper-back">
-        <span class="d-flex d-md-none align-items-center " role="button" (click)="clickToggle()"
-          [ngClass]="{'invisible': !status}">
-          <img src="/assets/images/arrow-back-white.svg" role="button" alt="back" title="back"
-            class="d-none d-md-block">
-          <img src="/assets/images/back.svg" role="button" alt="back" title="back" class="d-md-none">
-          <span class="ms-2">Ga terug</span>
-        </span>
-        <span class="d-none d-md-flex align-items-center " role="button" (click)="closeModal()">
+      <div class="d-flex justify-content-end align-items-center languageModal__wrapper-back">
+        <span class="d-none d-md-flex align-items-center" role="button" (click)="closeModal()">
           <img src="/assets/images/arrow-back-white.svg" role="button" alt="back" title="back"
             class="d-none d-md-block">
           <img src="/assets/images/back.svg" role="button" alt="back" title="back" class="d-md-none">
@@ -26,14 +19,9 @@
         <img src="/assets/images/logo.svg" alt="logo" />
       </div>
 
-      <h2 [ngClass]="{'d-none d-md-block': status}">Selecteer uw land en taalkeuze</h2>
+      <h2>Selecteer uw land en taalkeuze</h2>
 
-      <div class="languageModal__wrapper-child" [ngClass]="{'active': status}">
-        <ul class="nav nav-tabs languageModal__wrapper-levelTwo ms-0">
-          <li>
-            <!-- <button class="nav-link"><strong>{{selectedCountry?.name}}</strong></button> -->
-          </li>
-        </ul>
+      <div class="languageModal__wrapper-child">
         <div class="tab-content">
           <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags justify-content-center">
             <div class="d-flex align-items-center flag" *ngFor="let lang of languages"
@@ -44,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="languageModal__scroll d-md-flex" [ngClass]="{'d-none': status}">
+      <div class="languageModal__scroll d-md-flex">
         <ul class="nav nav-tabs" id="myTabModal" role="tablist">
           <li class="nav-item" role="presentation" *ngFor="let item of continentsConfig; let i = index">
             <button class="nav-link" [ngClass]="{'active':item?.selected}" [id]="item?.id" data-bs-toggle="tab"
@@ -53,10 +41,10 @@
           </li>
         </ul>
       </div>
-      <div [ngClass]="{'d-none d-md-block': status}" class="tab-content" id="myTabContent">
+      <div class="tab-content" [ngClass]="{'isButton': selectedCountry && selectedLanguage}" id="myTabContent">
         <div class="tab-pane fade show active" id="nav-Afrika" role="tabpanel" aria-labelledby="nav-Afrika">
           <div class="flex-wrap d-flex align-items-center languageModal__wrapper-flags">
-            <div (click)="clickToggle()" *ngFor="let item of countryList; let i = index"
+            <div *ngFor="let item of countryList; let i = index"
               class="d-flex align-items-center flag notActive"
               [ngClass]="{'active': item === selectedCountry,'notActive': item !== selectedCountry}" role="button"
               (click)="selectCountry(item)">
@@ -67,8 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedCountry && selectedLanguage"
-      [ngClass]="{'active': status}">
+    <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedCountry && selectedLanguage">
       <button class="btn btn-white" [disabled]="!selectedLanguage" (click)="saveLanguage()">Bevestig en start</button>
     </div>
   </div>

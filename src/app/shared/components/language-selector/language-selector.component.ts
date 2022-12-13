@@ -27,7 +27,6 @@ export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
   selectedContinent: IContinentsConfig = CONTINENTS_CONFIG[0];
   selectedCountry: any;
   selectedLanguage: string = 'English';
-  status: boolean = false;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
   @Input() activeClass: boolean = false;
   constructor() {}
@@ -50,10 +49,6 @@ export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
 
   saveLanguage() {
     this.closeModal();
-  }
-
-  clickToggle() {
-    this.status = !this.status;
   }
 
   setCountryList() {

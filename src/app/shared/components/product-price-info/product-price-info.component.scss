@@ -1,153 +1,173 @@
 @import "../../../../assets/scss/variables.scss";
 .product-price {
-  h5 {
-    font-weight: 700;
-    padding-bottom: 5px;
-    border-bottom: 1px solid $color-disabled-dark;
-    @include max-screen($tablet) {
-      border: 0;
-    }
-  }
-  p,
-  strong {
-    color: $color-secondary;
-    margin-bottom: 8px;
-  }
-  aside {
-    display: flex;
-    align-items: center;
-  }
-  &__info {
-    padding-top: 88px;
-    border-top: 1px solid $color-disabled-dark;
-    @include max-screen($mobile) {
-      padding-top: 19px;
-    }
-    img {
-      width: 14px;
-      cursor: pointer;
-      margin: -3px 0 0 3px;
-    }
-    &-text {
-      p {
-        font-size: 12px;
-      }
-    }
-  }
-  &__price {
-    padding: 0 0 9px;
-    margin: 17px 0 24px;
-    border-bottom: 1px solid $color-disabled-dark;
-    @include max-screen($tablet) {
-      margin-bottom: 15px;
-      padding: 0 0 13px;
-    }
-    strong {
-      margin: 0;
-    }
-    > div {
-      strong {
-        @include min-screen($tablet) {
-          font-size: 20px;
+    h5 {
+        font-weight: 700;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $color-disabled-dark;
+        @include max-screen($tablet) {
+            border: 0;
         }
-      }
     }
-    &-info {
-      p {
-        font-size: 12px;
-      }
+    p,
+    strong {
+        color: $color-secondary;
+        margin-bottom: 8px;
     }
-  }
-  &__note {
-    margin-bottom: 24px;
-    a {
-      text-decoration: underline;
+    aside {
+        display: flex;
+        align-items: center;
     }
-  }
-  &__social {
-    padding: 5px 0 17px;
-    margin-bottom: 14px;
-    border-bottom: 1px solid $color-disabled-dark;
-    ul {
-      @include max-screen(374px) {
-        flex-wrap: wrap;
-      }
-      li {
-        cursor: pointer;
-        @include max-screen(374px) {
-          width: 50%;
-          margin: 5px 0;
+    &__info {
+        padding-top: 88px;
+        border-top: 1px solid $color-disabled-dark;
+        @include max-screen($mobile) {
+            padding-top: 19px;
         }
         img {
-          width: 19px;
-          @include max-screen($mobile) {
+            width: 14px;
+            cursor: pointer;
+            margin: -3px 0 0 3px;
+        }
+        &-text {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    &__price {
+        padding: 0 0 9px;
+        margin: 17px 0 24px;
+        border-bottom: 1px solid $color-disabled-dark;
+        @include max-screen($tablet) {
+            margin-bottom: 15px;
+            padding: 0 0 13px;
+        }
+        strong {
+            margin: 0;
+        }
+        > div {
+            strong {
+                @include min-screen($tablet) {
+                    font-size: 20px;
+                }
+            }
+        }
+        &-info {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    &__note {
+        margin-bottom: 24px;
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__social {
+        padding: 5px 0 17px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid $color-disabled-dark;
+        ul {
+            @include max-screen(374px) {
+                flex-wrap: wrap;
+            }
+            li {
+                cursor: pointer;
+                @include max-screen(374px) {
+                    width: 50%;
+                    margin: 5px 0;
+                }
+                img {
+                    width: 19px;
+                    @include max-screen($mobile) {
+                        width: 16px;
+                        max-height: 16px;
+                        margin-right: 5px !important;
+                    }
+                }
+                span {
+                    font-size: 14px;
+                    @include max-screen($mobile) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    &__btn {
+        img {
             width: 16px;
-            max-height: 16px;
-            margin-right: 5px !important;
-          }
-        }
-        span {
-          font-size: 14px;
-          @include max-screen($mobile) {
-            font-size: 12px;
-          }
-        }
-      }
+            margin-left: 8px;
+        }    
     }
-  }
-  &__accept {
-    margin-bottom: 25px;
-    img {
-      width: 14px;
-      margin: -2px 0 0 3px;
-      cursor: pointer;
-    }
-    input {
-      display: none;
-      &:checked + label {
-        &::after {
-          opacity: 1;
+    &__accept {
+        margin-bottom: 25px;
+        img {
+            width: 14px;
+            margin: -2px 0 0 3px;
+            cursor: pointer;
         }
-      }
-    }
-    label {
-      padding-left: 30px;
-      position: relative;
-      display: inline-flex;
-      @include max-screen($mobile) {
-        padding-left: 25px;
-      }
-      &::before {
-        top: 3px;
-        left: 0;
-        content: "";
-        width: 16px;
-        height: 16px;
-        display: block;
-        cursor: pointer;
-        border-radius: 2px;
-        position: absolute;
-        border: 1px solid $color-secondary;
-        @include max-screen($mobile) {
-          top: 2px;
+        input {
+            display: none;
+            &:checked + label {
+                &::after {
+                    opacity: 1;
+                }
+            }
         }
-      }
-      &::after {
-        content: "";
-        left: 2px;
-        top: 5px;
-        opacity: 0;
-        width: 12px;
-        cursor: pointer;
-        height: 12px;
-        display: block;
-        position: absolute;
-        border-radius: 2px;
-        background-color: $color-secondary;
-        @include max-screen($mobile) {
-          top: 4px;
+        label {
+            padding-left: 30px;
+            position: relative;
+            display: inline-flex;
+            @include max-screen($mobile) {
+                padding-left: 25px;
+            }
+            &::before {
+                top: 3px;
+                left: 0;
+                content: "";
+                width: 16px;
+                height: 16px;
+                display: block;
+                cursor: pointer;
+                border-radius: 2px;
+                position: absolute;
+                border: 1px solid $color-secondary;
+                @include max-screen($mobile) {
+                    top: 2px;
+                }
+            }
+            &::after {
+                content: "";
+                left: 2px;
+                top: 5px;
+                opacity: 0;
+                width: 12px;
+                cursor: pointer;
+                height: 12px;
+                display: block;
+                position: absolute;
+                border-radius: 2px;
+                background-color: $color-secondary;
+                @include max-screen($mobile) {
+                    top: 4px;
+                }
+            }
         }
-      }
     }
-  }
+    &__text {
+        padding-top: 24px;
+        img {
+            width: 24px;
+            cursor: pointer;
+            @include max-screen($mobile){
+                width: 20px;
+            }
+        }
+        p {
+            padding-left: 8px;
+            width: calc(100% - 24px);
+        }
+    }
 }

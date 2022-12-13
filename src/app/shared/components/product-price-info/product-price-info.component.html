@@ -67,11 +67,16 @@
       <img (click)="openSubsModal()" src="assets/images/info.svg" alt="Info" />
     </div>
 
-    <button class="btn btn-primary w-100" (click)="currentRoute === 'checkout' ? saveDetails(): gotoCheckout()"
+    <button class="product-price__btn btn btn-primary w-100" (click)="currentRoute === 'checkout' ? saveDetails(): gotoCheckout()"
       [disabled]="isDisable">
       {{ currentRoute === 'checkout' ? 'Verstuurd!' : 'Betalen'}}
+
+      <img *ngIf="currentRoute === 'checkout'" src="assets/images/tick.svg" alt="tick"/>
     </button>
-    <p *ngIf="pay">Er wordt z.s.m. contact met je opgenomen over deze configuratie!</p>
+    <div class="product-price__text d-flex" *ngIf="pay">
+        <img class="align-self-start" src="assets/images/info-o.svg" alt="Info"/>
+        <p>Er wordt z.s.m. contact met je opgenomen over deze configuratie!</p>
+    </div>
   </div>
 </div>
 
