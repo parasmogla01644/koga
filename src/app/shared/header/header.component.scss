@@ -1,62 +1,64 @@
 @import "../../../assets/scss/variables.scss";
 .back-header {
-    z-index: 9;
+  z-index: 9;
+  padding: 24px 0;
+  position: relative;
+  @include max-screen($desktop-xlarge) {
     padding: 24px 0;
-    position: relative;
-    @include max-screen($desktop-xlarge) {
-        padding: 24px 0;
-    }
+  }
+  @include max-screen($desktop-large) {
+    padding: 24px 0;
+  }
+  @include max-screen($tablet-lg) {
+    background-color: $color-cream;
+  }
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 64px 0 0;
+    text-decoration: none;
+    color: $color-secondary;
     @include max-screen($desktop-large) {
-        padding: 24px 0;
+      margin-right: 30px;
     }
-    @include max-screen($tablet-lg) {
-        background-color: $color-cream;
+    @include max-screen($desktop) {
+      margin-right: 15px;
     }
-    a {
-        font-weight: 500;
-        font-size: 16px;
-        margin: 0 64px 0 0;
-        text-decoration: none;
-        color: $color-secondary;
-        @include max-screen($desktop-large) {
-            margin-right: 30px;
-        }
-        @include max-screen($desktop) {
-            margin-right: 15px;
-        }
-        @include max-screen($mobile) {
-            font-size: 14px;
-        }
-        img {
-            margin-right: 17px;
-            @include max-screen($mobile) {
-                width: 19px;
-                margin-right: 10px;
-            }
-        }
+    @include max-screen($mobile) {
+      font-size: 14px;
     }
-    &__language {
-        margin: 0 15px 0 0;
-        cursor: pointer;
-        @include min-screen(2200px){
-            margin-left: auto;
-        }
-        @include max-screen($desktop) {
-            margin-right: 0;
-            margin-left: auto;
-            padding-right: 12px;
-            @include background-image(angle-down, svg, right, no-repeat, 8px);
-        }
-        span {
-            user-select: none;
-            font-size: 14px;
-            @include max-screen($desktop) {
-                display: none;
-            }
-        }
-        img {
-            width: 27px;
-            display: block;
-        }
+    img {
+      margin-right: 17px;
+      @include max-screen($mobile) {
+        width: 19px;
+        margin-right: 10px;
+      }
     }
+  }
+  &__language {
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    @include min-screen(2200px) {
+      margin-left: auto;
+    }
+    @include max-screen($desktop) {
+      margin-right: 0;
+      margin-left: auto;
+      padding-right: 12px;
+      @include background-image(angle-down, svg, right, no-repeat, 8px);
+    }
+    span {
+      user-select: none;
+      @include max-screen($desktop) {
+        display: none;
+      }
+    }
+    img {
+      width: 27px;
+      display: block;
+      @include min-screen($desktop) {
+        display: none;
+      }
+    }
+  }
 }

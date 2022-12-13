@@ -16,6 +16,7 @@ export class SelectComponent implements OnInit {
   @Input() default: string = 'Open this select menu';
   @Input() fgroup!: FormGroup;
   @Input() controlName!: string;
+  @Input() isRequired: boolean = false;
   @Input() options: ISelect[] = [
     {
       title: 'UK',

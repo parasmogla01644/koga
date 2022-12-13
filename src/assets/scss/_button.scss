@@ -1,56 +1,56 @@
 .btn {
-    border: 0;
-    height: 50px;
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    padding: 10px 16px;
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 0;
-    @include max-screen($mobile){
-        height: 40px;
-        font-size: 14px;
+  border: 0;
+  height: 50px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 0;
+  @include max-screen($mobile) {
+    height: 40px;
+    font-size: 14px;
+  }
+  &-primary {
+    color: $color-white;
+    background-color: $color-primary;
+    &:hover {
+      background-color: $color-secondary;
     }
-    &-primary {
-        color: $color-white;
-        background-color: $color-primary;
-        &:hover {
-            background-color: $color-secondary;
-        }
+  }
+  &-secondary {
+    background-color: $color-secondary;
+    &:hover {
+      background-color: darken($color-secondary, 20%);
     }
-    &-secondary {
-        background-color: $color-secondary;
-        &:hover {
-            background-color: darken($color-secondary, 20%);
-        }
+  }
+  &-outline {
+    font-weight: 700;
+    color: $color-darkBlue;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    &:hover {
+      border-color: $color-secondary;
     }
-    &-outline {
-        font-weight: 700;
-        color: $color-darkBlue;
-        background-color: transparent;
-        border: 1px solid $color-secondary;
-        &:hover {
-            border-color: $color-secondary;
-        }
+  }
+  &-white {
+    color: $color-darkBlue;
+    background-color: $color-white;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
     }
-    &-white {
-        color: $color-darkBlue;
-        background-color: $color-white;
-        &:hover {
-            background-color: $color-primary;
-            color: $color-white;
-        }
+  }
+  &:disabled {
+    opacity: 1;
+    background-color: $color-disabled;
+    cursor: not-allowed;
+  }
+  & + .btn {
+    margin-left: 16px;
+    @include max-screen($mobile) {
+      margin-left: 10px;
     }
-    &:disabled {
-        opacity: 1;
-        background-color: $color-disabled;
-        cursor: not-allowed;
-    }
-    & + .btn {
-        margin-left: 16px;
-        @include max-screen($mobile){
-            margin-left: 10px;
-        }
-    }  
+  }
 }

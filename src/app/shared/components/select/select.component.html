@@ -7,7 +7,9 @@
         <option [value]="option.value">{{option.title}}</option>
       </ng-container>
     </select>
-    <label for="floatingSelect">{{label}}<span>*</span></label>
-    <app-error-msg [groupName]="fgroup" [controlName]="controlName"></app-error-msg>
+    <label for="floatingSelect">{{label}}
+      <span *ngIf="isRequired">*</span>
+    </label>
+    <app-error-msg *ngIf="isRequired" [groupName]="fgroup" [controlName]="controlName"></app-error-msg>
   </div>
 </form>
