@@ -12,6 +12,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   gotoConfigurationPage() {
-    this.router.navigate(['']);
+    const currentRoute: string = this.router.url;
+    if (currentRoute === '/checkout') {
+      this.router.navigate(['cart-details']);
+    } else {
+      this.router.navigate(['']);
+    }
   }
 }
