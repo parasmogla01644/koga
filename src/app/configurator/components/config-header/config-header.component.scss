@@ -13,10 +13,8 @@
         background-color: $color-cream;
     }
     &__menu{
-        margin-right: 20px;
-        &:hover{
-            color: $color-black;
-        }
+        color: $color-black;
+        margin-right: 30px;
         img{
             width: 22px;
         }

@@ -1,4 +1,4 @@
-@import '../../../../assets/scss/variables.scss';
+@import "../../../../assets/scss/variables.scss";
 .side-menu {
     top: 0;
     left: 0;
@@ -7,32 +7,67 @@
     height: 100%;
     width: 300px;
     position: fixed;
-    padding-top: 20px;
+    padding: 20px 20px 0;
+    transform: translateX(-110%);
+    transition: 0.3s ease-in-out;
     background-color: $color-white;
     box-shadow: 10px 0 10px rgba($color-black, 0.05);
-    ul {
-        li {
-            a {
-                padding: 8px 0;
-                display: block;
-                font-size: 18px;
-                line-height: 1.2;
-                img {
-                    width: 20px;
-                }
-                &:hover {
-                    color: $color-primary;
-                }
-            }
-            &.active {
-                a {
-                    color: $color-primary;
-                }
-            }
-        }
+    &.active {
+        transform: translateX(0);
     }
     &__close {
         font-size: 12px;
-        margin-bottom: 20px;
+        margin-bottom: 13px;
+    }
+    &__wrap {
+        flex: auto;
+        margin: 0 -20px;
+        overflow-y: auto;
+        ul {
+            li {
+                margin: 8px 0;
+                a {
+                    display: flex;
+                    font-size: 16px;
+                    padding: 10px 20px;
+                    line-height: 1.2;
+                    align-items: center;
+                    color: $color-black;
+                    img {
+                        margin-top: -2px;
+                        max-width: 16px;
+                        max-height: 16px;
+                        margin-right: 8px;
+                    }
+                    &:hover {
+                        background-color: rgba($color-black, 0.05);
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: rgba($color-black, 0.05);
+                    }
+                }
+                ul {
+                    margin: 0 0 0 44px;
+                    li {
+                        a {
+                            padding: 0;
+                            font-size: 14px;
+                            display: inline;
+                            background-color: transparent;
+                            &:hover {
+                                color: $color-primary;
+                            }
+                        }
+                        &.active {
+                            a {
+                                color: $color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,16 +1,36 @@
-<div class="side-menu px-3">
+<div class="side-menu flex-column d-flex">
     <a class="side-menu__close d-inline-flex align-items-center">
         <img class="me-2" src="/assets/images/cross-blue.svg" alt="cross">
         Close
     </a>
-    <ul class="list-unstyled components mb-5">
-        <li class="active">
-            <a class="text-truncate">
-                <img src="assets/images/configuration.svg" alt=""/>
-                Home
-            </a>
-        </li>
-        <li><a class="text-truncate">About</a></li>
-        <li><a class="text-truncate">Works</a></li>
-    </ul>
+    <div class="side-menu__wrap">
+        <ul>
+            <li>
+                <a [routerLink]="['/']" class="text-truncate">
+                    <img src="assets/images/back.svg" alt="back">
+                    WorldTraveller-S
+                </a>
+            </li>
+            <li class="active">
+                <a class="text-truncate">
+                    <img src="assets/images/info.svg" alt=""/>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="text-truncate">
+                    <img src="assets/images/info.svg" alt=""/>About
+                </a>
+                <ul>
+                    <li><a class="text-truncate">Lorem Ipsum sit</a></li>          
+                    <li><a class="text-truncate">Lorem Ipsum sit</a></li>          
+                </ul>
+            </li>
+            <li>
+                <a class="text-truncate">
+                    <img src="assets/images/info.svg" alt=""/> Works
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
