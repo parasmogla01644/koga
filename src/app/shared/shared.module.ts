@@ -13,6 +13,7 @@ import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
 import { DigitOnlyDirective } from './directives/digit-only.directive';
 import { SelectComponent } from './components/select/select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 const MODULES = [
   NgbModule,
@@ -31,12 +32,13 @@ const COMPONENTS = [
   LanguageSelectorComponent,
   ErrorMsgComponent,
   SelectComponent,
+  ContactFormComponent,
 ];
 
 const DIRECTIVES = [DigitOnlyDirective];
 
 @NgModule({
-  declarations: [...COMPONENTS, ...DIRECTIVES],
+  declarations: [...COMPONENTS, ...DIRECTIVES, ContactFormComponent],
   imports: [CommonModule, ...MODULES],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })

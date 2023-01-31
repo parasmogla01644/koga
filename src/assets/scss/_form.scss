@@ -16,6 +16,11 @@
       font-size: 14px;
     }
   }
+  & > textarea.form-control{
+    padding: 11px 15px !important;
+    min-height: 80px;
+    resize: none;
+  }
   & > .form-select {
     @include background-image(
       select-arrow,

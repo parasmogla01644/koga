@@ -12,6 +12,15 @@
     @include max-screen($tablet-lg){
         background-color: $color-cream;
     }
+    &__menu{
+        margin-right: 20px;
+        &:hover{
+            color: $color-black;
+        }
+        img{
+            width: 22px;
+        }
+    }
     &__back {
         font-weight: 500;
         font-size: 16px;

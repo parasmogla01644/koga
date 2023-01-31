@@ -28,11 +28,15 @@
             padding: 12px 10px;
             align-items: center;
             justify-content: center;
+            position: relative;
             background-color: darken(desaturate(adjust-hue($color-cream, 1), 57.43), 15.49);
             @include max-screen($mobile){
                 width: 30px;
                 height: 27px;
                 padding: 7px;
+            }
+            &.is-save{
+                background-color: $color-secondary;
             }
             img {
                 max-height: 100% !important;

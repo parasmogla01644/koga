@@ -18,5 +18,10 @@
 </div>
 
 <div class="container">
+  <app-modal  [headerCustomClass]="['px-0']">
+  <ng-container body>
+    <app-contact-form></app-contact-form>
+  </ng-container>
+  </app-modal>
   <app-product-parts></app-product-parts>
 </div>
