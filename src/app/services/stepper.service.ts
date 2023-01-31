@@ -24,6 +24,11 @@ export class StepperService {
   updateCurrentStepConfig(value: any) {
     let config = this.stepsConfig.value;
     this.stepsConfig.next({ ...config, ...value });
+    this.scrollToTop();
+  }
+
+  scrollToTop(){
+    window.scrollTo(0, 0);
   }
 
   gotoNextStep() {
