@@ -1,6 +1,6 @@
 <div class="d-flex flex-wrap align-items-center configHeader">
-  <app-sidebar></app-sidebar>
-    <a class="configHeader__menu d-inline-flex align-items-center">
+  <app-sidebar [isOpened]="openSideBar" (toggleMenu)="toggleSidebarMenu()" ></app-sidebar>
+    <a class="configHeader__menu d-inline-flex align-items-center" (click)="toggleSidebarMenu()">
         <img src="assets/images/menu.svg" alt="hamburger">
     </a>
 

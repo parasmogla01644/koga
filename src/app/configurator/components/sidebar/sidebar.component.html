@@ -1,5 +1,5 @@
-<div class="side-menu flex-column d-flex">
-    <a class="side-menu__close d-inline-flex align-items-center">
+<div class="side-menu flex-column d-flex" [ngClass]="{'active':isOpened}">
+    <a class="side-menu__close d-inline-flex align-items-center" (click)="toggleMenu.next(true)">
         <img class="me-2" src="/assets/images/cross-blue.svg" alt="cross">
         Close
     </a>

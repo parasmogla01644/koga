@@ -12,6 +12,7 @@ export class ConfigHeaderComponent implements OnInit {
   headerTab: IHeaderTab[] = HEADER_TABS;
   currentStepConfig: any;
   dropDownStatus: boolean = false;
+  openSideBar: boolean = false;
 
   constructor(private readonly stepperService: StepperService) {}
 
@@ -48,5 +49,9 @@ export class ConfigHeaderComponent implements OnInit {
     this.stepperService.stepsConfig.subscribe((data: any) => {
       this.currentStepConfig = data;
     });
+  }
+
+  toggleSidebarMenu(){
+    this.openSideBar = !this.openSideBar ;
   }
 }
