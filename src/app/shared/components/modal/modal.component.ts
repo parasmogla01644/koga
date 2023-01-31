@@ -39,15 +39,10 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(window.innerWidth);
     this.allowClickOutside = window.innerWidth < 767 ? true: false;
   }
 
   closeModal() {
-    this.close.emit();
-  }
-  
-  onOutsideModalClick( ){
     this.close.emit();
   }
 

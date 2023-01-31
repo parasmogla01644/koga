@@ -3,7 +3,7 @@
     <a (click)="gotoConfigurationPage()" class="configHeader__back d-flex align-items-center"><img
         src="assets/images/back-blue.svg" alt="back">{{buttonText}}</a>
 
-    <div class="back-header__language d-flex align-items-center" (click)="openModal()">
+    <div class="back-header__language d-flex align-items-center" (click)="openModal( $event )">
       <img src="assets/images/flag-uk.png" alt="" />
       <span class="ms-2">Landkeuze</span>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 export const BackButtonText = {
@@ -14,7 +14,7 @@ export const BackButtonText = {
 export class HeaderComponent implements OnInit {
   showLangPopup: boolean = false;
   buttonText: string = BackButtonText.default;
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.buttonText =
@@ -32,11 +32,13 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  openModal() {
+  openModal( event: any ) {
     this.showLangPopup = true;
+    event.stopPropagation();
   }
 
   closeModal(event: any) {
     this.showLangPopup = false;
+    this.cd.detectChanges();
   }
 }

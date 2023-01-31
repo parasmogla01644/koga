@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostListener,
   Input,
   OnChanges,
   OnDestroy,
@@ -29,8 +30,14 @@ export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
   selectedLanguage: string = 'English';
   @Output() close: EventEmitter<boolean> = new EventEmitter();
   @Input() activeClass: boolean = false;
+  allowClickOutside: boolean = false;
   constructor() {}
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.allowClickOutside = window.innerWidth < 767 ? true: false;
+  }
+  
   ngOnChanges() {
     if (this.activeClass) {
       addClassToBody('is-modal');
@@ -41,6 +48,7 @@ export class LanguageSelectorComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     this.setCountryList();
+    this.allowClickOutside = window.innerWidth < 767 ? true: false;
   }
 
   closeModal() {

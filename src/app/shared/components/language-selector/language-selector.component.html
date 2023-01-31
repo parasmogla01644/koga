@@ -1,6 +1,6 @@
 <!--  language modal-->
 <div class="languageModal text-center d-flex flex-wrap w-100 h-100" [ngClass]="{'active': activeClass}">
-  <div class="languageModal__wrapper d-flex flex-column w-100">
+  <div class="languageModal__wrapper d-flex flex-column w-100"  appClickOutside (clickOutside)="closeModal()" [allowClickOutside]="allowClickOutside">
     <div class="languageModal__inner w-100">
       <div class="d-flex justify-content-md-start justify-content-end align-items-center languageModal__wrapper-back">
         <span class="d-none d-md-flex align-items-center" role="button" (click)="closeModal()">
