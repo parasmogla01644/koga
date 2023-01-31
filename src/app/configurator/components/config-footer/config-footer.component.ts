@@ -47,7 +47,7 @@ export class ConfigFooterComponent implements OnInit {
     );
     return HEADER_TABS?.length - 1 === index
       ? 'Goto Checkout Cart'
-      : `Naar stap ${index + 2} ${HEADER_TABS?.[index + 1]?.title}`;
+      : ` ${index + 2} ${HEADER_TABS?.[index + 1]?.title}`;
   }
 
   get isDisabled() {

@@ -1,19 +1,27 @@
 <div class="modal-block" [ngClass]="{'active': activeClass}">
-    <div class="modal-block__wrap">
-        <span class="modal-block__close d-flex justify-content-end" >
-            <img class="d-none d-md-block" src="/assets/images/cross-white.svg" role="button" (click)="closeModal()" alt="cross">
-            <img class="d-block d-md-none" src="/assets/images/cross-blue.svg" role="button" (click)="closeModal()" alt="cross">
-        </span>
-        <div class="modal-block__inner">
-            <div class="modal-block__header" *ngIf="headerTitle">
-                <h2 [ngClass]="headerCustomClass">{{headerTitle}}</h2>
-            </div>
-            <ng-container>
-                <div class="modal-block__body">
-                    <ng-content select="[body]"></ng-content>
+    <div class="modal-block__scroll">
+        <div class="modal-block__wrap">
+            <span class="modal-block__close d-flex justify-content-end" >
+                <img class="d-none d-md-block" src="/assets/images/cross-white.svg" role="button" (click)="closeModal()" alt="cross">
+                <img class="d-block d-md-none" src="/assets/images/cross-blue.svg" role="button" (click)="closeModal()" alt="cross">
+            </span>
+            <div class="modal-block__inner">
+                <div class="modal-block__header" *ngIf="headerTitle">
+                    <h2 [ngClass]="headerCustomClass">{{headerTitle}}</h2>
                 </div>
-                <ng-content select="[footer]"></ng-content>
-            </ng-container>
+                <ng-container>
+                    <div class="modal-block__body">
+                        <ng-content select="[body]"></ng-content>
+                    </div>
+                    <ng-content select="[footer]"></ng-content>
+                </ng-container>
+            </div>
         </div>
+    </div>
+    <div class="modal-block__bottom d-none d-md-flex justify-content-center">
+        <a (click)="closeModal()">
+            <img class="me-2" src="/assets/images/cross-white.svg" role="button" alt="cross">
+            Close
+        </a>
     </div>
 </div>

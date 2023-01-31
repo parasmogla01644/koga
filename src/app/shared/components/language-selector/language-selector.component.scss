@@ -5,26 +5,23 @@
     z-index: 9;
     opacity: 0;
     position: fixed;
-    overflow-y: auto;
     visibility: hidden;
-    padding: 66px 40px 20px;
     backdrop-filter: blur(5px);
     transition: 0.3s ease-in-out;
     background-color: rgba($color-secondary, 0.9);
-    @include max-screen($tablet-lg) {
-        padding: 15px;
-    }
-    @include max-screen($mobile) {
-        padding: 0;
-        overflow: hidden;
-    }
     &__wrapper {
+        overflow-y: auto;
+        padding: 66px 40px 20px;
+        height: calc(100vh - 80px);
+        @include max-screen($tablet-lg) {
+            padding: 15px;
+        }
         @include max-screen($mobile) {
             left: 0;
             bottom: 0;
+            padding: 20px 0 0;
             position: fixed;
             overflow-y: auto;
-            padding: 20px 0 0;
             height: calc(100% - 82px);
             transition: 0.3s ease-in-out;
             transform: translateY(100px);
@@ -150,7 +147,7 @@
                 }
                 @include max-screen($mobile) {
                     width: 100%;
-                    padding: 15px;
+                    padding: 15px 13px;
                     margin: 0;
                     border: 0;
                 }
@@ -218,7 +215,14 @@
         }
     }
     &__next {
-        margin-top: auto;
+        @include min-screen($mobile){
+            right: 42px;
+            bottom: 10px;
+            position: absolute;
+        }
+        @include max-screen($tablet-lg){
+            right: 16px;            
+        }
         @include max-screen($mobile) {
             left: 0;
             bottom: 0;
@@ -264,6 +268,20 @@
             @include max-screen($mobile) {
                 transform: translateY(0);
             }
+        }
+    }
+    &__bottom {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        img {
+            width: 17px;
+        }
+        a {
+            font-size: 13px;
+            color: $color-white;
         }
     }
 }

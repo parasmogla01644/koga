@@ -20,7 +20,7 @@ import { SignatureComponent } from './components/signature/signature.component';
 import { FrameSizeComponent } from './components/frame-size/frame-size.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ConfirmLeave } from '@shared/guards/can-deactivate.guard';
-
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes = [
   {
     path: '',
@@ -48,7 +48,7 @@ const COMPONENTS = [
   FrameSizeComponent,
 ];
 
-const MODULES = [CommonModule, SharedModule, RouterModule];
+const MODULES = [CommonModule, SharedModule, RouterModule, NgbTooltipModule];
 
 @NgModule({
   declarations: [...COMPONENTS, SidebarComponent],

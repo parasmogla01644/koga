@@ -1,87 +1,105 @@
 @import "../../../../assets/scss/variables.scss";
 .modal-block {
-  top: 0;
-  left: 0;
-  z-index: 9;
-  width: 100%;
-  opacity: 0;
-  height: 100%;
-  position: fixed;
-  overflow-y: auto;
-  visibility: hidden;
-  padding: 72px 135px 0;
-  mix-blend-mode: normal;
-  backdrop-filter: blur(5px);
-  transition: 0.3s ease-in-out;
-  background-color: rgba($color-secondary, 0.9);
-  @include max-screen($tablet) {
-    padding: 20px 50px 0;
-  }
-  @include max-screen($mobile) {
-    padding: 80px 0 0;
-  }
-  &__close {
-    @include max-screen($mobile) {
-      margin-bottom: 20px;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    position: fixed;
+    visibility: hidden;
+    mix-blend-mode: normal;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease-in-out;
+    background-color: rgba($color-secondary, 0.9);
+    &__close {
+        @include max-screen($mobile) {
+            margin-bottom: 20px;
+        }
+        img {
+            cursor: pointer;
+            max-width: 36px;
+            @include max-screen($mobile) {
+                max-width: 18px;
+            }
+        }
     }
-    img {
-      cursor: pointer;
-      max-width: 36px;
-      @include max-screen($mobile) {
-        max-width: 18px;
-      }
+    &__scroll {
+        padding: 72px 135px 0;
+        overflow-y: auto;
+        height: calc(100vh - 50px);
+        @include max-screen($tablet) {
+            padding: 20px 50px 0;
+        }
+        @include max-screen($mobile) {
+            padding: 80px 0 0;
+            height: 100vh;
+        }
     }
-  }
-  &__wrap {
-    @include max-screen($mobile) {
-      padding: 15px 15px 0;
-      transition: 0.3s ease-in-out;
-      transform: translateY(100px);
-      min-height: calc(100vh - 80px);
-      background-color: $color-white;
+    &__wrap {
+        @include max-screen($mobile) {
+            padding: 15px 15px 0;
+            transition: 0.3s ease-in-out;
+            transform: translateY(100px);
+            min-height: calc(100vh - 80px);
+            background-color: $color-white;
+        }
     }
-  }
-  &__inner {
-    max-width: 1015px;
-    margin: 0 auto;
-    padding: 44px 15px;
-    @include max-screen($tablet) {
-      padding: 24px 15px;
+    &__inner {
+        max-width: 1015px;
+        margin: 0 auto;
+        padding: 44px 15px;
+        @include max-screen($tablet) {
+            padding: 24px 15px;
+        }
+        @include max-screen($mobile) {
+            padding: 0;
+        }
     }
-    @include max-screen($mobile) {
-      padding: 0;
+    &__header {
+        h2 {
+            padding: 0 80px;
+            color: $color-white;
+            margin-bottom: 38px;
+            @include max-screen($tablet) {
+                padding: 0;
+                margin-bottom: 24px;
+            }
+            @include max-screen($mobile) {
+                text-align: center;
+                color: $color-darkBlue;
+            }
+        }
     }
-  }
-  &__header {
-    h2 {
-      padding: 0 80px;
-      color: $color-white;
-      margin-bottom: 38px;
-      @include max-screen($tablet) {
-        padding: 0;
-        margin-bottom: 24px;
-      }
-      @include max-screen($mobile) {
-        text-align: center;
-        color: $color-darkBlue;
-      }
+    &__body {
+        color: $color-white;
+        @include max-screen($mobile) {
+            overflow-y: auto;
+            margin: 0 -15px;
+            color: $color-secondary;
+            padding: 0 15px 15px;
+            height: calc(100vh - 173px);
+        }
     }
-  }
-  &__body {
-    color: $color-white;
-    @include max-screen($mobile) {
-      overflow-y: auto;
-      margin: 0 -15px;
-      color: $color-secondary;
-      padding: 0 15px 15px;
-      height: calc(100vh - 173px);
+    &__bottom {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+        padding-bottom: 20px;
+        img {
+            width: 17px;
+        }
+        a {
+            font-size: 13px;
+            color: $color-white;
+        }
     }
-  }
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    .modal-block__wrap {
-      transform: translateY(0);
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        .modal-block__wrap {
+            transform: translateY(0);
+        }
     }
-  }
 }
