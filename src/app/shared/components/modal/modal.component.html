@@ -1,6 +1,6 @@
 <div class="modal-block" [ngClass]="{'active': activeClass}">
     <div class="modal-block__scroll">
-        <div class="modal-block__wrap">
+        <div class="modal-block__wrap" appClickOutside (clickOutside)="onOutsideModalClick($event)">
             <span class="modal-block__close d-flex justify-content-end" >
                 <img class="d-none d-md-block" src="/assets/images/cross-white.svg" role="button" (click)="closeModal()" alt="cross">
                 <img class="d-block d-md-none" src="/assets/images/cross-blue.svg" role="button" (click)="closeModal()" alt="cross">

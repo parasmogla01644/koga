@@ -6,7 +6,7 @@
         <ng-template ngbPanelContent>
           <ng-container [ngSwitch]="frame.ref">
             <ng-container *ngSwitchCase="'framekleurRef'">
-              <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal()">meer
+              <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal($event)">meer
                   informatie</a>
               </p>
               <app-select *ngIf="selectedFrame?.showColorOptions" label='Color' [options]="colorOptions"
@@ -44,7 +44,7 @@
               </div>
             </ng-container>
             <ng-container *ngSwitchCase="'vorkRef'">
-              <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal()">meer
+              <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal($event)">meer
                   informatie</a>
               </p>
             </ng-container>

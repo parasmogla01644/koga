@@ -35,6 +35,10 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   closeModal() {
     this.close.emit();
   }
+  
+  onOutsideModalClick( event: any ){
+    this.close.emit();
+  }
 
   ngOnDestroy() {
     removeClassToBody('is-modal');

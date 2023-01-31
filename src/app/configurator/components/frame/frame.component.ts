@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StepperService } from '@service/stepper.service';
 import { ISelect } from '@shared/components/select/select.component';
@@ -102,7 +102,8 @@ export class FrameComponent implements OnInit {
 
   constructor(
     private readonly stepperService: StepperService,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -132,12 +133,14 @@ export class FrameComponent implements OnInit {
   handleChange(event: any) {
     console.log(event);
   }
-  toggleModal() {
+  toggleModal(event?:any ) {
     this.openModal = !this.openModal;
+    event?.stopPropagation();
   }
 
   closeModal() {
     this.openModal = false;
+    this.cd.detectChanges();
   }
 
   selectCard(card: any) {
