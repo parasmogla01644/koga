@@ -7,12 +7,14 @@ export interface ComponentCanDeactivate {
   deactivateMessage: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ConfirmLeave implements CanDeactivate<ComponentCanDeactivate> {
   canDeactivate(component: ComponentCanDeactivate): boolean | Observable<boolean> {
 
-    return component.canDeactivate() ?
-      true : confirm( component.deactivateMessage || 'You are about to exit your design. Be sure to save your configuration.' );
+    return component?.canDeactivate() ||false ?
+      true : confirm( component?.deactivateMessage || 'You are about to exit your design. Be sure to save your configuration.' );
 
   }
 

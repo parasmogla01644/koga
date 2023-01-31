@@ -19,7 +19,7 @@ import { SizeComponent } from './components/size/size.component';
 import { SignatureComponent } from './components/signature/signature.component';
 import { FrameSizeComponent } from './components/frame-size/frame-size.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ConfirmLeave } from '@shared/guards/can-deactivate.guard';
+import { ConfirmLeave } from '../guards/can-deactivate.guard';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes = [
   {

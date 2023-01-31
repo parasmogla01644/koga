@@ -14,6 +14,7 @@ import { DigitOnlyDirective } from './directives/digit-only.directive';
 import { SelectComponent } from './components/select/select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ClickOutsideDirective } from './directives/outsideClick.directive';
 
 const MODULES = [
   NgbModule,
@@ -35,10 +36,10 @@ const COMPONENTS = [
   ContactFormComponent,
 ];
 
-const DIRECTIVES = [DigitOnlyDirective];
+const DIRECTIVES = [DigitOnlyDirective, ClickOutsideDirective ];
 
 @NgModule({
-  declarations: [...COMPONENTS, ...DIRECTIVES, ContactFormComponent],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
   imports: [CommonModule, ...MODULES],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
