@@ -18,6 +18,7 @@ export class ProductPriceInfoComponent implements OnInit {
   @Input() accept: boolean = false;
   @Input() isDisable: boolean = true;
   showInfoModal: boolean = false;
+  showContactPopup: boolean = false;
   showSubsDetailPopup: boolean = false;
   currentRoute!: string;
   pay: boolean = false;
@@ -37,6 +38,11 @@ export class ProductPriceInfoComponent implements OnInit {
     event.stopPropagation();
   }
 
+  openContactModal( event: any ) {
+    this.showContactPopup = true;
+    event.stopPropagation();
+  }
+
   closeModal() {
     this.showInfoModal = false;
     this.cd.detectChanges();
@@ -49,6 +55,11 @@ export class ProductPriceInfoComponent implements OnInit {
 
   closeSubsModal() {
     this.showSubsDetailPopup = false;
+    this.cd.detectChanges();
+  }
+
+  closeContactModal() {
+    this.showContactPopup = false;
     this.cd.detectChanges();
   }
 

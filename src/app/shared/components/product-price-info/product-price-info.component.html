@@ -34,7 +34,7 @@
           </a>
         </li>
         <li>
-          <a class="d-flex align-items-center">
+          <a class="d-flex align-items-center" (click)="openContactModal( $event )">
             <img src="/assets/images/call.svg" alt="call" class="me-2">
             <span>Contact us</span>
           </a>
@@ -102,5 +102,10 @@
     unde quia ea iusto! Eaque, doloribus delectus! Sequi sed asperiores vitae aliquid et illum eaque enim, consequatur
     eum! Sint quaerat quo possimus inventore dolorum ullam laboriosam, enim repellendus, debitis magnam quibusdam
     placeat autem nemo provident, quod est consequatur sit nihil. Ipsum dolor odit autem laudantium.
+  </ng-container>
+</app-modal>
+<app-modal [activeClass]="showContactPopup" (close)="closeContactModal()" [headerCustomClass]="['px-0']" headerTitle="">
+  <ng-container body>
+    <app-contact-form></app-contact-form>
   </ng-container>
 </app-modal>
