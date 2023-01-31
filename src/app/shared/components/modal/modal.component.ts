@@ -20,6 +20,8 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   @Input() headerCustomClass!: string[];
   @Input() activeClass: boolean = false;
 
+  allowClickOutside: boolean = false;
+
   constructor() {}
 
   ngOnChanges() {
@@ -30,13 +32,16 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(window.innerWidth);
+    this.allowClickOutside = window.innerWidth < 767 ? true: false;
+  }
 
   closeModal() {
     this.close.emit();
   }
   
-  onOutsideModalClick( event: any ){
+  onOutsideModalClick( ){
     this.close.emit();
   }
 
