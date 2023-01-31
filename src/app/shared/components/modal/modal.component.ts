@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostListener,
   Input,
   OnChanges,
   OnDestroy,
@@ -23,6 +24,11 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
   allowClickOutside: boolean = false;
 
   constructor() {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.allowClickOutside = window.innerWidth < 767 ? true: false;
+  }
 
   ngOnChanges() {
     if (this.activeClass) {
