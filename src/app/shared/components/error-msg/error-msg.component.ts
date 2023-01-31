@@ -11,6 +11,7 @@ export class ErrorMsgComponent implements OnInit {
   @Input() controlName!: string;
   @Input() groupName!: FormGroup;
   @Input() patternErrorMsg!: string;
+  @Input() customErrorMessage: string = '';
 
   constructor() {}
 
@@ -31,6 +32,8 @@ export class ErrorMsgComponent implements OnInit {
         msg = this.patternErrorMsg;
       } else if (errors?.phone) {
         msg = ERRORS.PHONE;
+      } else if( this.customErrorMessage ){
+        msg = this.customErrorMessage;
       }
     }
     return msg;

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductBlockComponent implements OnInit {
 
+  openContactPopup: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    this.openContactPopup = true;
+  }
+
+  closeModal() {
+    this.openContactPopup = false;
   }
 
 }
