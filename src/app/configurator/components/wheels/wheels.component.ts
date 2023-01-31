@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { IAppCards, IExpansionTabs } from '../../models/configurator.models';
 import { AppCards } from '../../constants/cards.contants';
 import { StepperService } from '@service/stepper.service';
@@ -25,7 +25,7 @@ export class WheelsComponent implements OnInit {
     },
   ];
 
-  constructor(private readonly stepperService: StepperService) {}
+  constructor(private readonly stepperService: StepperService, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.setData();
@@ -46,12 +46,14 @@ export class WheelsComponent implements OnInit {
   handleChange(event: any) {
     console.log(event);
   }
-  toggleModal() {
+  toggleModal( event: any ) {
     this.openModal = !this.openModal;
+    event.stopPropagation();
   }
 
   closeModal() {
     this.openModal = false;
+    this.cd.detectChanges();
   }
 
   selectCard(card: any) {

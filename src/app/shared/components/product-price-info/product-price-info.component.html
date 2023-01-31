@@ -17,7 +17,7 @@
           The VAT will be calculated in the next step.
         </ng-template>
       </p>
-      <img src="assets/images/info.svg" alt="Info" (click)="openModal()" />
+      <img src="assets/images/info.svg" alt="Info" (click)="openModal( $event )" />
     </div>
     <div class="product-price__price d-flex flex-wrap justify-content-between align-items-end">
       <strong>Total</strong>
@@ -64,7 +64,7 @@
     <div class="product-price__accept" *ngIf="accept">
       <input type="checkbox" id="accept">
       <label for="accept">Lorem ipsum dolor sit amet.</label>
-      <img (click)="openSubsModal()" src="assets/images/info.svg" alt="Info" />
+      <img (click)="openSubsModal( $event )" src="assets/images/info.svg" alt="Info" />
     </div>
 
     <button class="product-price__btn btn btn-primary w-100" (click)="currentRoute === 'checkout' ? saveDetails(): gotoCheckout()"

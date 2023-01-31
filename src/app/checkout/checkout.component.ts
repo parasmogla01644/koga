@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   noWhitespaceValidator,
@@ -14,7 +14,7 @@ export class CheckoutComponent implements OnInit {
   deliveryOptionPopup: boolean = false;
   userForm!: FormGroup;
 
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _fb: FormBuilder,  private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -38,11 +38,13 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  openDeliveryOptionPopup() {
+  openDeliveryOptionPopup( event: any) {
     this.deliveryOptionPopup = true;
+    event.stopPropagation();
   }
 
   closeDeliveryOptionPopup() {
     this.deliveryOptionPopup = false;
+    this.cd.detectChanges();
   }
 }

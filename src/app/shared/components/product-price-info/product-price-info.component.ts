@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ export class ProductPriceInfoComponent implements OnInit {
   currentRoute!: string;
   pay: boolean = false;
 
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.currentRoute = this.router.url === '/checkout' ? 'checkout' : '';
@@ -32,20 +32,24 @@ export class ProductPriceInfoComponent implements OnInit {
     this.router.navigate(['checkout']);
   }
 
-  openModal() {
+  openModal( event: any ) {
     this.showInfoModal = true;
+    event.stopPropagation();
   }
 
   closeModal() {
     this.showInfoModal = false;
+    this.cd.detectChanges();
   }
 
-  openSubsModal() {
+  openSubsModal( event: any ) {
     this.showSubsDetailPopup = true;
+    event.stopPropagation();
   }
 
   closeSubsModal() {
     this.showSubsDetailPopup = false;
+    this.cd.detectChanges();
   }
 
   saveDetails() {

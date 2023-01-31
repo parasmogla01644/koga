@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-product-block',
@@ -8,17 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class ProductBlockComponent implements OnInit {
 
   openContactPopup: boolean = false;
-  constructor() { }
+  constructor( private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
-  openModal() {
+  openModal( event: any) {
     this.openContactPopup = true;
+    event.stopPropagation();
   }
 
   closeModal() {
     this.openContactPopup = false;
+    this.cd.detectChanges();
   }
 
 }

@@ -4,7 +4,7 @@
     <ng-container>
       <ngb-panel *ngFor="let tab of expansionList; let i = index" [id]="(i).toString()" [title]="tab.title">
         <ng-template ngbPanelContent>
-          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal()">meer
+          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri... <a (click)="toggleModal( $event )">meer
               informatie</a></p>
 
           <div class="row">

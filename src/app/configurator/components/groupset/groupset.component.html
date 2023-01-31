@@ -4,7 +4,7 @@
     <ng-container *ngFor="let group of expansionList; let i = index">
       <ngb-panel [title]="group.title" [id]="(i).toString()">
         <ng-template ngbPanelContent>
-          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri..<a (click)="toggleModal()">meer
+          <p>t. Urna massa ut sed nibh quis ultrices quis. S morbi sceleri..<a (click)="toggleModal($event)">meer
               informatie</a></p>
           <div class="row">
             <ng-container *ngFor="let card of AppCards">
