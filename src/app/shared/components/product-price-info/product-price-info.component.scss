@@ -78,6 +78,9 @@
                     width: 50%;
                     margin: 5px 0;
                 }
+                a {
+                    color: $color-black;
+                }
                 img {
                     width: 19px;
                     @include max-screen($mobile) {
