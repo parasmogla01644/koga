@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,9 +9,21 @@ export class SidebarComponent implements OnInit {
 
   @Input() isOpened: boolean = false;
   @Output() toggleMenu: EventEmitter<boolean> = new EventEmitter();
-  constructor() { }
+  dropDownStatus: boolean = false;
+
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+  }
+
+  languageToggle(event: any) {
+    this.dropDownStatus = !this.dropDownStatus;
+    event.stopPropagation();
+  }
+
+  closeModal(event: any) {
+    this.dropDownStatus = false;
+    this.cd.detectChanges();
   }
 
 }

@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li>
-                <a class="text-truncate">
+                <a class="text-truncate" (click)="languageToggle($event); toggleMenu.next(true)">
                     <img src="assets/images/language.svg" alt=""/>
                     Landkeuze
                 </a>
@@ -27,3 +27,5 @@
     </div>
 </div>
 <div class="side-menu__overlay" (click)="toggleMenu.next(true)" [ngClass]="{'active':isOpened}"></div>
+<app-language-selector [activeClass]="dropDownStatus" (close)='closeModal($event)'>
+</app-language-selector>

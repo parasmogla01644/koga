@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HEADER_TABS } from '../../constants/headers.constants';
 import { IHeaderTab } from '../../models/configurator.models';
 import { StepperService } from '@service/stepper.service';
@@ -11,10 +11,9 @@ import { StepperService } from '@service/stepper.service';
 export class ConfigHeaderComponent implements OnInit {
   headerTab: IHeaderTab[] = HEADER_TABS;
   currentStepConfig: any;
-  dropDownStatus: boolean = false;
   openSideBar: boolean = false;
 
-  constructor(private readonly stepperService: StepperService, private cd: ChangeDetectorRef) {}
+  constructor(private readonly stepperService: StepperService,) {}
 
   ngOnInit(): void {
     this.subsCurrentStep();
@@ -31,16 +30,6 @@ export class ConfigHeaderComponent implements OnInit {
         }
       },
     });
-  }
-
-  languageToggle(event: any) {
-    this.dropDownStatus = !this.dropDownStatus;
-    event.stopPropagation();
-  }
-
-  closeModal(event: any) {
-    this.dropDownStatus = false;
-    this.cd.detectChanges();
   }
 
   selectTab(index: number) {
