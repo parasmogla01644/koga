@@ -24,7 +24,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes = [
   {
     path: '',
-    canDeactivate: [ConfirmLeave],
+    // canDeactivate: [ConfirmLeave],
     component: ConfiguratorComponent,
   },
 ];

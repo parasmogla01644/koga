@@ -12,16 +12,18 @@ import { IHeaderTab } from './models/configurator.models';
 export class ConfiguratorComponent implements OnInit {
   currentStep!: IHeaderTab;
   viewToggle: boolean = false;
-  deactivateMessage: string = 'You are about to exit your design. Be sure to save your configuration.';
+  deactivateMessage: string =
+    'You are about to exit your design. Be sure to save your configuration.';
   private tabList = HEADER_TABS;
+  currentStepConfig: any;
 
   constructor(private readonly stepperService: StepperService) {}
 
   @HostListener('window:beforeunload')
   canDeactivate(): Observable<boolean> | boolean {
-      return this.currentStep.ref=== ( this.tabList[this.tabList?.length-1]?.ref);
+    return this.isEdited;
   }
-  
+
   ngOnInit(): void {
     this.subsCurrentSteps();
   }
@@ -33,5 +35,15 @@ export class ConfiguratorComponent implements OnInit {
   }
   clickViewToggle(value: boolean): void {
     this.viewToggle = value;
+  }
+
+  subsCurrentStepConfig() {
+    this.stepperService.stepsConfig.subscribe((data: any) => {
+      this.currentStepConfig = data;
+    });
+  }
+
+  get isEdited() {
+    return !!this.currentStepConfig?.[this.currentStep?.id];
   }
 }
