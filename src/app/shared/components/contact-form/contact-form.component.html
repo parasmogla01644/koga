@@ -6,20 +6,18 @@
       <div class="col-md-6">
         <div class="form-floating">
           <input type="text" formControlName="name" class="form-control"
-            id="floatingInput" placeholder="enter your name">
+            id="floatingInput1" placeholder="enter your name">
           <label for="floatingInput">Name</label>
           <app-error-msg [groupName]="contactFormGroup" controlName="name"></app-error-msg>
-          <span class="invalid-message">Please enter your name </span>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-floating">
-          <input type="text" formControlName="email" class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com">
+          <input type="text" formControlName="subject" class="form-control"
+            id="floatingInput2"
+            placeholder="Subject">
           <label for="floatingInput">Subject</label>
-          <app-error-msg [groupName]="contactFormGroup" controlName="email"></app-error-msg>
-          <span class="invalid-message">Please enter your email </span>
+          <app-error-msg [groupName]="contactFormGroup" controlName="subject"></app-error-msg>
         </div>
       </div>
       <div class="col-md-12">
@@ -28,7 +26,6 @@
             here" id="floatingTextarea2" formControlName="message" ></textarea>
           <label for="floatingTextarea2">Message</label>
           <app-error-msg [groupName]="contactFormGroup" controlName="message" customErrorMessage="Please enter your message of at least 5 characters"></app-error-msg>
-          <span class="invalid-message">Please enter your message of at least 5 characters</span>
         </div>
       </div>
       <div class="col-md-12 d-flex justify-content-end ">
