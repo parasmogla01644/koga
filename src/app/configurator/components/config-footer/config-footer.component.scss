@@ -96,6 +96,9 @@
             @include max-screen($mobile){
                 font-size: 13px;
             }
+            @include max-screen(374px){
+                font-size: 11px;
+            }
         }
         &--save {
             @include max-screen($desktop){

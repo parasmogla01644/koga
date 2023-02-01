@@ -103,9 +103,8 @@
         img {
             width: 17px;
         }
-        a {
-            font-size: 13px;
-            color: $color-white;
+        .btn {
+            min-width: 80px;
         }
     }
     &.active {
