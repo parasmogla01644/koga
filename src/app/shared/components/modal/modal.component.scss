@@ -25,6 +25,7 @@
         }
     }
     &__scroll {
+        width: 100%;
         padding: 72px 135px 0;
         overflow-y: auto;
         height: calc(100vh - 50px);
@@ -34,6 +35,9 @@
         @include max-screen($mobile) {
             padding: 80px 0 0;
             height: 100vh;
+            transition: 0.3s ease-in-out;
+            transform: translateY(100px);
+
         }
         &::-webkit-scrollbar {
             width: 5px;
@@ -50,8 +54,6 @@
     &__wrap {
         @include max-screen($mobile) {
             padding: 15px 15px 0;
-            transition: 0.3s ease-in-out;
-            transform: translateY(100px);
             min-height: calc(100vh - 80px);
             background-color: $color-white;
         }
@@ -109,7 +111,7 @@
     &.active {
         opacity: 1;
         visibility: visible;
-        .modal-block__wrap {
+        .modal-block__scroll {
             transform: translateY(0);
         }
     }
