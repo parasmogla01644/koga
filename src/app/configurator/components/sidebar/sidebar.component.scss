@@ -16,9 +16,17 @@
         transform: translateX(0);
     }
     &__close {
-        font-size: 12px;
+        opacity: 0.8;
+        font-size: 15px;
         color: $color-black;
         margin-bottom: 13px;
+        transition: 0.3s ease-in-out opacity;
+        img {
+            width: 16px;
+        }
+        &:hover {
+            opacity: 1;
+        }
     }
     &__wrap {
         flex: auto;

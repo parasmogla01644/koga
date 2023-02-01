@@ -1,13 +1,8 @@
 <div class="d-flex flex-wrap align-items-center configHeader">
   <app-sidebar [isOpened]="openSideBar" (toggleMenu)="toggleSidebarMenu()" ></app-sidebar>
     <a class="configHeader__menu d-inline-flex align-items-center" (click)="toggleSidebarMenu()">
-        <img src="assets/images/menu.svg" alt="hamburger">
+        <img src="assets/images/menu.svg" class="me-2" alt="hamburger"> Menu
     </a>
-
-    <div class="configHeader__language" (click)="languageToggle( $event )">
-        <span>Landkeuze</span>
-        <img src="assets/images/flag-uk.png" alt="" />
-    </div>
 
   <ul class="nav nav-tabs align-items-center" id="myTab" role="tablist">
     <ng-container *ngFor="let tab of headerTab; let i = index">
