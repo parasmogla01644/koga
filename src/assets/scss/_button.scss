@@ -25,6 +25,12 @@
       background-color: darken($color-secondary, 20%);
     }
   }
+  &-white {
+    color: $color-secondary !important;
+    &:hover {
+        color: $color-white !important
+    }
+  }
   &-outline {
     font-weight: 700;
     color: $color-darkBlue;
@@ -46,6 +52,9 @@
     opacity: 1;
     background-color: $color-disabled;
     cursor: not-allowed;
+  }
+  &.btn-sm {
+    height: 35px;
   }
   & + .btn {
     margin-left: 16px;

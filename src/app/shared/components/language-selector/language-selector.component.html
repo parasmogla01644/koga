@@ -57,8 +57,7 @@
     </div>
   </div>
   <div class="languageModal__bottom d-none d-md-flex justify-content-center align-items-center">
-       <a (click)="closeModal()">
-            <img class="me-2" src="/assets/images/cross-white.svg" role="button" alt="cross">
+       <a (click)="closeModal()" class="btn btn-white btn-sm">
             Close
         </a>
         <div class="d-md-flex justify-content-end languageModal__next" *ngIf="selectedCountry && selectedLanguage">
