@@ -21,6 +21,7 @@ export class ContactFormComponent implements OnInit {
       name: ['', Validators.required],
       subject: ['', [Validators.required]],
       message: ['', Validators.minLength(5)],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 

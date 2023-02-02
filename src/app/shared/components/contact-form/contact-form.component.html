@@ -22,6 +22,15 @@
       </div>
       <div class="col-md-12">
         <div class="form-floating">
+          <input type="email" formControlName="email" class="form-control"
+            id="floatingInput02"
+            placeholder="Subject">
+          <label for="floatingInput">Email</label>
+          <app-error-msg [groupName]="contactFormGroup" controlName="email"></app-error-msg>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-floating">
           <textarea class="form-control" placeholder="Leave a message
             here" id="floatingTextarea2" formControlName="message" ></textarea>
           <label for="floatingTextarea2">Message</label>
