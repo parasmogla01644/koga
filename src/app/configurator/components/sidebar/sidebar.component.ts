@@ -10,6 +10,8 @@ export class SidebarComponent implements OnInit {
   @Input() isOpened: boolean = false;
   @Output() toggleMenu: EventEmitter<boolean> = new EventEmitter();
   dropDownStatus: boolean = false;
+  isExpanded: boolean = false;
+  expandedMenuName!: string;
 
   constructor(private cd: ChangeDetectorRef) {}
 
@@ -25,5 +27,10 @@ export class SidebarComponent implements OnInit {
     this.dropDownStatus = false;
     this.cd.detectChanges();
   }
-
+  childMenuToggle( menuToggle: string){
+    if( this.expandedMenuName === menuToggle ){
+        this.isExpanded = !this.isExpanded;
+    }
+    this.expandedMenuName = menuToggle;
+  }
 }

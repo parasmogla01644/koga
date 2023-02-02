@@ -6,22 +6,68 @@
     <div class="side-menu__wrap">
         <ul>
             <li>
-                <a [routerLink]="['/']" class="text-truncate">
+                <a [routerLink]="['/']">
                     <img src="assets/images/back.svg" alt="back">
-                    WorldTraveller-S
+                    <span>WorldTraveller-S</span>
                 </a>
             </li>
             <li>
-                <a class="text-truncate">
+                <a>
                     <img src="assets/images/configuration.svg" alt=""/>
-                    Open saved configuration
+                    <span>Open saved configuration</span>
                 </a>
             </li>
             <li>
-                <a class="text-truncate" (click)="languageToggle($event); toggleMenu.next(true)">
+                <a (click)="languageToggle($event); toggleMenu.next(true)">
                     <img src="assets/images/language.svg" alt=""/>
-                    Landkeuze
+                    <span>Landkeuze</span>
                 </a>
+            </li>
+            <li class="has-child" [ngClass]="{'active':isExpanded && expandedMenuName ==='expandMenu'}">
+                <a (click)="childMenuToggle('expandMenu')">
+                    <img src="assets/images/language.svg" alt=""/>
+                    <span>Lorem Ipsum</span>
+                </a>
+                <ul>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-child" [ngClass]="{'active':isExpanded && expandedMenuName === 'expandMenu1' }">
+                <a (click)="childMenuToggle('expandMenu1')">
+                    <img src="assets/images/language.svg" alt=""/>
+                    <span>Lorem Ipsum</span>
+                </a>
+                <ul>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span>Lorem Ipsum sit amet</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
