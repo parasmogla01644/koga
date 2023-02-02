@@ -77,7 +77,7 @@
         font-weight: 500;
         color: $color-secondary;
         @include max-screen($desktop){
-            left: 15px;
+            right: 15px;
             bottom: 14px;
             position: absolute;
         }
@@ -98,12 +98,6 @@
             }
             @include max-screen(374px){
                 font-size: 11px;
-            }
-        }
-        &--save {
-            @include max-screen($desktop){
-                left: auto;
-                right: 15px;
             }
         }
     }

@@ -37,7 +37,7 @@
               <div class="row">
                 <ng-container *ngFor="let card of AppCards">
                   <div class="col-6 d-flex mb-3">
-                    <app-card-part class="d-flex w-100" [isDisabled]="card.isDisabled" [caption]="card.caption"
+                    <app-card-part class="d-flex w-100" (click)="selectCard(card)" [isDisabled]="card.isDisabled" [caption]="card.caption"
                       [infoTitle]="card.infoTitle"></app-card-part>
                   </div>
                 </ng-container>

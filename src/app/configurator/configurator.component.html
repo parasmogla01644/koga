@@ -3,7 +3,7 @@
   <div class="configurator__info d-flex flex-wrap">
     <article class="d-flex justify-content-center align-items-center" [ngClass]="{'justify-content-lg-center px-3':viewToggle, 'justify-content-lg-end':!viewToggle}">
         <div class="configurator__view d-none d-lg-flex">
-            <a class="is-save" placement="top" ngbTooltip="Save"><img src="assets/images/save1.svg" alt="save"/></a>
+            <a class="is-save" placement="top" ngbTooltip="Save"><img src="assets/images/save-white.svg" alt="save"/></a>
             <a [ngClass]="{'active': viewToggle}" (click)="clickViewToggle(true)" placement="top" ngbTooltip="View mode"><img src="assets/images/eye.svg" alt="Eye"/></a>
             <a [ngClass]="{'active': !viewToggle}" (click)="clickViewToggle(false)" placement="top" ngbTooltip="Edit mode"><img src="assets/images/edit-solid.svg" alt="Edit"/></a>
         </div>

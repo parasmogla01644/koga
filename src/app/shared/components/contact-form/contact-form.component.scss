@@ -1,6 +1,9 @@
 @import '../../../../assets/scss/variables.scss';
 .contact{
-    background-color: $color-white;
     padding: 30px;
     border-radius: 4px;
+    background-color: $color-white;
+    @include max-screen($mobile){
+        padding: 0;
+    }
 }

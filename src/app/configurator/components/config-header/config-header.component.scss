@@ -97,30 +97,4 @@
             }
         }
     }
-    &__language {
-        margin: 0 15px 0 0;
-        cursor: pointer;
-        @include min-screen(2200px){
-            margin-left: auto;
-        }
-        @include max-screen($desktop) {
-            margin-right: 0;
-            margin-left: auto;
-            padding-right: 12px;
-            @include background-image(angle-down, svg, right, no-repeat, 8px);
-        }
-        span {
-            user-select: none;
-            @include max-screen($desktop) {
-                display: none;
-            }
-        }
-        img {
-            width: 27px;
-            display: block;
-            @include min-screen($desktop) {
-                display: none;
-            }
-        }
-    }
 }

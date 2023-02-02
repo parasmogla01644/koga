@@ -131,7 +131,7 @@
             @include max-screen($mobile) {
                 overflow-y: auto;
                 padding: 0;
-                height: calc(100vh - 374px);
+                height: calc(100vh - 353px);
             }
             &.isButton {
                 @include max-screen($mobile){
