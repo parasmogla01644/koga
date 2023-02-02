@@ -28,9 +28,7 @@ export class SidebarComponent implements OnInit {
     this.cd.detectChanges();
   }
   childMenuToggle( menuToggle: string){
-    if( this.expandedMenuName === menuToggle ){
-        this.isExpanded = !this.isExpanded;
-    }
-    this.expandedMenuName = menuToggle;
+    this.isExpanded = !(this.expandedMenuName === menuToggle);
+    this.expandedMenuName = (this.expandedMenuName === menuToggle)? '': menuToggle;
   }
 }
