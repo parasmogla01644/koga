@@ -46,7 +46,7 @@ export class ConfigFooterComponent implements OnInit {
       (step) => step.id === this.currentStep.id
     );
     return HEADER_TABS?.length - 1 === index
-      ? 'Goto Checkout Cart'
+      ? 'Checkout Cart'
       : ` ${index + 2} ${HEADER_TABS?.[index + 1]?.title}`;
   }
 
